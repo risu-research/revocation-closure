@@ -13,3 +13,6 @@ external_effect_*_audit.json
 experiments/observed_tool_reads/_runs/
 tool_read_dev_*.json
 tool_read_holdout_*.json
+_custody_runs/
+experiments/trusted_custody/_custody_runs/
+experiments/trusted_custody/__pycache__/
