@@ -96,6 +96,7 @@ A sixth controlled module places the **actual effect ledger and current revocati
 - [Read-only physical effect auditor](experiments/independent_recipient/independent_auditor.py)
 - [Reproduce the complete experiment](experiments/independent_recipient/run.sh)
 - [Recorded evaluation summary](results/recipient_authority_summary.json)
+- [Independent audit, original SQL evidence and public reproduction](results/RECIPIENT_AUTHORITY_EVIDENCE.md)
 
 The held-out matrix includes 576 synthetic historical checkpoint replays. It distinguishes an open effect endpoint, old signed permits, recipient-side current-policy enforcement, and the addition of a separate owner credential. The recipient blocks correctly identified revoked-source writes after it acknowledges a notice, but **a missed notice or falsely clean original issuance remains unsafe**. This is an independent target-specific protection, not a claim about arbitrary internet egress or all provider systems.
 
