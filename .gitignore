@@ -16,3 +16,6 @@ tool_read_holdout_*.json
 _custody_runs/
 experiments/trusted_custody/_custody_runs/
 experiments/trusted_custody/__pycache__/
+_recipient_runs/
+experiments/independent_recipient/_recipient_runs/
+experiments/independent_recipient/__pycache__/
