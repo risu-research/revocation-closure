@@ -4,3 +4,9 @@ __pycache__/
 legal_order_result.json
 provenance_dev_result.json
 provenance_holdout_result.json
+experiments/external_effects/_runs/
+effect-dev.sqlite*
+effect-heldout.sqlite*
+external_effect_*_oracle.json
+external_effect_*_acks.json
+external_effect_*_audit.json
