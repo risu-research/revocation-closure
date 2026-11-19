@@ -1,0 +1,154 @@
+{
+  "schema": "tool-read-observation-nondeterminism-evaluation-v1",
+  "executed_compute_repo": "risu-research/formal-exec-2609",
+  "public_artifact_repo": "risu-research/revocation-closure",
+  "executed_development_commit": "52a6efe702cc7e17ad0cad2b1058d8079a7b3236",
+  "executed_heldout_commit": "cecfbf9669754aead087a8e0c95f34f2cfa11dfd",
+  "source_blob_sha1": {
+    "toolread_source_service": "4981b129a8f7f52be6dacc808007c347c6a14dad",
+    "toolread_runner": "a484dc6fef339f323025c23acad29b8f8038dc56",
+    "toolread_auditor": "0133a9e70f2d92d47f9534286b2f6c4d1dfe11eb",
+    "run_script": "62e040f7c07413164119d05439dcd83354d29690"
+  },
+  "protocol": {
+    "real_tool_interface": "langchain_core.tools.tool.invoke",
+    "source": "Synthetic records fetched from out-of-process HTTP service with server-created read events",
+    "nondeterministic_transform": "SHA-256 of read values and a fresh secrets.token_hex(16) nonce",
+    "output_binding": "Externally registered output hash bound to the flow and observed read event count",
+    "execution_framework": "LangGraph==1.2.12, InMemorySaver, historical checkpoint replay",
+    "effect_store": "Independent HTTP/SQLite receiver, read-only postrun auditor",
+    "guards": [
+      "cached",
+      "declared",
+      "tool_trace"
+    ],
+    "conditions": 15,
+    "policy_fixtures": [
+      "Acosta notice",
+      "NECEC challenge"
+    ],
+    "dev_seeds": [
+      71,
+      72
+    ],
+    "holdout_seeds": [
+      6101,
+      6102,
+      6103,
+      6104,
+      6105,
+      6106
+    ],
+    "oracle_note": "Source truth is in a separate per-run oracle manifest. It is not passed to the storage service or effect guard."
+  },
+  "splits": {
+    "development": {
+      "run_id": 44460188982,
+      "run_url": "https://github.com/risu-research/formal-exec-2609/actions/runs/44460188982",
+      "artifact_id": 14500135632,
+      "artifact_url": "https://github.com/risu-research/formal-exec-2609/actions/runs/44460188982/artifacts/14500135632",
+      "database_sha256": "49f55ac3bb9225c3576343930984e7f62bb6d5ce5171c0b3afb4f90157b10250",
+      "observer_report_sha256": "e85e13673070647fbcc705c73983ff560bbc7ed4fa41cab4b2c1554581190b42",
+      "cases": 180,
+      "guards": {
+        "cached": {
+          "affected": 28,
+          "cases": 60,
+          "clean": 28,
+          "clean_work_preserved": 24,
+          "released_source_effect": 4,
+          "revocation_violation": 28,
+          "unbound_output_write": 4,
+          "unresolved": 0,
+          "untraced_bypass_violation": 8
+        },
+        "declared": {
+          "affected": 28,
+          "cases": 60,
+          "clean": 28,
+          "clean_work_preserved": 16,
+          "released_source_effect": 4,
+          "revocation_violation": 12,
+          "unbound_output_write": 4,
+          "unresolved": 8,
+          "untraced_bypass_violation": 4
+        },
+        "tool_trace": {
+          "affected": 28,
+          "cases": 60,
+          "clean": 28,
+          "clean_work_preserved": 16,
+          "released_source_effect": 4,
+          "revocation_violation": 4,
+          "unbound_output_write": 0,
+          "unresolved": 16,
+          "untraced_bypass_violation": 4
+        }
+      },
+      "nondet_pairs": 12,
+      "partition": "dev",
+      "writes": 120,
+      "sql_integrity": "ok"
+    },
+    "heldout": {
+      "run_id": 44460302186,
+      "run_url": "https://github.com/risu-research/formal-exec-2609/actions/runs/44460302186",
+      "artifact_id": 14499637105,
+      "artifact_url": "https://github.com/risu-research/formal-exec-2609/actions/runs/44460302186/artifacts/14499637105",
+      "database_sha256": "b9ce256fd295be2fb1f762b0f89ba22706af6a736e14ac528e7911b0577001cd",
+      "observer_report_sha256": "48308343845dda0cfd07efd128cd4f9bc012797ee441d5689b18514d2f089a6a",
+      "cases": 540,
+      "guards": {
+        "cached": {
+          "affected": 84,
+          "cases": 180,
+          "clean": 84,
+          "clean_work_preserved": 72,
+          "released_source_effect": 12,
+          "revocation_violation": 84,
+          "unbound_output_write": 12,
+          "unresolved": 0,
+          "untraced_bypass_violation": 24
+        },
+        "declared": {
+          "affected": 84,
+          "cases": 180,
+          "clean": 84,
+          "clean_work_preserved": 48,
+          "released_source_effect": 12,
+          "revocation_violation": 36,
+          "unbound_output_write": 12,
+          "unresolved": 24,
+          "untraced_bypass_violation": 12
+        },
+        "tool_trace": {
+          "affected": 84,
+          "cases": 180,
+          "clean": 84,
+          "clean_work_preserved": 48,
+          "released_source_effect": 12,
+          "revocation_violation": 12,
+          "unbound_output_write": 0,
+          "unresolved": 48,
+          "untraced_bypass_violation": 12
+        }
+      },
+      "nondet_pairs": 36,
+      "partition": "holdout",
+      "writes": 360,
+      "sql_integrity": "ok"
+    }
+  },
+  "limitations": [
+    "The actual tool reads return constructed synthetic content, not real legal documents or confidential matter.",
+    "Tool registration and trace linkage only cover calls through the instrumented gateway.",
+    "An intentional untracked endpoint shows the limit of falsely complete source-read observations.",
+    "The transformation uses fresh randomness rather than LLM sampling; this isolates nondeterminism but does not test a real model.",
+    "Source-to-output registration is a service-stored digest declaration, not a cryptographically attested transformation.",
+    "Each scenario repeats with fresh nonce but is not an independent natural fault distribution.",
+    "The effect receiver is a separate localhost HTTP process and SQLite file, not a real external provider.",
+    "Replaying historic checkpoints uses LangGraph InMemorySaver, with PostgreSQL evaluated only in a separate simpler experiment.",
+    "Post-write audit detects committed effects but does not reverse them.",
+    "Results describe conditional behavior, not field error rates or legal compliance."
+  ]
+}
