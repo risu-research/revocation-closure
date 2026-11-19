@@ -1,0 +1,159 @@
+{
+  "schema": "recipient-owned-current-authority-evaluation-v1",
+  "research_goal": "Enforce current revocation at the independent recipient of a downstream effect, despite old agent checkpoints and already-issued capabilities.",
+  "public_repo": "risu-research/revocation-closure",
+  "compute_repo": "risu-research/formal-exec-2609",
+  "compute_branch": "exec/j-ownerpolicy945",
+  "source_blob_sha1": {
+    "recipient_service_py": "bff0dbbfce5f3b98da3eee53796fb7926803e64a",
+    "owner_relay_py": "ebb75cb3ed9e86766ea4384a5e332e930a09aef2",
+    "agent_worker_py": "2a192d3fe53fc5d88a7c29127c7707ba3aa0e488",
+    "run_evaluation_py": "a99a261b49c23d7cb812124822e5639e304c8c51",
+    "independent_auditor_py": "aaeabbea60c589e30db2c60bbbed6b19bab29644"
+  },
+  "environment": "Real LangGraph 1.2.12 checkpoint replay, agent UID 12002, owner relay UID 12001, recipient UID 12003, separate HTTP processes, recipient-owned SQLite with BEGIN IMMEDIATE.",
+  "protocol": {
+    "modes": [
+      "open",
+      "static",
+      "live",
+      "owner_live"
+    ],
+    "scenarios": [
+      "revoked_after_notice",
+      "mixed_after_notice",
+      "clean_independent",
+      "revoked_before_notice",
+      "revoked_after_release",
+      "forge_clean_label",
+      "tamper_clean_output",
+      "wrong_target_clean",
+      "missing_token_clean",
+      "duplicate_clean",
+      "false_clean_issuance",
+      "revocation_not_delivered"
+    ],
+    "legal_fixtures": [
+      "Acosta producer notice",
+      "NECEC pending challenge"
+    ],
+    "development_seeds": [
+      211,
+      212
+    ],
+    "evaluation_seeds": [
+      8211,
+      8212,
+      8213,
+      8214,
+      8215,
+      8216
+    ],
+    "checkpoint": "Capability issued before notice; historical pre-effect checkpoint resumed after latest thread state repaired",
+    "effect_audit": "Offline read-only auditor verifies physically persisted recipient effects, recipient policy epoch history, original issuer claims, true oracle dependency and all replay decisions",
+    "authorization_modes": {
+      "open": "Unauthenticated recipient write path, negative control",
+      "static": "Recipient verifies old HMAC-signed capability but does not re-check source policy",
+      "live": "Recipient verifies capability and current locally acknowledged revocation inside same SQL transaction as writing",
+      "owner_live": "live plus a separate owner write credential unavailable to the untrusted agent; relay authorized on behalf of owner"
+    }
+  },
+  "development": {
+    "run_id": 44467270022,
+    "artifact_id": 14502592760,
+    "actions_url": "https://github.com/risu-research/formal-exec-2609/actions/runs/44467270022",
+    "cases": 192,
+    "physical_effects": 132,
+    "by_mode": {
+      "open": {
+        "cases": 48,
+        "effects": 52,
+        "unsafe_after_owner_notice": 20,
+        "unsafe_after_recipient_ack": 16,
+        "clean_control_effects": 12
+      },
+      "static": {
+        "cases": 48,
+        "effects": 32,
+        "unsafe_after_owner_notice": 16,
+        "unsafe_after_recipient_ack": 12,
+        "clean_control_effects": 8
+      },
+      "live": {
+        "cases": 48,
+        "effects": 24,
+        "unsafe_after_owner_notice": 8,
+        "unsafe_after_recipient_ack": 4,
+        "clean_control_effects": 8
+      },
+      "owner_live": {
+        "cases": 48,
+        "effects": 24,
+        "unsafe_after_owner_notice": 8,
+        "unsafe_after_recipient_ack": 4,
+        "clean_control_effects": 8,
+        "agent_direct_denied": 48
+      }
+    },
+    "sqlite_sha256": "3ef34bf9e0c92374df1fa4243e1c6de1407608fb809d96fc6e81937bec71cc0f",
+    "audit_sha256": "9cbfcae9e4152703c6fea04d543f7dd9bfdabe37b239b2a301feea28dfc98f9a"
+  },
+  "evaluation": {
+    "run_id": 44467406356,
+    "artifact_id": 14503131178,
+    "actions_url": "https://github.com/risu-research/formal-exec-2609/actions/runs/44467406356",
+    "cases": 576,
+    "physical_effects": 396,
+    "by_mode": {
+      "open": {
+        "cases": 144,
+        "effects": 156,
+        "unsafe_after_owner_notice": 60,
+        "unsafe_after_recipient_ack": 48,
+        "clean_control_effects": 36
+      },
+      "static": {
+        "cases": 144,
+        "effects": 96,
+        "unsafe_after_owner_notice": 48,
+        "unsafe_after_recipient_ack": 36,
+        "clean_control_effects": 24
+      },
+      "live": {
+        "cases": 144,
+        "effects": 72,
+        "unsafe_after_owner_notice": 24,
+        "unsafe_after_recipient_ack": 12,
+        "clean_control_effects": 24
+      },
+      "owner_live": {
+        "cases": 144,
+        "effects": 72,
+        "unsafe_after_owner_notice": 24,
+        "unsafe_after_recipient_ack": 12,
+        "clean_control_effects": 24,
+        "agent_direct_denied": 144
+      }
+    },
+    "source_declared_falsely_clean_unsafe_per_live_mode": 12,
+    "recipient_did_not_receive_notice_unsafe_per_live_mode": 12,
+    "correctly_declared_with_acknowledged_revocation_unsafe_per_live_mode": 0,
+    "sqlite_sha256": "3df188a1aeab62723ac34e2a64db4d1e5ee81cdd275b5243f4288016c05e306b",
+    "audit_sha256": "eeeaf64d70b3000c3d03cf8d8ef3bd6c6bbf635a6d3c59ff3a969d8420d9ff7c",
+    "offline_full_read_only_reaudit": "PASS",
+    "changed_persisted_sql_effect_negative_control": "DETECTED"
+  },
+  "qualifications": [
+    "All source content and legal scenarios are synthetic. There are 12 fixed scenarios repeated by seeds, not independent legal matters.",
+    "A complete local proof must be available to the recipient, and the recipient must actually receive and acknowledge the revocation update.",
+    "If an independent target has not received a notice, even owner_live authorizes old R-derived outputs in the constructed test.",
+    "If an authorized issuer falsely certifies a clean source, a signed permit does not recover hidden true lineage; the false claim causes unsafe writes.",
+    "A separate owner credential prevents direct untrusted use of this recipient, but an open relay remains callable with an otherwise valid permit. The recipient's checks must therefore remain enforced.",
+    "The recipient only controls writes to its own endpoint. Other open external endpoints or exfiltrated source copies are outside the evaluated boundary.",
+    "Recipient updates and commits are serialized via the recipient's own SQLite BEGIN IMMEDIATE. This proves ordering relative to acknowledged updates, not instantaneous propagation of real-world legal notice.",
+    "No real SaaS provider, credential delegation backend, adversarial network, live LLM, production user identities or court compliance evaluated.",
+    "A signed bearer token is not a general-purpose proof of authorization or full source completeness.",
+    "This is an application of well-established reference-monitor, least-privilege and recipient-side policy evaluation concepts, not the discovery of a new cryptographic primitive."
+  ],
+  "release_state": "No GitHub release, Zenodo archival release or DOI was made. Author approval required."
+}
