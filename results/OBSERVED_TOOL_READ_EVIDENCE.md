@@ -28,6 +28,17 @@ The original ZIP archives were extracted in a separate container-backed environm
 
 **Reproductions will not be byte-identical.** Fresh entropy is an intentional property of the transform. The oracle's expected guard decisions, persisted-effect counts and all invariants are stable; the precise transform nonces and resulting archive file hashes vary across reruns.
 
+## Public reproduction and tamper control
+
+A fresh Actions job cloned the public repository at commit `ea426228f4f37ca04981318d6ec2e72c699b1d12`, executed its standalone development runner inside a clean pinned LangGraph environment, and generated the same 180-case outcome counts with newly sampled transformation nonces.
+
+- [Independent public rerun and archived held-out audit, run 44460894473](https://github.com/risu-research/formal-exec-2609/actions/runs/44460894473)
+- [Public validation log artifact 14500400818](https://github.com/risu-research/formal-exec-2609/actions/runs/44460894473/artifacts/14500400818)
+
+After completing the rerun, the job modified a physically stored SQL effect on a disposable copy of the SQLite database. The read-only auditor failed with an assertion as expected. The same public auditor also downloaded the **original held-out Actions artifact** and independently recomputed its 540-case results, confirming all summary counters and all 36 nondeterministic same-source pairs.
+
+This validates the concrete replay and audit chain without presuming that a source-service log sees uninstrumented reads. The bypass case remains an explicit counterexample.
+
 ## Qualified findings
 
 The tool-observed read trace blocks or defers replay when the source-service event log identifies revoked data and the output hash matches the registered transformation. The trace guard can admit correctly tracked clean-source outputs despite genuine nondeterminism.
