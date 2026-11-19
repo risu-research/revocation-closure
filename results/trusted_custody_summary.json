@@ -1,0 +1,96 @@
+{
+  "schema": "trusted-custody-execution-and-forensic-evidence-v1",
+  "project": "After the Clawback: Revocation Closure in Agentic Legal Workflows",
+  "public_source_repository": "risu-research/revocation-closure",
+  "compute_repository": "risu-research/formal-exec-2609",
+  "branch": "exec/j-custody913",
+  "research_question": "Can an isolated trusted process enforce protected-source access and current effect permissions while preventing uncertain missing-source evidence from being classified as clean?",
+  "protocol": {
+    "framework": "Real LangGraph 1.2.12 checkpoint history with LangChain @tool mediator",
+    "isolation": "Broker process Linux UID 12001; untrusted agent Linux UID 12002; OS DAC 0700 private directory and 0400 raw source/key files",
+    "source_content": "48-byte synthetic random source snapshots generated after setup, never returned as raw content to the untrusted worker",
+    "checkpoint": "Historical pre-effect checkpoint resumed after current state is repaired",
+    "effect_check": "HMAC-SHA256 certificate, independently stored issued source list/read events, current revocation status checked within SQLite BEGIN IMMEDIATE transaction",
+    "archive": "SQLite WAL finalized and integrity_check=ok before saved copy and separate observer audit",
+    "policies": [
+      "Acosta notice fixture",
+      "NECEC pending challenge fixture"
+    ],
+    "scenarios": 14,
+    "development_seeds": [
+      31,
+      32
+    ],
+    "heldout_seeds": [
+      5301,
+      5302,
+      5303,
+      5304,
+      5305,
+      5306
+    ]
+  },
+  "source_git_blob_hashes": {
+    "trusted_broker_py": "7c47d692e99d8d79c9557c8e2d11409b685a78a5",
+    "agent_worker_py": "95e0a3f45aee6b149f5bd79723f3a0c50a94fdf8",
+    "integrated_driver_py": "0291f3fc37c233af547668e424256a477ff7763c",
+    "independent_auditor_py": "2a33aa996bae26026216b184fb43278ea4a65883"
+  },
+  "development": {
+    "actions_run_id": 44464377771,
+    "actions_url": "https://github.com/risu-research/formal-exec-2609/actions/runs/44464377771",
+    "artifact_id": 14501865391,
+    "cases": 56,
+    "physical_effects": 20,
+    "clean_cases_including_negative_controls": 32,
+    "clean_effects_committed": 12,
+    "sqlite_sha256": "3a4480abb0acf45917f8a5e4d9441a3745a584993d9898d5664c2df4acb3a1be",
+    "audit_sha256": "e8ed3ca857636e56f76506a0196565b5499455d5cb2340435f13d3529c04d138",
+    "verified_independently_from_downloaded_archive": true
+  },
+  "heldout": {
+    "actions_run_id": 44464512343,
+    "actions_url": "https://github.com/risu-research/formal-exec-2609/actions/runs/44464512343",
+    "artifact_id": 14501497943,
+    "cases": 168,
+    "physical_effects": 60,
+    "revoked_derived_effects_committed_during_revocation": 0,
+    "clean_scenarios_intentionally_expected_to_commit": 36,
+    "clean_scenarios_committed": 36,
+    "clean_cases_including_negative_controls": 96,
+    "clean_effects_committed": 36,
+    "missing_or_modified_evidence_cases_abstained": 72,
+    "revoked_read_requests_denied_after_notice": 12,
+    "duplicate_second_effects_blocked": 12,
+    "sqlite_sha256": "7c27de50bd75ee392c1deba765808a6423e1d48bd3415b903a18cf0c7ccf302a",
+    "audit_sha256": "2406336bafa0c18fa3d3821f7c33e39079949ddb127e90bacb9e24269d721b18",
+    "verified_independently_from_downloaded_archive": true,
+    "sql_effect_tampering_negative_control": "PASS"
+  },
+  "recovery_negative_controls": {
+    "original_source_absent": "UNRESOLVED_NO_MATCH",
+    "wrong_source_version": "UNRESOLVED_NO_MATCH",
+    "nonce_missing": "UNRESOLVED_NONCE",
+    "identical_contents_for_distinct_names": "UNRESOLVED_AMBIGUOUS"
+  },
+  "actual_unauthorized_access_checks": {
+    "untrusted_direct_vault_read": "ACCESS_DENIED",
+    "untrusted_signing_key_read": "ACCESS_DENIED",
+    "untrusted_admin_key_read": "ACCESS_DENIED",
+    "untrusted_ledger_read": "ACCESS_DENIED",
+    "unauthenticated_policy_change": "DENIED",
+    "unauthenticated_test_fault": "DENIED",
+    "untracked_HTTP_read_route": "ABSENT"
+  },
+  "limitations": [
+    "Privileged root orchestrator and trusted broker are in one disposable Linux container; not an audited production sandbox.",
+    "The protected sink is the broker's own SQLite endpoint. The experiment does not control arbitrary external network destinations.",
+    "The untrusted worker receives only a digest and a bearer-style signed capability. It does not receive raw source bytes. No claim is made about previously exfiltrated raw bytes or other memory/caches.",
+    "The admin API is protected by a private test-only secret. Production identity, key rotation, per-user authorization, logging immutability, and network isolation are outside scope.",
+    "The retrospective candidate matcher is a bounded deterministic hash/nonce calculation. It is never used by the broker to infer permission from weak forensic evidence.",
+    "Synthetic legal-policy states and random source bytes, not actual protected client content; no real LLM transformation.",
+    "Each held-out seed repeats constructed scenarios rather than independently sampling legal workflows. Counts are conditional on the tested matrix.",
+    "A historical use may be prohibited after revocation even if it had earlier been permitted; this experiment tests effects through the mediated endpoint only."
+  ],
+  "release_note": "No GitHub release, Zenodo deposit or DOI authorized or created."
+}
