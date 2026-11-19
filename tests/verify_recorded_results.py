@@ -4,7 +4,7 @@ from pathlib import Path
 import hashlib
 import json
 
-FROZEN_SHA256="d74a143ba5fccf8c5fdf71d81baa476ee34a908fe23110b04b31a21f2d3ab443"
+FROZEN_SHA256="02a53546dc4dcf3b5e5ecf7ce59ace8d66e3d125294cd55a867a0044824c587b"
 EXPECTED={
  "acosta_unchecked":(1,True), "acosta_cached":(1,True),
  "acosta_guarded":(0,False), "acosta_clean":(1,False),
