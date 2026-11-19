@@ -22,10 +22,10 @@ python3 "$ROOT/external_effect_sink.py" --db "$OUT/effects.sqlite" --port "$PORT
 SINK_PID=$!
 trap 'kill "$SINK_PID" 2>/dev/null || true' EXIT
 for i in $(seq 1 60); do
-  if curl -fsS "http://127.0.0.1:$PORT/health" >/dev/null 2>&1; then break; fi
+  if python3 -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:$PORT/health', timeout=2).close()" >/dev/null 2>&1; then break; fi
   sleep 1
 done
-curl -fsS "http://127.0.0.1:$PORT/health" >/dev/null
+python3 -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:$PORT/health', timeout=2).close()" >/dev/null
 
 python3 "$ROOT/external_effect_runner.py" --partition "$PART" --endpoint "http://127.0.0.1:$PORT" | tee replay.log
 kill "$SINK_PID"
