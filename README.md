@@ -81,6 +81,7 @@ The later effect check verifies signed and registered evidence against the curre
 - [Independent SQL and recovery auditor](experiments/trusted_custody/independent_auditor.py)
 - [Public Linux/Docker reproducer](experiments/trusted_custody/run.sh)
 - [Recorded development and held-out outcomes](results/trusted_custody_summary.json)
+- [Independent audit, verified Actions and public rerun evidence](results/TRUSTED_CUSTODY_EVIDENCE.md)
 
 The held-out result covers 168 fixed synthetic scenarios. It demonstrates a sounder enforcement boundary within the tested interface, while leaving general-purpose cloud egress, memory side channels, external identity and real privileged legal data outside scope. The original manuscript remains unchanged.
 
