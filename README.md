@@ -69,6 +69,21 @@ A fourth, small independent experiment uses a real LangChain `@tool` call to rea
 
 The 540-case held-out fault matrix includes deliberately untracked source reads. A valid observation trace reduces unauthorized writes when reads pass through the instrumented boundary. A deliberate bypass defeats the trace guard despite a valid-looking record, which limits any completeness claim. The underlying content and legal policy states are synthetic.
 
+## Enforced source custody and conditional retrospective recovery
+
+A fifth module combines actual operating-system process isolation with effect-time authorization. A trusted broker has access to synthetic protected source bytes, records every read it performs, and signs a binding between source dependencies and the transformed output. The untrusted LangGraph agent has a separate Linux identity and cannot directly open the source vault, signing key, admin key or protected SQLite ledger.
+
+The later effect check verifies signed and registered evidence against the current revocation state in the same SQL transaction as the write. Missing or contradictory evidence leads to an unresolved outcome. A separate bounded forensic test distinguishes unavailable historical source versions, missing nonces and ambiguous candidate matches.
+
+- [Experiment protocol, exact scope and results](experiments/trusted_custody/PROTOCOL.md)
+- [Trusted broker and guarded effect service](experiments/trusted_custody/trusted_broker.py)
+- [Untrusted LangGraph worker](experiments/trusted_custody/agent_worker.py)
+- [Independent SQL and recovery auditor](experiments/trusted_custody/independent_auditor.py)
+- [Public Linux/Docker reproducer](experiments/trusted_custody/run.sh)
+- [Recorded development and held-out outcomes](results/trusted_custody_summary.json)
+
+The held-out result covers 168 fixed synthetic scenarios. It demonstrates a sounder enforcement boundary within the tested interface, while leaving general-purpose cloud egress, memory side channels, external identity and real privileged legal data outside scope. The original manuscript remains unchanged.
+
 ## Evidence boundary
 
 The court orders are cited as public source documents. A human translated selected clauses into test fixtures. Passing tests confirm that the implemented interpreter and replay harness behave as those fixtures specify. They do not certify compliance by any real workflow, law firm, or AI provider. Missing or falsely complete dependency information remains a failure boundary.
