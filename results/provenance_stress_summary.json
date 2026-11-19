@@ -1,0 +1,141 @@
+{
+  "schema": "provenance-fault-evaluation-summary-v1",
+  "code_blob_sha1": "18ec60f938dbba6fb8dd4f9ccfb8ff9ed74a9dd4",
+  "code_sha256": "f4d825d9a9c3c112c85e5547c9fd964abfbbb0dbb2ca28ca15d02d8638818cb0",
+  "executed_source_commit": "ddded3472e7e1183162407322fca475afcb2164a",
+  "compute_repository": "risu-research/formal-exec-2609",
+  "version": "LangGraph 1.2.12, Python 3.12",
+  "protocol": {
+    "fault_templates": 18,
+    "guard_modes": [
+      "cached",
+      "embedded",
+      "receipt"
+    ],
+    "legal_fixture_policies": [
+      "Acosta notice",
+      "NECEC pending challenge"
+    ],
+    "development_seeds": [
+      11,
+      12,
+      13,
+      14
+    ],
+    "evaluation_seeds": [
+      4101,
+      4102,
+      4103,
+      4104,
+      4105,
+      4106,
+      4107,
+      4108,
+      4109,
+      4110,
+      4111,
+      4112,
+      4113,
+      4114,
+      4115,
+      4116,
+      4117,
+      4118,
+      4119,
+      4120
+    ],
+    "outcome_unit": "one historical checkpoint replay with an independent SQLite write-effect ledger",
+    "observational_collision_controls": "identical policy-facing artifact IDs, payloads, embedded metadata and source-read receipts, but different withheld oracle lineage"
+  },
+  "development": {
+    "run_id": 44455269658,
+    "by_guard": {
+      "cached": {
+        "affected": 80,
+        "clean": 64,
+        "clean_effects_preserved": 64,
+        "total": 144,
+        "unauthorized_effects": 80,
+        "unresolved_affected": 0,
+        "unresolved_clean": 0
+      },
+      "embedded": {
+        "affected": 80,
+        "clean": 64,
+        "clean_effects_preserved": 48,
+        "total": 144,
+        "unauthorized_effects": 32,
+        "unresolved_affected": 8,
+        "unresolved_clean": 8
+      },
+      "receipt": {
+        "affected": 80,
+        "clean": 64,
+        "clean_effects_preserved": 32,
+        "total": 144,
+        "unauthorized_effects": 16,
+        "unresolved_affected": 24,
+        "unresolved_clean": 24
+      }
+    },
+    "checks": 432,
+    "collision_checks": 24,
+    "langgraph_version": "1.2.12",
+    "partition": "dev",
+    "passed": true,
+    "result_sha256": "bb020eb3c5989e5dde3d7d7fa0c719c2c5e9015bea0b0a7657f6bdeaee0ff180",
+    "rows": 432
+  },
+  "evaluation": {
+    "run_id": 44455344566,
+    "by_guard": {
+      "cached": {
+        "affected": 400,
+        "clean": 320,
+        "clean_effects_preserved": 320,
+        "total": 720,
+        "unauthorized_effects": 400,
+        "unresolved_affected": 0,
+        "unresolved_clean": 0
+      },
+      "embedded": {
+        "affected": 400,
+        "clean": 320,
+        "clean_effects_preserved": 240,
+        "total": 720,
+        "unauthorized_effects": 160,
+        "unresolved_affected": 40,
+        "unresolved_clean": 40
+      },
+      "receipt": {
+        "affected": 400,
+        "clean": 320,
+        "clean_effects_preserved": 160,
+        "total": 720,
+        "unauthorized_effects": 80,
+        "unresolved_affected": 120,
+        "unresolved_clean": 120
+      }
+    },
+    "checks": 2160,
+    "collision_checks": 120,
+    "langgraph_version": "1.2.12",
+    "partition": "holdout",
+    "passed": true,
+    "result_sha256": "cfcfd5480c5c422d54f8d73d3651957da209d7d7705a22e87d09165ecf877d50",
+    "rows": 2160
+  },
+  "archive_links": {
+    "dev": "https://github.com/risu-research/formal-exec-2609/actions/runs/44455269658/artifacts/14496729744",
+    "heldout": "https://github.com/risu-research/formal-exec-2609/actions/runs/44455344566/artifacts/14497580903"
+  },
+  "limitations": [
+    "The 18 fault classes are manually constructed, equally weighted test cases.",
+    "Seeds change synthetic payload instances, not the failure-type distribution or the domain of studied legal cases.",
+    "Rates are conditional stress-test outcomes, not prevalence estimates or statistical claims of generalization.",
+    "A trusted source-read receipt is simulated as a separate SQLite table, not a cryptographically signed external witness.",
+    "A falsely complete receipt remains indistinguishable from a correct receipt under the tested information interface.",
+    "The harness uses LangGraph InMemorySaver; PostgreSQL persistence was evaluated separately in an earlier replay study.",
+    "Only synthetic content and manually specified Acosta/NECEC notice states are exercised."
+  ]
+}
