@@ -41,6 +41,21 @@ python tests/verify_provenance_evaluation.py provenance_holdout_result.json
 
 The complete per-run result is retained as an [Actions artifact](https://github.com/risu-research/formal-exec-2609/actions/runs/44455344566). The source revision and result hash are pinned in the summary.
 
+## Independent external-effect verification
+
+A third module tests whether historical checkpoint replay creates a **persisted downstream effect** after revocation and whether a separately executed, read-only observer can verify the actual resulting storage state.
+
+- [Method and pre-registered scenarios](experiments/external_effects/PROTOCOL.md)
+- [HTTP effect receiver](experiments/external_effects/external_effect_sink.py)
+- [Real LangGraph replay driver](experiments/external_effects/external_effect_runner.py)
+- [Independent SQL auditor](experiments/external_effects/external_effect_auditor.py)
+- [One-command development or held-out rerun](experiments/external_effects/run.sh)
+- [Verified result and source hashes](results/external_effects_summary.json)
+
+The held-out run covers 1,152 seeded checkpoint replays across a fixed matrix. It compares cached approval, client-side prechecks, and storage-side checks performed inside the write transaction. An independent observer reads physically persisted SQLite rows and policy event history without relying on the workflow's success messages. The matrix includes revocation between a client check and an external write.
+
+Results describe controlled synthetic conditions, not live legal-service behavior, validated provider deletion, or real-world error frequencies. Incorrectly complete receipts remain a known failure boundary. The work is deliberately separate from the frozen submitted manuscript.
+
 ## Evidence boundary
 
 The court orders are cited as public source documents. A human translated selected clauses into test fixtures. Passing tests confirm that the implemented interpreter and replay harness behave as those fixtures specify. They do not certify compliance by any real workflow, law firm, or AI provider. Missing or falsely complete dependency information remains a failure boundary.
