@@ -35,8 +35,8 @@
       "pass": true
     },
     {
-      "actual": "ALLOW",
-      "expected": "ALLOW",
+      "actual": "REQUIRED",
+      "expected": "REQUIRED",
       "id": "AC4",
       "order": "acosta",
       "pass": true
@@ -77,43 +77,43 @@
       "pass": true
     },
     {
-      "actual": "HOLD",
-      "expected": "HOLD",
+      "actual": "CONDITIONAL",
+      "expected": "CONDITIONAL",
       "id": "NE3",
       "order": "necec",
       "pass": true
     },
     {
-      "actual": "ALLOW",
-      "expected": "ALLOW",
+      "actual": "REQUIRED",
+      "expected": "REQUIRED",
       "id": "NE4",
       "order": "necec",
       "pass": true
     },
     {
-      "actual": "ALLOW",
-      "expected": "ALLOW",
+      "actual": "REQUIRED",
+      "expected": "REQUIRED",
       "id": "NE5",
       "order": "necec",
       "pass": true
     },
     {
-      "actual": "UNRESOLVED",
-      "expected": "UNRESOLVED",
+      "actual": "NO_MANDATE",
+      "expected": "NO_MANDATE",
       "id": "NE6",
       "order": "necec",
       "pass": true
     },
     {
-      "actual": "ALLOW",
-      "expected": "ALLOW",
+      "actual": "REQUIRED",
+      "expected": "REQUIRED",
       "id": "NE7",
       "order": "necec",
       "pass": true
     },
     {
-      "actual": "BLOCK",
-      "expected": "BLOCK",
+      "actual": "OUT_OF_SCOPE",
+      "expected": "OUT_OF_SCOPE",
       "id": "NE8",
       "order": "necec",
       "pass": true
@@ -175,15 +175,15 @@
       "pass": true
     },
     {
-      "actual": "UNRESOLVED",
-      "expected": "UNRESOLVED",
+      "actual": "EVIDENCE_MISSING",
+      "expected": "EVIDENCE_MISSING",
       "id": "SP5",
       "order": "spheres",
       "pass": true
     },
     {
-      "actual": "ALLOW",
-      "expected": "ALLOW",
+      "actual": "EVIDENCE_PRESENT",
+      "expected": "EVIDENCE_PRESENT",
       "id": "SP6",
       "order": "spheres",
       "pass": true
