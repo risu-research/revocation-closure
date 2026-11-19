@@ -1,0 +1,168 @@
+{
+  "schema": "revocation-external-effects-evaluation-v1",
+  "source_repository": "risu-research/formal-exec-2609",
+  "public_repository": "risu-research/revocation-closure",
+  "source_head_sha": "7d90b2ca5be3eb94e970d2baf009a8b6056fef53",
+  "source_files": {
+    "external_effect_sink.py": {
+      "git_blob_sha1": "30f4d17d19550e8549cb974055279a0972341510",
+      "sha256": "3363da6f914fce33662c5b7349ddc05f316427b99235f9a4a2e35cc720840111"
+    },
+    "external_effect_runner.py": {
+      "git_blob_sha1": "c41adef808930ceccfbc00efcd1b5bc71446a255",
+      "sha256": "ca4b44189ab50f21f68c467f15ea8b942feb570f4b8dbae177c83e4d82d9ab8b"
+    },
+    "external_effect_auditor.py": {
+      "git_blob_sha1": "7b4f75a4ad91bb74e47c294d02839b089f90e8b9",
+      "sha256": "023c78bb9f808692afe97b9f3f8e938318cee347c91da1fbb4f1962433a6ff92"
+    }
+  },
+  "protocol": {
+    "templates": 16,
+    "guards": [
+      "cached",
+      "client_precheck",
+      "sink_atomic"
+    ],
+    "policy_states": [
+      "acosta_notice",
+      "necec_challenge"
+    ],
+    "dev_seeds": [
+      901,
+      902,
+      903,
+      904
+    ],
+    "holdout_seeds": [
+      7001,
+      7002,
+      7003,
+      7004,
+      7005,
+      7006,
+      7007,
+      7008,
+      7009,
+      7010,
+      7011,
+      7012
+    ],
+    "outcome": "physically persisted write in out-of-process HTTP/SQLite service, classified by a read-only auditor against withheld oracle lineage",
+    "correction": "Archived SQLite WAL records were checkpointed and integrity-checked in final runs before upload"
+  },
+  "splits": {
+    "dev": {
+      "by_guard": {
+        "cached": {
+          "abstentions": 0,
+          "cases": 128,
+          "clean_cases": 40,
+          "clean_writes_preserved": 40,
+          "detected_unsafe_after_commit": 72,
+          "false_complete_unsafe": 8,
+          "race_unsafe": 16,
+          "revoked_at_commit": 72,
+          "unsafe_writes": 72
+        },
+        "client_precheck": {
+          "abstentions": 40,
+          "cases": 128,
+          "clean_cases": 40,
+          "clean_writes_preserved": 16,
+          "detected_unsafe_after_commit": 32,
+          "false_complete_unsafe": 8,
+          "race_unsafe": 16,
+          "revoked_at_commit": 72,
+          "unsafe_writes": 32
+        },
+        "sink_atomic": {
+          "abstentions": 40,
+          "cases": 128,
+          "clean_cases": 40,
+          "clean_writes_preserved": 16,
+          "detected_unsafe_after_commit": 16,
+          "false_complete_unsafe": 8,
+          "race_unsafe": 0,
+          "revoked_at_commit": 72,
+          "unsafe_writes": 16
+        }
+      },
+      "cases": 384,
+      "partition": "dev",
+      "persisted": 240,
+      "sha256": "61db45b7867e43809423250070009ce18c07192314f8c0e467856baf646a6889",
+      "run_id": 44457578111,
+      "run_url": "https://github.com/risu-research/formal-exec-2609/actions/runs/44457578111",
+      "artifact_id": 14498955334,
+      "artifact_url": "https://github.com/risu-research/formal-exec-2609/actions/runs/44457578111/artifacts/14498955334",
+      "sqlite_archive_verified": {
+        "sqlite_integrity": "ok",
+        "journal_mode": "delete",
+        "db_rows": 240,
+        "agrees_with_audit": true
+      }
+    },
+    "holdout": {
+      "by_guard": {
+        "cached": {
+          "abstentions": 0,
+          "cases": 384,
+          "clean_cases": 120,
+          "clean_writes_preserved": 120,
+          "detected_unsafe_after_commit": 216,
+          "false_complete_unsafe": 24,
+          "race_unsafe": 48,
+          "revoked_at_commit": 216,
+          "unsafe_writes": 216
+        },
+        "client_precheck": {
+          "abstentions": 120,
+          "cases": 384,
+          "clean_cases": 120,
+          "clean_writes_preserved": 48,
+          "detected_unsafe_after_commit": 96,
+          "false_complete_unsafe": 24,
+          "race_unsafe": 48,
+          "revoked_at_commit": 216,
+          "unsafe_writes": 96
+        },
+        "sink_atomic": {
+          "abstentions": 120,
+          "cases": 384,
+          "clean_cases": 120,
+          "clean_writes_preserved": 48,
+          "detected_unsafe_after_commit": 48,
+          "false_complete_unsafe": 24,
+          "race_unsafe": 0,
+          "revoked_at_commit": 216,
+          "unsafe_writes": 48
+        }
+      },
+      "cases": 1152,
+      "partition": "holdout",
+      "persisted": 720,
+      "sha256": "ab72f0745536447ee031021b9111f6f205de62359075ddaa8d1a6413098e4cbf",
+      "run_id": 44457583262,
+      "run_url": "https://github.com/risu-research/formal-exec-2609/actions/runs/44457583262",
+      "artifact_id": 14498647239,
+      "artifact_url": "https://github.com/risu-research/formal-exec-2609/actions/runs/44457583262/artifacts/14498647239",
+      "sqlite_archive_verified": {
+        "sqlite_integrity": "ok",
+        "journal_mode": "delete",
+        "db_rows": 720,
+        "agrees_with_audit": true
+      }
+    }
+  },
+  "limitations": [
+    "Constructed source labels and case-policy states, not live client or court records",
+    "Independent HTTP process and SQLite observer are in one test runner VM, not a third-party storage service",
+    "Cached approval is intentionally represented as a stored pre-notice boolean",
+    "Receipt completeness is only asserted, not externally attested",
+    "Transactional defense assumes all protected writes use the guarded endpoint",
+    "Detection by the post-write observer does not remove a committed effect",
+    "Repeated seeded fault templates do not estimate failure prevalence",
+    "The work uses LangGraph InMemorySaver and synthetic source receipts"
+  ]
+}
