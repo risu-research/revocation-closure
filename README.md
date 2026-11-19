@@ -20,6 +20,27 @@ python experiments/court_policy/legal_order_probe.py
 
 The script produces `legal_order_result.json` in the current working directory. It asserts 25 fixed policy fixtures and eight historical-checkpoint replay scenarios. It uses synthetic markers and a local SQLite effects ledger. No confidential litigation content, vendor API, or legal filing is processed.
 
+## Provenance fault evaluation
+
+A second, independently reproducible module studies missing, mislabeled, stale and falsely complete source-dependency evidence.
+
+- [Protocol and limitations](experiments/provenance_stress/PROTOCOL.md)
+- [Runnable checkpoint experiment](experiments/provenance_stress/provenance_stress.py)
+- [Development and held-out evaluation summary](results/provenance_stress_summary.json)
+- [Independent output auditor](tests/verify_provenance_evaluation.py)
+
+The evaluation covers 18 fixed fault types, three current-policy guard strategies, two court-policy fixtures and disjoint development and evaluation seeds. The 2,160 held-out synthetic checkpoint replays use LangGraph and an independent SQLite write ledger. Its aggregate results describe deliberately constructed failure conditions and do not estimate their occurrence in production.
+
+Run using Python 3.12:
+
+```bash
+python -m pip install 'langgraph==1.2.12'
+python experiments/provenance_stress/provenance_stress.py --partition holdout
+python tests/verify_provenance_evaluation.py provenance_holdout_result.json
+```
+
+The complete per-run result is retained as an [Actions artifact](https://github.com/risu-research/formal-exec-2609/actions/runs/44455344566). The source revision and result hash are pinned in the summary.
+
 ## Evidence boundary
 
 The court orders are cited as public source documents. A human translated selected clauses into test fixtures. Passing tests confirm that the implemented interpreter and replay harness behave as those fixtures specify. They do not certify compliance by any real workflow, law firm, or AI provider. Missing or falsely complete dependency information remains a failure boundary.
@@ -30,4 +51,4 @@ The source records are linked rather than copied into the repository. Tests and 
 
 ## License and citation
 
-Original test code is released under MIT in this repository. Referenced court orders and third-party software retain their own terms. Formal archival release and Zenodo DOI will follow a frozen, independently verified artifact version.
+Original test code is released under MIT in this repository. Referenced court orders and third-party software retain their own terms. A GitHub release or Zenodo DOI will be created only after the author explicitly approves a frozen version.
