@@ -2,13 +2,13 @@
 
 The public repository stores a byte-exact copy of the JSON generated in the independent computation repository.
 
-- Source commit: [47820e1edc128f45dcad15f952a501780624d779](https://github.com/risu-research/formal-exec-2609/commit/47820e1edc128f45dcad15f952a501780624d779)
+- Source commit: [158a1d455134b82758bd3bb1d0311b2ecf2a6512](https://github.com/risu-research/formal-exec-2609/commit/158a1d455134b82758bd3bb1d0311b2ecf2a6512)
 - Executed source branch: `exec/j-l62a9b`
-- GitHub Actions run: [44453256559](https://github.com/risu-research/formal-exec-2609/actions/runs/44453256559)
-- Original Actions artifact ID: `14496821449`, archive `j-l62a9b-court-policy`
-- Original source SHA-256: `c1f2ac5ca9df8163c45f70b23248c9dcc2e3485a53900e8b7f9610b793be71e5`
-- Original result SHA-256: `d74a143ba5fccf8c5fdf71d81baa476ee34a908fe23110b04b31a21f2d3ab443`
-- Public result blob SHA-1: `b2fd006a759997a9752e0147970f584039320525` (matches the blob hash of the original unmodified JSON)
+- GitHub Actions run: [44453790030](https://github.com/risu-research/formal-exec-2609/actions/runs/44453790030)
+- Original Actions artifact ID: `14497271280`, archive `j-l62a9b-court-policy`
+- Original source SHA-256: `e116d0aba2ead280ee783945d0200ed33203f55ad035bb51febdae089db6591d`
+- Original result SHA-256: `02a53546dc4dcf3b5e5ecf7ce59ace8d66e3d125294cd55a867a0044824c587b`
+- Public result blob SHA-1: `a144354a09aab3b5d63dbaa847d4605460226d25` (matches the blob hash of the original unmodified JSON)
 - Execution package: Python 3.12, `langgraph==1.2.12`; local SQLite effects. The action ran on Ubuntu and was successful.
 
 Results: 25 manually mapped, predeclared policy fixtures pass, two additional deadline wording assertions pass, and eight actual historical checkpoint replays produce the expected precommitted outcomes.
