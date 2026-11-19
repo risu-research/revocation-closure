@@ -1,0 +1,352 @@
+{
+  "deadline_controls_passed": 2,
+  "fixture_count": 25,
+  "fixture_passed": 25,
+  "langgraph_version": "1.2.12",
+  "limitations": [
+    "Manually mapped clauses to synthetic operations; no automatic legal interpretation",
+    "No real litigation data",
+    "InMemorySaver in this legal-policy run; prior independent R2 verified PostgresSaver",
+    "No external provider contract or deletion verified",
+    "Replaying an older checkpoint after current-state repair is permitted by this test harness",
+    "A false complete dependency label remains unsafe",
+    "No real-world legal deadline calculation or legal certification"
+  ],
+  "policy_fixtures": [
+    {
+      "actual": "HOLD",
+      "expected": "HOLD",
+      "id": "AC1",
+      "order": "acosta",
+      "pass": true
+    },
+    {
+      "actual": "HOLD",
+      "expected": "HOLD",
+      "id": "AC2",
+      "order": "acosta",
+      "pass": true
+    },
+    {
+      "actual": "ALLOW",
+      "expected": "ALLOW",
+      "id": "AC3",
+      "order": "acosta",
+      "pass": true
+    },
+    {
+      "actual": "ALLOW",
+      "expected": "ALLOW",
+      "id": "AC4",
+      "order": "acosta",
+      "pass": true
+    },
+    {
+      "actual": "ALLOW",
+      "expected": "ALLOW",
+      "id": "AC5",
+      "order": "acosta",
+      "pass": true
+    },
+    {
+      "actual": "HOLD",
+      "expected": "HOLD",
+      "id": "AC6",
+      "order": "acosta",
+      "pass": true
+    },
+    {
+      "actual": "UNRESOLVED",
+      "expected": "UNRESOLVED",
+      "id": "AC7",
+      "order": "acosta",
+      "pass": true
+    },
+    {
+      "actual": "HOLD",
+      "expected": "HOLD",
+      "id": "NE1",
+      "order": "necec",
+      "pass": true
+    },
+    {
+      "actual": "ALLOW",
+      "expected": "ALLOW",
+      "id": "NE2",
+      "order": "necec",
+      "pass": true
+    },
+    {
+      "actual": "HOLD",
+      "expected": "HOLD",
+      "id": "NE3",
+      "order": "necec",
+      "pass": true
+    },
+    {
+      "actual": "ALLOW",
+      "expected": "ALLOW",
+      "id": "NE4",
+      "order": "necec",
+      "pass": true
+    },
+    {
+      "actual": "ALLOW",
+      "expected": "ALLOW",
+      "id": "NE5",
+      "order": "necec",
+      "pass": true
+    },
+    {
+      "actual": "UNRESOLVED",
+      "expected": "UNRESOLVED",
+      "id": "NE6",
+      "order": "necec",
+      "pass": true
+    },
+    {
+      "actual": "ALLOW",
+      "expected": "ALLOW",
+      "id": "NE7",
+      "order": "necec",
+      "pass": true
+    },
+    {
+      "actual": "BLOCK",
+      "expected": "BLOCK",
+      "id": "NE8",
+      "order": "necec",
+      "pass": true
+    },
+    {
+      "actual": "BLOCK",
+      "expected": "BLOCK",
+      "id": "BR1",
+      "order": "broadway",
+      "pass": true
+    },
+    {
+      "actual": "ALLOW",
+      "expected": "ALLOW",
+      "id": "BR2",
+      "order": "broadway",
+      "pass": true
+    },
+    {
+      "actual": "UNRESOLVED",
+      "expected": "UNRESOLVED",
+      "id": "BR3",
+      "order": "broadway",
+      "pass": true
+    },
+    {
+      "actual": "BLOCK",
+      "expected": "BLOCK",
+      "id": "BR4",
+      "order": "broadway",
+      "pass": true
+    },
+    {
+      "actual": "BLOCK",
+      "expected": "BLOCK",
+      "id": "SP1",
+      "order": "spheres",
+      "pass": true
+    },
+    {
+      "actual": "ALLOW",
+      "expected": "ALLOW",
+      "id": "SP2",
+      "order": "spheres",
+      "pass": true
+    },
+    {
+      "actual": "UNRESOLVED",
+      "expected": "UNRESOLVED",
+      "id": "SP3",
+      "order": "spheres",
+      "pass": true
+    },
+    {
+      "actual": "BLOCK",
+      "expected": "BLOCK",
+      "id": "SP4",
+      "order": "spheres",
+      "pass": true
+    },
+    {
+      "actual": "UNRESOLVED",
+      "expected": "UNRESOLVED",
+      "id": "SP5",
+      "order": "spheres",
+      "pass": true
+    },
+    {
+      "actual": "ALLOW",
+      "expected": "ALLOW",
+      "id": "SP6",
+      "order": "spheres",
+      "pass": true
+    }
+  ],
+  "replay_count": 8,
+  "replay_passed": 8,
+  "replay_results": [
+    {
+      "court_order": "acosta",
+      "declared_dependency": "revoked",
+      "guard": "none",
+      "latest_state_cleaned": true,
+      "name": "acosta_unchecked",
+      "new_writes_from_historical_replay": 1,
+      "old_checkpoint_used": true,
+      "oracle_dependency": "revoked",
+      "replay_decision": "ALLOW",
+      "replay_phase": "noticed",
+      "unauthorized_write_observed": true,
+      "writes_before_replay": 1
+    },
+    {
+      "court_order": "acosta",
+      "declared_dependency": "revoked",
+      "guard": "cached",
+      "latest_state_cleaned": true,
+      "name": "acosta_cached",
+      "new_writes_from_historical_replay": 1,
+      "old_checkpoint_used": true,
+      "oracle_dependency": "revoked",
+      "replay_decision": "ALLOW",
+      "replay_phase": "noticed",
+      "unauthorized_write_observed": true,
+      "writes_before_replay": 1
+    },
+    {
+      "court_order": "acosta",
+      "declared_dependency": "revoked",
+      "guard": "current",
+      "latest_state_cleaned": true,
+      "name": "acosta_guarded",
+      "new_writes_from_historical_replay": 0,
+      "old_checkpoint_used": true,
+      "oracle_dependency": "revoked",
+      "replay_decision": "HOLD",
+      "replay_phase": "noticed",
+      "unauthorized_write_observed": false,
+      "writes_before_replay": 1
+    },
+    {
+      "court_order": "acosta",
+      "declared_dependency": "clean",
+      "guard": "current",
+      "latest_state_cleaned": true,
+      "name": "acosta_clean",
+      "new_writes_from_historical_replay": 1,
+      "old_checkpoint_used": true,
+      "oracle_dependency": "clean",
+      "replay_decision": "ALLOW",
+      "replay_phase": "noticed",
+      "unauthorized_write_observed": false,
+      "writes_before_replay": 1
+    },
+    {
+      "court_order": "necec",
+      "declared_dependency": "revoked",
+      "guard": "current",
+      "latest_state_cleaned": true,
+      "name": "necec_guarded",
+      "new_writes_from_historical_replay": 0,
+      "old_checkpoint_used": true,
+      "oracle_dependency": "revoked",
+      "replay_decision": "HOLD",
+      "replay_phase": "challenge_pending",
+      "unauthorized_write_observed": false,
+      "writes_before_replay": 1
+    },
+    {
+      "court_order": "necec",
+      "declared_dependency": "unknown",
+      "guard": "current",
+      "latest_state_cleaned": true,
+      "name": "necec_unknown",
+      "new_writes_from_historical_replay": 0,
+      "old_checkpoint_used": true,
+      "oracle_dependency": "revoked",
+      "replay_decision": "UNRESOLVED",
+      "replay_phase": "noticed",
+      "unauthorized_write_observed": false,
+      "writes_before_replay": 0
+    },
+    {
+      "court_order": "necec",
+      "declared_dependency": "clean",
+      "guard": "current",
+      "latest_state_cleaned": true,
+      "name": "necec_false_complete",
+      "new_writes_from_historical_replay": 1,
+      "old_checkpoint_used": true,
+      "oracle_dependency": "revoked",
+      "replay_decision": "ALLOW",
+      "replay_phase": "noticed",
+      "unauthorized_write_observed": true,
+      "writes_before_replay": 1
+    },
+    {
+      "court_order": "necec",
+      "declared_dependency": "revoked",
+      "guard": "current",
+      "latest_state_cleaned": true,
+      "name": "necec_withdrawn",
+      "new_writes_from_historical_replay": 1,
+      "old_checkpoint_used": true,
+      "oracle_dependency": "revoked",
+      "replay_decision": "ALLOW",
+      "replay_phase": "claim_withdrawn",
+      "unauthorized_write_observed": false,
+      "writes_before_replay": 1
+    }
+  ],
+  "schema": "court-grounded-checkpoint-replay-v1",
+  "source_orders": {
+    "acosta": {
+      "clauses": [
+        "14(c)(ii), p.15",
+        "14(d), p.15"
+      ],
+      "court": "S.D.N.Y.",
+      "disposition_window": "10 days",
+      "doc": 39,
+      "docket": "1:25-cv-01119",
+      "pdf": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1%3A2025cv01119/636556/39/0.pdf"
+    },
+    "broadway": {
+      "clauses": [
+        "paragraph 16, p.12"
+      ],
+      "court": "S.D.N.Y.",
+      "doc": 37,
+      "docket": "1:25-cv-07386",
+      "pdf": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1%3A2025cv07386/648886/37/0.pdf"
+    },
+    "necec": {
+      "clauses": [
+        "IV.1(b), pp.17-18"
+      ],
+      "court": "S.D.N.Y.",
+      "disposition_window": "2 business days",
+      "doc": 58,
+      "docket": "1:25-cv-05351",
+      "pdf": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1%3A2025cv05351/644926/58/0.pdf"
+    },
+    "spheres": {
+      "clauses": [
+        "12.4(b)-(c), p.20",
+        "12.4(d)-(e), p.21"
+      ],
+      "court": "C.D. Cal.",
+      "doc": 34,
+      "docket": "2:25-cv-12197",
+      "pdf": "https://cases.justia.com/federal/district-courts/california/cacdce/2%3A2025cv12197/1000608/34/0.pdf"
+    }
+  },
+  "status": "PASS"
+}
