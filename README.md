@@ -85,6 +85,20 @@ The later effect check verifies signed and registered evidence against the curre
 
 The held-out result covers 168 fixed synthetic scenarios. It demonstrates a sounder enforcement boundary within the tested interface, while leaving general-purpose cloud egress, memory side channels, external identity and real privileged legal data outside scope. The original manuscript remains unchanged.
 
+## Independent recipient authorization after revocation
+
+A sixth controlled module places the **actual effect ledger and current revocation policy inside an independent HTTP/SQLite recipient**, separate from the trusted source broker and untrusted LangGraph worker. It tests whether an old pre-notice capability can bypass the recipient after the source is revoked.
+
+- [Experiment protocol, matched controls and known failure cases](experiments/independent_recipient/PROTOCOL.md)
+- [Independent recipient service](experiments/independent_recipient/recipient_service.py)
+- [Owner-credential relay](experiments/independent_recipient/owner_relay.py)
+- [Historical LangGraph checkpoint worker](experiments/independent_recipient/agent_worker.py)
+- [Read-only physical effect auditor](experiments/independent_recipient/independent_auditor.py)
+- [Reproduce the complete experiment](experiments/independent_recipient/run.sh)
+- [Recorded evaluation summary](results/recipient_authority_summary.json)
+
+The held-out matrix includes 576 synthetic historical checkpoint replays. It distinguishes an open effect endpoint, old signed permits, recipient-side current-policy enforcement, and the addition of a separate owner credential. The recipient blocks correctly identified revoked-source writes after it acknowledges a notice, but **a missed notice or falsely clean original issuance remains unsafe**. This is an independent target-specific protection, not a claim about arbitrary internet egress or all provider systems.
+
 ## Evidence boundary
 
 The court orders are cited as public source documents. A human translated selected clauses into test fixtures. Passing tests confirm that the implemented interpreter and replay harness behave as those fixtures specify. They do not certify compliance by any real workflow, law firm, or AI provider. Missing or falsely complete dependency information remains a failure boundary.
