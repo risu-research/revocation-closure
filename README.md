@@ -56,6 +56,19 @@ The held-out run covers 1,152 seeded checkpoint replays across a fixed matrix. I
 
 Results describe controlled synthetic conditions, not live legal-service behavior, validated provider deletion, or real-world error frequencies. Incorrectly complete receipts remain a known failure boundary. The work is deliberately separate from the frozen submitted manuscript.
 
+## Actual tool-read provenance and nondeterministic transformations
+
+A fourth, small independent experiment uses a real LangChain `@tool` call to read synthetic source records over HTTP. The source service records read events when they occur. A LangGraph transformation uses fresh random nonce values, so repeated reads of the same content produce different outputs. A separate read-only auditor verifies the logged sources, the nonce-bound transformation, policy epochs and persisted SQL effects.
+
+- [Experiment protocol and qualified results](experiments/observed_tool_reads/PROTOCOL.md)
+- [Executable tool and checkpoint runner](experiments/observed_tool_reads/toolread_runner.py)
+- [HTTP source read recorder](experiments/observed_tool_reads/toolread_source_service.py)
+- [Independent audit code](experiments/observed_tool_reads/toolread_auditor.py)
+- [Local reproducer](experiments/observed_tool_reads/run.sh)
+- [Original held-out metrics and evidence hashes](results/tool_read_nondeterminism_summary.json)
+
+The 540-case held-out fault matrix includes deliberately untracked source reads. A valid observation trace reduces unauthorized writes when reads pass through the instrumented boundary. A deliberate bypass defeats the trace guard despite a valid-looking record, which limits any completeness claim. The underlying content and legal policy states are synthetic.
+
 ## Evidence boundary
 
 The court orders are cited as public source documents. A human translated selected clauses into test fixtures. Passing tests confirm that the implemented interpreter and replay harness behave as those fixtures specify. They do not certify compliance by any real workflow, law firm, or AI provider. Missing or falsely complete dependency information remains a failure boundary.
