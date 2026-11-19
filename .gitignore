@@ -10,3 +10,6 @@ effect-heldout.sqlite*
 external_effect_*_oracle.json
 external_effect_*_acks.json
 external_effect_*_audit.json
+experiments/observed_tool_reads/_runs/
+tool_read_dev_*.json
+tool_read_holdout_*.json
