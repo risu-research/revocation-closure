@@ -20,3 +20,7 @@ The initial 520 labels follow the original codebook. Later event questions disti
 This release supports independent review of each published baseline cell and the event summary. A complete cell-by-cell reconstruction of the manuscript's 120 revised order-wide labels needs the full final adjudication table. The preliminary clause pins do not supply full-document negative checks for every zero.
 
 Order PDFs remain at their linked public sources. The repository holds only our coding tables and short clause-location notes.
+
+## Conditional order-wide reconciliation
+
+The [120-cell adjudication ledger](adjudicated_changes_120.csv) and [complete conditional 520-cell table](conditional_520.csv) reconstruct the later order-wide labels from the original frozen matrix. [Methods and source-check flags](CONDITIONAL_CODING.md) distinguish that coding scope from the event-triggered predicates. Run `python verify_conditional_coding.py` in this directory to check all 120 changes and the 13-code totals.

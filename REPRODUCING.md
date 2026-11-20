@@ -146,6 +146,19 @@ python tests/check_expected_metrics.py
 
 The two runs compare program approvals and verify the physical SQL effects. See the [experiment README](experiments/program_binding/README.md).
 
+
+## Court-order conditional coding
+
+The [court-order coding module](experiments/court_coding/CONDITIONAL_CODING.md) now includes the 120-cell adjudication ledger and the complete conditional 520-cell matrix. Run:
+
+```bash
+cd experiments/court_coding
+python verify_public_coding.py
+python verify_conditional_coding.py
+```
+
+The second check reconstructs 118 additions, two removals, and the conditional code frequencies. Five identified source checks remain open in the published ledger.
+
 ## Inputs and evidence
 
 Every experiment uses synthetic source records and researcher-specified legal-policy fixtures. The original result JSON, source revisions, independent audit procedures and GitHub Actions records are linked from the [results directory](results/). Repeated seeds vary synthetic identifiers within fixed scenario families.
