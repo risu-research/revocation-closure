@@ -17,7 +17,7 @@ Run `python verify_public_coding.py` to check unique case and cell keys, origina
 
 The initial 520 labels follow the original codebook. Later event questions distinguish whole-order treatment from actions triggered directly by a privilege claim. The reviewed disagreements cover a selected 77-cell core-stratum subset. The underlying historical search-query log was not preserved in full.
 
-This release supports independent review of each published baseline cell and the event summary. A complete cell-by-cell reconstruction of the manuscript's 120 revised order-wide labels needs the full final adjudication table. The preliminary clause pins do not supply full-document negative checks for every zero.
+This release supports independent review of the baseline cells and event summary. The complete 120-change ledger and conditional 520-cell table now permit exact reconstruction of the final order-wide labels. The preliminary clause pins do not supply full-document negative checks for every zero.
 
 Order PDFs remain at their linked public sources. The repository holds only our coding tables and short clause-location notes.
 
