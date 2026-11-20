@@ -1,0 +1,22 @@
+{
+  "baseline": {
+    "signed_completions": 12,
+    "unsigned_execution_failures": 5,
+    "recipient_decisions": 17,
+    "allowed": 4,
+    "blocked": 6,
+    "held": 7,
+    "persisted_effects": 4,
+    "tampered_proof_rejections": 4
+  },
+  "approved_literal_ablation": {
+    "signed_completions": 12,
+    "unsigned_execution_failures": 5,
+    "recipient_decisions": 17,
+    "allowed": 5,
+    "blocked": 6,
+    "held": 6,
+    "persisted_effects": 5,
+    "tampered_proof_rejections": 4
+  }
+}

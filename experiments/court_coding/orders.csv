@@ -1,0 +1,41 @@
+order_id,case,court,year,stratum,initial_split,public_docket_url
+1,"218 Broadway, LLC v. J.P. Morgan Chase Bank, N.A.",S.D.N.Y.,2026,core_clawback,development,https://docs.justia.com/cases/federal/district-courts/new-york/nysdce/1%3A2025cv07386/648886/37
+2,"NECEC Transmission LLC v. Campos EPC, LLC",S.D.N.Y.,2025,core_clawback,development,https://docs.justia.com/cases/federal/district-courts/new-york/nysdce/1%3A2025cv05351/644926/58
+3,"ZL Technologies, Inc. v. Shield Financial Compliance, Inc.",S.D.N.Y.,2026,core_clawback,development,https://docs.justia.com/cases/federal/district-courts/new-york/nysdce/1%3A2025cv02673/639695/140
+4,Acosta v. The New York Times Company,S.D.N.Y.,2025,core_clawback,development,https://docs.justia.com/cases/federal/district-courts/new-york/nysdce/1%3A2025cv01119/636556/39
+5,"Greenlight Capital, Inc. v. Fishback",S.D.N.Y.,2025,core_clawback,development,https://docs.justia.com/cases/federal/district-courts/new-york/nysdce/1%3A2024cv04832/623847/43
+6,"Odam v. ELRAC, LLC",S.D.N.Y.,2024,core_clawback,heldout,https://docs.justia.com/cases/federal/district-courts/new-york/nysdce/1%3A2024cv02017/617721/30/
+7,Zimmerman v. DJGN LLC,S.D. Ohio,2026,core_clawback,development,https://docs.justia.com/cases/federal/district-courts/ohio/ohsdce/1%3A2025cv00729/306433/25
+8,"SDG Warner Village, LLC v. City of Clayton",S.D. Ohio,2026,core_clawback,heldout,https://docs.justia.com/cases/federal/district-courts/ohio/ohsdce/3%3A2025cv00320/306060/15
+9,Mechanical Licensing Collective v. Spotify USA Inc. (amended order),S.D.N.Y.,2026,core_clawback,heldout,https://docs.justia.com/cases/federal/district-courts/new-york/nysdce/1%3A2024cv03809/621657/131
+10,"Kuzniewski v. Sharkninja Operating, LLC",S.D.N.Y.,2025,core_clawback,development,https://docs.justia.com/cases/federal/district-courts/new-york/nysdce/1%3A2025cv04842/643998/16
+11,JESTER v. INNOPOWER INC,M.D. Ga.,2025,core_clawback,development,https://docs.justia.com/cases/federal/district-courts/georgia/gamdce/3%3A2025cv00104/137823/28
+12,Fayles v. Ford Motor Company,D. Mass.,2025,core_clawback,development,https://docs.justia.com/cases/federal/district-courts/massachusetts/madce/1%3A2025cv10161/279944/19
+13,"Imatome-Yun v. Tesla, Inc.",C.D. Cal.,2024,core_clawback,development,https://docs.justia.com/cases/federal/district-courts/california/cacdce/8%3A2024cv02690/951194/25
+14,"Riley v. Amazon.com, Inc.",C.D. Ill.,2025,core_clawback,heldout,https://docs.justia.com/cases/federal/district-courts/illinois/ilcdce/4%3A2025cv04181/97635/13
+15,"LaGuardia v. Amazon.com, Inc.",S.D.N.Y.,2025,core_clawback,development,https://docs.justia.com/cases/federal/district-courts/new-york/nysdce/1%3A2025cv07954/650053/19
+16,Kitts v. Uncrate LLC,S.D. Ohio,2025,core_clawback,development,https://docs.justia.com/cases/federal/district-courts/ohio/ohsdce/1%3A2025cv00021/299515/22
+17,Daily News LP v. Microsoft Corporation,S.D.N.Y.,2024,core_clawback,development,https://docs.justia.com/cases/federal/district-courts/new-york/nysdce/1%3A2024cv03285/620514/129/
+18,"Center for Investigative Reporting, Inc. v. OpenAI, Inc.",S.D.N.Y.,2024,core_clawback,heldout,https://docs.justia.com/cases/federal/district-courts/new-york/nysdce/1%3A2024cv04872/623941/129
+19,"KB Home v. Kingsbarn Realty Capital, LLC",C.D. Cal.,2024,core_clawback,heldout,https://docs.justia.com/cases/federal/district-courts/california/cacdce/2%3A2024cv04153/926748/52
+20,"Dana Soft Pty Ltd v. Meta Platforms, Inc.",N.D. Cal.,2026,core_clawback,heldout,https://docs.justia.com/cases/federal/district-courts/california/candce/3%3A2025cv03821/448918/46
+21,"Voltstar Technologies, Inc. v. Amazon.com, Inc.",S.D.N.Y.,2025,core_clawback,heldout,https://docs.justia.com/cases/federal/district-courts/new-york/nysdce/1%3A2025cv01791/637904/35
+22,Seibert v. FDIC,S.D.N.Y.,2025,core_clawback,development,https://docs.justia.com/cases/federal/district-courts/new-york/nysdce/1%3A2024cv00427/613933/70
+23,"Fanimal, Inc. v. Live Nation Entertainment, Inc.",C.D. Cal.,2026,core_clawback,development,https://docs.justia.com/cases/federal/district-courts/california/cacdce/2%3A2025cv12335/1000955/38
+24,iOttie Inc. v. HSM Co. Ltd,S.D.N.Y.,2026,core_clawback,development,https://docs.justia.com/cases/federal/district-courts/new-york/nysdce/1%3A2025cv02642/639666/59
+25,In re Ex Parte Application of Allan Green et al.,S.D.N.Y.,2026,core_clawback,development,https://docs.justia.com/cases/federal/district-courts/new-york/nysdce/1%3A2026mc00166/662315/63
+26,"Camm v. Reach Financial, LLC",S.D.N.Y.,2026,core_clawback,development,https://docs.justia.com/cases/federal/district-courts/new-york/nysdce/1%3A2025cv01921/638232/38
+27,N.G. v. City of Stockton,E.D. Cal.,2026,core_clawback,development,https://docs.justia.com/cases/federal/district-courts/california/caedce/2%3A2026cv01533/487188/12
+28,Natalie Gianne v. Accor Management US Inc.,C.D. Cal.,2025,core_clawback,development,https://docs.justia.com/cases/federal/district-courts/california/cacdce/2%3A2025cv02425/962625/35
+29,"Spheres Music, LLC v. John Murphy",C.D. Cal.,2026,core_clawback,development,https://docs.justia.com/cases/federal/district-courts/california/cacdce/2%3A2025cv12197/1000608/34
+30,Zurich American Insurance Co. v. Amazon.com Services LLC,C.D. Cal.,2026,core_clawback,heldout,https://docs.justia.com/cases/federal/district-courts/california/cacdce/2%3A2025cv06306/978297/16
+31,Napoli v. Meta Platforms Inc.,S.D.N.Y.,2025,supplementary_requirements,development,https://docs.justia.com/cases/federal/district-courts/new-york/nysdce/1%3A2025cv02872/640129/37
+32,"SitNet LLC v. Meta Platforms, Inc.",S.D.N.Y.,2026,supplementary_requirements,development,https://docs.justia.com/cases/federal/district-courts/new-york/nysdce/1%3A2025cv06185/646519/44
+33,Maklani v. Amazon.com Inc.,E.D. Cal.,2026,supplementary_requirements,development,https://docs.justia.com/cases/federal/district-courts/california/caedce/1%3A2025cv01027/469736/25
+34,"Taylor Haney v. Service Finance Company, LLC",C.D. Cal.,2026,supplementary_requirements,heldout,https://docs.justia.com/cases/federal/district-courts/california/cacdce/5%3A2025cv01338/972696/27
+35,Rudasill v. Swiss Re American Holding Corp.,S.D.N.Y.,2026,supplementary_requirements,development,https://docs.justia.com/cases/federal/district-courts/new-york/nysdce/1%3A2025cv01403/637138/102
+36,"Meta Platforms, Inc. v. Folger",N.D. Cal.,2025,supplementary_requirements,development,https://docs.justia.com/cases/federal/district-courts/california/candce/3%3A2025cv01672/444723/35
+37,"Rumen Makaveev v. RxSight, Inc.",C.D. Cal.,2026,supplementary_requirements,heldout,https://docs.justia.com/cases/federal/district-courts/california/cacdce/8%3A2025cv01596/980058/63
+38,"Palantir Technologies, Inc. v. Jain",S.D.N.Y.,2025,supplementary_requirements,development,https://docs.justia.com/cases/federal/district-courts/new-york/nysdce/1%3A2025cv08985/652097/29
+39,"MCM Construction, Inc. v. Zurich American Insurance Co.",E.D. Cal.,2026,supplementary_requirements,development,https://docs.justia.com/cases/federal/district-courts/california/caedce/2%3A2025cv01568/466289/13
+40,Doe v. Hill,D. Mont.,2026,supplementary_requirements,heldout,https://docs.justia.com/cases/federal/district-courts/montana/mtdce/9%3A2026cv00037/83952/30

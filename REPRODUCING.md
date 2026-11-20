@@ -121,6 +121,31 @@ python tests/check_public_reproduction.py
 
 The check verifies court-order inputs, source-code seals, extracted policy results, fresh HTTP/SQLite effects and an altered-row rejection test. [Inputs and method](experiments/court_order_transfer/README.md).
 
+## Court-order coding tables
+
+```bash
+cd experiments/court_coding
+python verify_public_coding.py
+```
+
+The checker reads the original 520 labels and the 40 event records, and checks the 77 reviewed core discrepancies.
+
+## Program-bound execution
+
+Use a disposable Linux container or VM with Python 3.12+, libseccomp and root access inside that environment.
+
+```bash
+cd experiments/program_binding
+python -m pip install -r requirements.txt
+PYTHONPATH=. python -m experiments.trusted_transform.run_stage_q --out fresh_baseline
+PYTHONPATH=. python tests/independent_stage_q_audit.py . fresh_baseline
+PYTHONPATH=. python -m experiments.trusted_transform.run_stage_q --approve-literal --out fresh_ablation
+PYTHONPATH=. python tests/independent_stage_q_audit.py . fresh_ablation
+python tests/check_expected_metrics.py
+```
+
+The two runs compare program approvals and verify the physical SQL effects. See the [experiment README](experiments/program_binding/README.md).
+
 ## Inputs and evidence
 
 Every experiment uses synthetic source records and researcher-specified legal-policy fixtures. The original result JSON, source revisions, independent audit procedures and GitHub Actions records are linked from the [results directory](results/). Repeated seeds vary synthetic identifiers within fixed scenario families.

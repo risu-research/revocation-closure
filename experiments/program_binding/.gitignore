@@ -1,0 +1,6 @@
+fresh_*/
+results_new/
+results/
+__pycache__/
+*.pyc
+*.sqlite

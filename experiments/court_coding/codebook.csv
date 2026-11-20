@@ -1,0 +1,14 @@
+code,explicit_text_threshold,source_search_terms
+SRC,"Explicit return, sequestration, destruction, deletion or equivalent disposition of protected source.",return | sequester | destroy | delete | retrieve | remove | clawback | Rule 26(b)(5)(B)
+COPY,Express copies/duplicates/electronic copies.,copy | copies | duplicate | reproduction | excerpt | electronically stored
+USE,Express stop on use/review/disclosure after notification or while privilege contested.,no further use | not use | stop review | refrain from | pending claim | prohibit disclosure
+TP,Express retrieve or recall after previous third-party disclosure.,retrieve | recall | third-party | recipients | previously disclosed | dissemination
+NOTE,Expressly governed notes/memoranda/analysis/work product reflecting protected contents.,notes | analyses | work product | memorandum | reflecting contents | notes of counsel
+SUM,Expressly governed summaries/abstracts/compilations/extracts; record trigger stage.,summary | summaries | abstract | compilation | extract | condensed representation
+DER,Express downstream/generated artifact beyond NOTE/SUM.,derived | generated | downstream | output | input | constructed document | other documents
+DB,"Named database, e-room, litigation-support or comparably specific storage system; electronic copies alone insufficient.",database | review system | litigation support | e-room | platform | e-discovery | electronic records
+AI,AI platform input/use specifically conditioned on later deletion capability or explicit AI deletion duty.,AI | artificial intelligence | LLM | large language model | delete from model | permanently remove
+BK,Express backup/DR/archive treatment or exception.,backup | archive | disaster recovery | inaccessible | overwrite | retention
+CERT,Express written certification/confirmation/affidavit of disposition.,certify | certification | affidavit | declaration | written confirmation
+PART,Express partial-privilege redaction/replacement/excision (distinguish confidentiality redaction).,redact | redacted replacement | partial privilege | excise | portion | non-privileged part
+CHAL,Express pending challenge control; distinguish privilege claim vs confidentiality/AI-tool challenge.,challenge | dispute | contest | pending resolution | sequester | until court resolves

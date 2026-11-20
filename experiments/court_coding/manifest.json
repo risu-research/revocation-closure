@@ -1,0 +1,35 @@
+{
+  "files": {
+    "codebook.csv": {
+      "sha256": "8cc1748baa5b69c0af12fd1060c8c5759ee27954f44190e4d640e265e021b79b",
+      "rows_excluding_header": 13
+    },
+    "event_predicates_40.csv": {
+      "sha256": "395b141fbdbe07873956a21ed2ad9459e7281db33d6b8afdfb9c002eea09fb35",
+      "rows_excluding_header": 40
+    },
+    "frozen_520.csv": {
+      "sha256": "05baf11104de1397ac75c295c0222aaf3daf9197340c35b07a8eaeb66624de30",
+      "rows_excluding_header": 520
+    },
+    "orders.csv": {
+      "sha256": "c9a8ca6443c2a478893876fab38319a578ce9ec5eba9cbc5d5d0dd34f182ca6d",
+      "rows_excluding_header": 40
+    },
+    "reviewed_disagreements_77.csv": {
+      "sha256": "cb5379ed75cc265a1f18546b34919b63fbc1f228e3d8f2bae41d684bdc2c5b0c",
+      "rows_excluding_header": 77
+    },
+    "source_clause_pins.csv": {
+      "sha256": "c4feaa13052455c424a47329c5bb9c5fd1b82d3964138a1740fe9b455706b61a",
+      "rows_excluding_header": 47
+    }
+  },
+  "source_workbooks": {
+    "frozen_reference": "40x13 initial coding",
+    "clause_evidence": "preliminary indexed audit",
+    "adjudicated_77": "77 disagreement review, core stratum",
+    "events40": "event-specific predicates"
+  },
+  "scope": "Original 520 frozen labels, 77 reviewed discrepancies and 40 event predicates. A complete post-hoc 520-cell reassessment was not reconstructed from these workbooks."
+}

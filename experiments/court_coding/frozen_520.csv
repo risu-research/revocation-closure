@@ -1,0 +1,521 @@
+order_id,case,code,original_value
+1,"218 Broadway, LLC v. J.P. Morgan Chase Bank, N.A.",SRC,1
+1,"218 Broadway, LLC v. J.P. Morgan Chase Bank, N.A.",COPY,1
+1,"218 Broadway, LLC v. J.P. Morgan Chase Bank, N.A.",USE,1
+1,"218 Broadway, LLC v. J.P. Morgan Chase Bank, N.A.",TP,0
+1,"218 Broadway, LLC v. J.P. Morgan Chase Bank, N.A.",NOTE,1
+1,"218 Broadway, LLC v. J.P. Morgan Chase Bank, N.A.",SUM,0
+1,"218 Broadway, LLC v. J.P. Morgan Chase Bank, N.A.",DER,0
+1,"218 Broadway, LLC v. J.P. Morgan Chase Bank, N.A.",DB,1
+1,"218 Broadway, LLC v. J.P. Morgan Chase Bank, N.A.",AI,1
+1,"218 Broadway, LLC v. J.P. Morgan Chase Bank, N.A.",BK,0
+1,"218 Broadway, LLC v. J.P. Morgan Chase Bank, N.A.",CERT,0
+1,"218 Broadway, LLC v. J.P. Morgan Chase Bank, N.A.",PART,0
+1,"218 Broadway, LLC v. J.P. Morgan Chase Bank, N.A.",CHAL,1
+2,"NECEC Transmission LLC v. Campos EPC, LLC",SRC,1
+2,"NECEC Transmission LLC v. Campos EPC, LLC",COPY,1
+2,"NECEC Transmission LLC v. Campos EPC, LLC",USE,1
+2,"NECEC Transmission LLC v. Campos EPC, LLC",TP,1
+2,"NECEC Transmission LLC v. Campos EPC, LLC",NOTE,1
+2,"NECEC Transmission LLC v. Campos EPC, LLC",SUM,1
+2,"NECEC Transmission LLC v. Campos EPC, LLC",DER,1
+2,"NECEC Transmission LLC v. Campos EPC, LLC",DB,0
+2,"NECEC Transmission LLC v. Campos EPC, LLC",AI,0
+2,"NECEC Transmission LLC v. Campos EPC, LLC",BK,1
+2,"NECEC Transmission LLC v. Campos EPC, LLC",CERT,1
+2,"NECEC Transmission LLC v. Campos EPC, LLC",PART,0
+2,"NECEC Transmission LLC v. Campos EPC, LLC",CHAL,1
+3,"ZL Technologies, Inc. v. Shield Financial Compliance, Inc.",SRC,1
+3,"ZL Technologies, Inc. v. Shield Financial Compliance, Inc.",COPY,1
+3,"ZL Technologies, Inc. v. Shield Financial Compliance, Inc.",USE,1
+3,"ZL Technologies, Inc. v. Shield Financial Compliance, Inc.",TP,1
+3,"ZL Technologies, Inc. v. Shield Financial Compliance, Inc.",NOTE,1
+3,"ZL Technologies, Inc. v. Shield Financial Compliance, Inc.",SUM,0
+3,"ZL Technologies, Inc. v. Shield Financial Compliance, Inc.",DER,0
+3,"ZL Technologies, Inc. v. Shield Financial Compliance, Inc.",DB,0
+3,"ZL Technologies, Inc. v. Shield Financial Compliance, Inc.",AI,0
+3,"ZL Technologies, Inc. v. Shield Financial Compliance, Inc.",BK,0
+3,"ZL Technologies, Inc. v. Shield Financial Compliance, Inc.",CERT,1
+3,"ZL Technologies, Inc. v. Shield Financial Compliance, Inc.",PART,0
+3,"ZL Technologies, Inc. v. Shield Financial Compliance, Inc.",CHAL,1
+4,Acosta v. The New York Times Company,SRC,1
+4,Acosta v. The New York Times Company,COPY,1
+4,Acosta v. The New York Times Company,USE,1
+4,Acosta v. The New York Times Company,TP,1
+4,Acosta v. The New York Times Company,NOTE,1
+4,Acosta v. The New York Times Company,SUM,1
+4,Acosta v. The New York Times Company,DER,1
+4,Acosta v. The New York Times Company,DB,1
+4,Acosta v. The New York Times Company,AI,0
+4,Acosta v. The New York Times Company,BK,0
+4,Acosta v. The New York Times Company,CERT,0
+4,Acosta v. The New York Times Company,PART,1
+4,Acosta v. The New York Times Company,CHAL,1
+5,"Greenlight Capital, Inc. v. Fishback",SRC,1
+5,"Greenlight Capital, Inc. v. Fishback",COPY,1
+5,"Greenlight Capital, Inc. v. Fishback",USE,1
+5,"Greenlight Capital, Inc. v. Fishback",TP,1
+5,"Greenlight Capital, Inc. v. Fishback",NOTE,1
+5,"Greenlight Capital, Inc. v. Fishback",SUM,1
+5,"Greenlight Capital, Inc. v. Fishback",DER,1
+5,"Greenlight Capital, Inc. v. Fishback",DB,1
+5,"Greenlight Capital, Inc. v. Fishback",AI,0
+5,"Greenlight Capital, Inc. v. Fishback",BK,0
+5,"Greenlight Capital, Inc. v. Fishback",CERT,0
+5,"Greenlight Capital, Inc. v. Fishback",PART,1
+5,"Greenlight Capital, Inc. v. Fishback",CHAL,1
+6,"Odam v. ELRAC, LLC",SRC,1
+6,"Odam v. ELRAC, LLC",COPY,1
+6,"Odam v. ELRAC, LLC",USE,1
+6,"Odam v. ELRAC, LLC",TP,0
+6,"Odam v. ELRAC, LLC",NOTE,1
+6,"Odam v. ELRAC, LLC",SUM,1
+6,"Odam v. ELRAC, LLC",DER,0
+6,"Odam v. ELRAC, LLC",DB,1
+6,"Odam v. ELRAC, LLC",AI,0
+6,"Odam v. ELRAC, LLC",BK,0
+6,"Odam v. ELRAC, LLC",CERT,0
+6,"Odam v. ELRAC, LLC",PART,1
+6,"Odam v. ELRAC, LLC",CHAL,1
+7,Zimmerman v. DJGN LLC,SRC,1
+7,Zimmerman v. DJGN LLC,COPY,1
+7,Zimmerman v. DJGN LLC,USE,1
+7,Zimmerman v. DJGN LLC,TP,0
+7,Zimmerman v. DJGN LLC,NOTE,1
+7,Zimmerman v. DJGN LLC,SUM,1
+7,Zimmerman v. DJGN LLC,DER,0
+7,Zimmerman v. DJGN LLC,DB,0
+7,Zimmerman v. DJGN LLC,AI,0
+7,Zimmerman v. DJGN LLC,BK,0
+7,Zimmerman v. DJGN LLC,CERT,0
+7,Zimmerman v. DJGN LLC,PART,1
+7,Zimmerman v. DJGN LLC,CHAL,1
+8,"SDG Warner Village, LLC v. City of Clayton",SRC,1
+8,"SDG Warner Village, LLC v. City of Clayton",COPY,1
+8,"SDG Warner Village, LLC v. City of Clayton",USE,1
+8,"SDG Warner Village, LLC v. City of Clayton",TP,0
+8,"SDG Warner Village, LLC v. City of Clayton",NOTE,1
+8,"SDG Warner Village, LLC v. City of Clayton",SUM,1
+8,"SDG Warner Village, LLC v. City of Clayton",DER,0
+8,"SDG Warner Village, LLC v. City of Clayton",DB,0
+8,"SDG Warner Village, LLC v. City of Clayton",AI,0
+8,"SDG Warner Village, LLC v. City of Clayton",BK,0
+8,"SDG Warner Village, LLC v. City of Clayton",CERT,0
+8,"SDG Warner Village, LLC v. City of Clayton",PART,1
+8,"SDG Warner Village, LLC v. City of Clayton",CHAL,1
+9,Mechanical Licensing Collective v. Spotify USA Inc. (amended order),SRC,1
+9,Mechanical Licensing Collective v. Spotify USA Inc. (amended order),COPY,1
+9,Mechanical Licensing Collective v. Spotify USA Inc. (amended order),USE,1
+9,Mechanical Licensing Collective v. Spotify USA Inc. (amended order),TP,1
+9,Mechanical Licensing Collective v. Spotify USA Inc. (amended order),NOTE,1
+9,Mechanical Licensing Collective v. Spotify USA Inc. (amended order),SUM,0
+9,Mechanical Licensing Collective v. Spotify USA Inc. (amended order),DER,0
+9,Mechanical Licensing Collective v. Spotify USA Inc. (amended order),DB,0
+9,Mechanical Licensing Collective v. Spotify USA Inc. (amended order),AI,0
+9,Mechanical Licensing Collective v. Spotify USA Inc. (amended order),BK,0
+9,Mechanical Licensing Collective v. Spotify USA Inc. (amended order),CERT,1
+9,Mechanical Licensing Collective v. Spotify USA Inc. (amended order),PART,0
+9,Mechanical Licensing Collective v. Spotify USA Inc. (amended order),CHAL,1
+10,"Kuzniewski v. Sharkninja Operating, LLC",SRC,1
+10,"Kuzniewski v. Sharkninja Operating, LLC",COPY,1
+10,"Kuzniewski v. Sharkninja Operating, LLC",USE,1
+10,"Kuzniewski v. Sharkninja Operating, LLC",TP,0
+10,"Kuzniewski v. Sharkninja Operating, LLC",NOTE,1
+10,"Kuzniewski v. Sharkninja Operating, LLC",SUM,0
+10,"Kuzniewski v. Sharkninja Operating, LLC",DER,1
+10,"Kuzniewski v. Sharkninja Operating, LLC",DB,0
+10,"Kuzniewski v. Sharkninja Operating, LLC",AI,0
+10,"Kuzniewski v. Sharkninja Operating, LLC",BK,0
+10,"Kuzniewski v. Sharkninja Operating, LLC",CERT,0
+10,"Kuzniewski v. Sharkninja Operating, LLC",PART,0
+10,"Kuzniewski v. Sharkninja Operating, LLC",CHAL,1
+11,JESTER v. INNOPOWER INC,SRC,1
+11,JESTER v. INNOPOWER INC,COPY,1
+11,JESTER v. INNOPOWER INC,USE,1
+11,JESTER v. INNOPOWER INC,TP,1
+11,JESTER v. INNOPOWER INC,NOTE,1
+11,JESTER v. INNOPOWER INC,SUM,0
+11,JESTER v. INNOPOWER INC,DER,0
+11,JESTER v. INNOPOWER INC,DB,1
+11,JESTER v. INNOPOWER INC,AI,0
+11,JESTER v. INNOPOWER INC,BK,0
+11,JESTER v. INNOPOWER INC,CERT,0
+11,JESTER v. INNOPOWER INC,PART,0
+11,JESTER v. INNOPOWER INC,CHAL,1
+12,Fayles v. Ford Motor Company,SRC,1
+12,Fayles v. Ford Motor Company,COPY,1
+12,Fayles v. Ford Motor Company,USE,1
+12,Fayles v. Ford Motor Company,TP,0
+12,Fayles v. Ford Motor Company,NOTE,1
+12,Fayles v. Ford Motor Company,SUM,0
+12,Fayles v. Ford Motor Company,DER,0
+12,Fayles v. Ford Motor Company,DB,0
+12,Fayles v. Ford Motor Company,AI,0
+12,Fayles v. Ford Motor Company,BK,0
+12,Fayles v. Ford Motor Company,CERT,0
+12,Fayles v. Ford Motor Company,PART,0
+12,Fayles v. Ford Motor Company,CHAL,1
+13,"Imatome-Yun v. Tesla, Inc.",SRC,1
+13,"Imatome-Yun v. Tesla, Inc.",COPY,1
+13,"Imatome-Yun v. Tesla, Inc.",USE,1
+13,"Imatome-Yun v. Tesla, Inc.",TP,1
+13,"Imatome-Yun v. Tesla, Inc.",NOTE,1
+13,"Imatome-Yun v. Tesla, Inc.",SUM,0
+13,"Imatome-Yun v. Tesla, Inc.",DER,0
+13,"Imatome-Yun v. Tesla, Inc.",DB,1
+13,"Imatome-Yun v. Tesla, Inc.",AI,0
+13,"Imatome-Yun v. Tesla, Inc.",BK,0
+13,"Imatome-Yun v. Tesla, Inc.",CERT,1
+13,"Imatome-Yun v. Tesla, Inc.",PART,1
+13,"Imatome-Yun v. Tesla, Inc.",CHAL,1
+14,"Riley v. Amazon.com, Inc.",SRC,1
+14,"Riley v. Amazon.com, Inc.",COPY,1
+14,"Riley v. Amazon.com, Inc.",USE,1
+14,"Riley v. Amazon.com, Inc.",TP,0
+14,"Riley v. Amazon.com, Inc.",NOTE,1
+14,"Riley v. Amazon.com, Inc.",SUM,0
+14,"Riley v. Amazon.com, Inc.",DER,0
+14,"Riley v. Amazon.com, Inc.",DB,0
+14,"Riley v. Amazon.com, Inc.",AI,1
+14,"Riley v. Amazon.com, Inc.",BK,0
+14,"Riley v. Amazon.com, Inc.",CERT,1
+14,"Riley v. Amazon.com, Inc.",PART,0
+14,"Riley v. Amazon.com, Inc.",CHAL,1
+15,"LaGuardia v. Amazon.com, Inc.",SRC,1
+15,"LaGuardia v. Amazon.com, Inc.",COPY,1
+15,"LaGuardia v. Amazon.com, Inc.",USE,1
+15,"LaGuardia v. Amazon.com, Inc.",TP,0
+15,"LaGuardia v. Amazon.com, Inc.",NOTE,1
+15,"LaGuardia v. Amazon.com, Inc.",SUM,0
+15,"LaGuardia v. Amazon.com, Inc.",DER,0
+15,"LaGuardia v. Amazon.com, Inc.",DB,0
+15,"LaGuardia v. Amazon.com, Inc.",AI,0
+15,"LaGuardia v. Amazon.com, Inc.",BK,0
+15,"LaGuardia v. Amazon.com, Inc.",CERT,0
+15,"LaGuardia v. Amazon.com, Inc.",PART,0
+15,"LaGuardia v. Amazon.com, Inc.",CHAL,1
+16,Kitts v. Uncrate LLC,SRC,1
+16,Kitts v. Uncrate LLC,COPY,1
+16,Kitts v. Uncrate LLC,USE,1
+16,Kitts v. Uncrate LLC,TP,0
+16,Kitts v. Uncrate LLC,NOTE,1
+16,Kitts v. Uncrate LLC,SUM,0
+16,Kitts v. Uncrate LLC,DER,0
+16,Kitts v. Uncrate LLC,DB,0
+16,Kitts v. Uncrate LLC,AI,0
+16,Kitts v. Uncrate LLC,BK,0
+16,Kitts v. Uncrate LLC,CERT,0
+16,Kitts v. Uncrate LLC,PART,0
+16,Kitts v. Uncrate LLC,CHAL,1
+17,Daily News LP v. Microsoft Corporation,SRC,1
+17,Daily News LP v. Microsoft Corporation,COPY,1
+17,Daily News LP v. Microsoft Corporation,USE,1
+17,Daily News LP v. Microsoft Corporation,TP,1
+17,Daily News LP v. Microsoft Corporation,NOTE,1
+17,Daily News LP v. Microsoft Corporation,SUM,1
+17,Daily News LP v. Microsoft Corporation,DER,0
+17,Daily News LP v. Microsoft Corporation,DB,0
+17,Daily News LP v. Microsoft Corporation,AI,0
+17,Daily News LP v. Microsoft Corporation,BK,0
+17,Daily News LP v. Microsoft Corporation,CERT,0
+17,Daily News LP v. Microsoft Corporation,PART,1
+17,Daily News LP v. Microsoft Corporation,CHAL,1
+18,"Center for Investigative Reporting, Inc. v. OpenAI, Inc.",SRC,1
+18,"Center for Investigative Reporting, Inc. v. OpenAI, Inc.",COPY,1
+18,"Center for Investigative Reporting, Inc. v. OpenAI, Inc.",USE,1
+18,"Center for Investigative Reporting, Inc. v. OpenAI, Inc.",TP,1
+18,"Center for Investigative Reporting, Inc. v. OpenAI, Inc.",NOTE,1
+18,"Center for Investigative Reporting, Inc. v. OpenAI, Inc.",SUM,1
+18,"Center for Investigative Reporting, Inc. v. OpenAI, Inc.",DER,0
+18,"Center for Investigative Reporting, Inc. v. OpenAI, Inc.",DB,0
+18,"Center for Investigative Reporting, Inc. v. OpenAI, Inc.",AI,0
+18,"Center for Investigative Reporting, Inc. v. OpenAI, Inc.",BK,0
+18,"Center for Investigative Reporting, Inc. v. OpenAI, Inc.",CERT,0
+18,"Center for Investigative Reporting, Inc. v. OpenAI, Inc.",PART,1
+18,"Center for Investigative Reporting, Inc. v. OpenAI, Inc.",CHAL,1
+19,"KB Home v. Kingsbarn Realty Capital, LLC",SRC,1
+19,"KB Home v. Kingsbarn Realty Capital, LLC",COPY,1
+19,"KB Home v. Kingsbarn Realty Capital, LLC",USE,1
+19,"KB Home v. Kingsbarn Realty Capital, LLC",TP,1
+19,"KB Home v. Kingsbarn Realty Capital, LLC",NOTE,1
+19,"KB Home v. Kingsbarn Realty Capital, LLC",SUM,0
+19,"KB Home v. Kingsbarn Realty Capital, LLC",DER,0
+19,"KB Home v. Kingsbarn Realty Capital, LLC",DB,0
+19,"KB Home v. Kingsbarn Realty Capital, LLC",AI,0
+19,"KB Home v. Kingsbarn Realty Capital, LLC",BK,0
+19,"KB Home v. Kingsbarn Realty Capital, LLC",CERT,0
+19,"KB Home v. Kingsbarn Realty Capital, LLC",PART,1
+19,"KB Home v. Kingsbarn Realty Capital, LLC",CHAL,1
+20,"Dana Soft Pty Ltd v. Meta Platforms, Inc.",SRC,1
+20,"Dana Soft Pty Ltd v. Meta Platforms, Inc.",COPY,1
+20,"Dana Soft Pty Ltd v. Meta Platforms, Inc.",USE,1
+20,"Dana Soft Pty Ltd v. Meta Platforms, Inc.",TP,0
+20,"Dana Soft Pty Ltd v. Meta Platforms, Inc.",NOTE,1
+20,"Dana Soft Pty Ltd v. Meta Platforms, Inc.",SUM,1
+20,"Dana Soft Pty Ltd v. Meta Platforms, Inc.",DER,0
+20,"Dana Soft Pty Ltd v. Meta Platforms, Inc.",DB,0
+20,"Dana Soft Pty Ltd v. Meta Platforms, Inc.",AI,0
+20,"Dana Soft Pty Ltd v. Meta Platforms, Inc.",BK,1
+20,"Dana Soft Pty Ltd v. Meta Platforms, Inc.",CERT,1
+20,"Dana Soft Pty Ltd v. Meta Platforms, Inc.",PART,1
+20,"Dana Soft Pty Ltd v. Meta Platforms, Inc.",CHAL,1
+21,"Voltstar Technologies, Inc. v. Amazon.com, Inc.",SRC,1
+21,"Voltstar Technologies, Inc. v. Amazon.com, Inc.",COPY,1
+21,"Voltstar Technologies, Inc. v. Amazon.com, Inc.",USE,1
+21,"Voltstar Technologies, Inc. v. Amazon.com, Inc.",TP,1
+21,"Voltstar Technologies, Inc. v. Amazon.com, Inc.",NOTE,0
+21,"Voltstar Technologies, Inc. v. Amazon.com, Inc.",SUM,0
+21,"Voltstar Technologies, Inc. v. Amazon.com, Inc.",DER,0
+21,"Voltstar Technologies, Inc. v. Amazon.com, Inc.",DB,1
+21,"Voltstar Technologies, Inc. v. Amazon.com, Inc.",AI,0
+21,"Voltstar Technologies, Inc. v. Amazon.com, Inc.",BK,0
+21,"Voltstar Technologies, Inc. v. Amazon.com, Inc.",CERT,1
+21,"Voltstar Technologies, Inc. v. Amazon.com, Inc.",PART,0
+21,"Voltstar Technologies, Inc. v. Amazon.com, Inc.",CHAL,1
+22,Seibert v. FDIC,SRC,1
+22,Seibert v. FDIC,COPY,1
+22,Seibert v. FDIC,USE,1
+22,Seibert v. FDIC,TP,0
+22,Seibert v. FDIC,NOTE,0
+22,Seibert v. FDIC,SUM,0
+22,Seibert v. FDIC,DER,0
+22,Seibert v. FDIC,DB,0
+22,Seibert v. FDIC,AI,0
+22,Seibert v. FDIC,BK,1
+22,Seibert v. FDIC,CERT,1
+22,Seibert v. FDIC,PART,0
+22,Seibert v. FDIC,CHAL,1
+23,"Fanimal, Inc. v. Live Nation Entertainment, Inc.",SRC,1
+23,"Fanimal, Inc. v. Live Nation Entertainment, Inc.",COPY,1
+23,"Fanimal, Inc. v. Live Nation Entertainment, Inc.",USE,1
+23,"Fanimal, Inc. v. Live Nation Entertainment, Inc.",TP,1
+23,"Fanimal, Inc. v. Live Nation Entertainment, Inc.",NOTE,0
+23,"Fanimal, Inc. v. Live Nation Entertainment, Inc.",SUM,1
+23,"Fanimal, Inc. v. Live Nation Entertainment, Inc.",DER,0
+23,"Fanimal, Inc. v. Live Nation Entertainment, Inc.",DB,0
+23,"Fanimal, Inc. v. Live Nation Entertainment, Inc.",AI,0
+23,"Fanimal, Inc. v. Live Nation Entertainment, Inc.",BK,1
+23,"Fanimal, Inc. v. Live Nation Entertainment, Inc.",CERT,1
+23,"Fanimal, Inc. v. Live Nation Entertainment, Inc.",PART,0
+23,"Fanimal, Inc. v. Live Nation Entertainment, Inc.",CHAL,1
+24,iOttie Inc. v. HSM Co. Ltd,SRC,1
+24,iOttie Inc. v. HSM Co. Ltd,COPY,1
+24,iOttie Inc. v. HSM Co. Ltd,USE,1
+24,iOttie Inc. v. HSM Co. Ltd,TP,0
+24,iOttie Inc. v. HSM Co. Ltd,NOTE,0
+24,iOttie Inc. v. HSM Co. Ltd,SUM,0
+24,iOttie Inc. v. HSM Co. Ltd,DER,0
+24,iOttie Inc. v. HSM Co. Ltd,DB,0
+24,iOttie Inc. v. HSM Co. Ltd,AI,0
+24,iOttie Inc. v. HSM Co. Ltd,BK,0
+24,iOttie Inc. v. HSM Co. Ltd,CERT,0
+24,iOttie Inc. v. HSM Co. Ltd,PART,1
+24,iOttie Inc. v. HSM Co. Ltd,CHAL,1
+25,In re Ex Parte Application of Allan Green et al.,SRC,1
+25,In re Ex Parte Application of Allan Green et al.,COPY,1
+25,In re Ex Parte Application of Allan Green et al.,USE,1
+25,In re Ex Parte Application of Allan Green et al.,TP,1
+25,In re Ex Parte Application of Allan Green et al.,NOTE,0
+25,In re Ex Parte Application of Allan Green et al.,SUM,0
+25,In re Ex Parte Application of Allan Green et al.,DER,0
+25,In re Ex Parte Application of Allan Green et al.,DB,0
+25,In re Ex Parte Application of Allan Green et al.,AI,0
+25,In re Ex Parte Application of Allan Green et al.,BK,0
+25,In re Ex Parte Application of Allan Green et al.,CERT,0
+25,In re Ex Parte Application of Allan Green et al.,PART,0
+25,In re Ex Parte Application of Allan Green et al.,CHAL,1
+26,"Camm v. Reach Financial, LLC",SRC,1
+26,"Camm v. Reach Financial, LLC",COPY,1
+26,"Camm v. Reach Financial, LLC",USE,1
+26,"Camm v. Reach Financial, LLC",TP,1
+26,"Camm v. Reach Financial, LLC",NOTE,0
+26,"Camm v. Reach Financial, LLC",SUM,0
+26,"Camm v. Reach Financial, LLC",DER,0
+26,"Camm v. Reach Financial, LLC",DB,0
+26,"Camm v. Reach Financial, LLC",AI,0
+26,"Camm v. Reach Financial, LLC",BK,0
+26,"Camm v. Reach Financial, LLC",CERT,0
+26,"Camm v. Reach Financial, LLC",PART,0
+26,"Camm v. Reach Financial, LLC",CHAL,1
+27,N.G. v. City of Stockton,SRC,1
+27,N.G. v. City of Stockton,COPY,1
+27,N.G. v. City of Stockton,USE,1
+27,N.G. v. City of Stockton,TP,1
+27,N.G. v. City of Stockton,NOTE,0
+27,N.G. v. City of Stockton,SUM,1
+27,N.G. v. City of Stockton,DER,0
+27,N.G. v. City of Stockton,DB,0
+27,N.G. v. City of Stockton,AI,0
+27,N.G. v. City of Stockton,BK,0
+27,N.G. v. City of Stockton,CERT,1
+27,N.G. v. City of Stockton,PART,0
+27,N.G. v. City of Stockton,CHAL,1
+28,Natalie Gianne v. Accor Management US Inc.,SRC,1
+28,Natalie Gianne v. Accor Management US Inc.,COPY,1
+28,Natalie Gianne v. Accor Management US Inc.,USE,1
+28,Natalie Gianne v. Accor Management US Inc.,TP,1
+28,Natalie Gianne v. Accor Management US Inc.,NOTE,0
+28,Natalie Gianne v. Accor Management US Inc.,SUM,1
+28,Natalie Gianne v. Accor Management US Inc.,DER,0
+28,Natalie Gianne v. Accor Management US Inc.,DB,0
+28,Natalie Gianne v. Accor Management US Inc.,AI,0
+28,Natalie Gianne v. Accor Management US Inc.,BK,0
+28,Natalie Gianne v. Accor Management US Inc.,CERT,1
+28,Natalie Gianne v. Accor Management US Inc.,PART,0
+28,Natalie Gianne v. Accor Management US Inc.,CHAL,1
+29,"Spheres Music, LLC v. John Murphy",SRC,1
+29,"Spheres Music, LLC v. John Murphy",COPY,1
+29,"Spheres Music, LLC v. John Murphy",USE,1
+29,"Spheres Music, LLC v. John Murphy",TP,1
+29,"Spheres Music, LLC v. John Murphy",NOTE,0
+29,"Spheres Music, LLC v. John Murphy",SUM,0
+29,"Spheres Music, LLC v. John Murphy",DER,1
+29,"Spheres Music, LLC v. John Murphy",DB,0
+29,"Spheres Music, LLC v. John Murphy",AI,1
+29,"Spheres Music, LLC v. John Murphy",BK,0
+29,"Spheres Music, LLC v. John Murphy",CERT,0
+29,"Spheres Music, LLC v. John Murphy",PART,0
+29,"Spheres Music, LLC v. John Murphy",CHAL,1
+30,Zurich American Insurance Co. v. Amazon.com Services LLC,SRC,1
+30,Zurich American Insurance Co. v. Amazon.com Services LLC,COPY,1
+30,Zurich American Insurance Co. v. Amazon.com Services LLC,USE,1
+30,Zurich American Insurance Co. v. Amazon.com Services LLC,TP,1
+30,Zurich American Insurance Co. v. Amazon.com Services LLC,NOTE,1
+30,Zurich American Insurance Co. v. Amazon.com Services LLC,SUM,0
+30,Zurich American Insurance Co. v. Amazon.com Services LLC,DER,0
+30,Zurich American Insurance Co. v. Amazon.com Services LLC,DB,0
+30,Zurich American Insurance Co. v. Amazon.com Services LLC,AI,1
+30,Zurich American Insurance Co. v. Amazon.com Services LLC,BK,0
+30,Zurich American Insurance Co. v. Amazon.com Services LLC,CERT,1
+30,Zurich American Insurance Co. v. Amazon.com Services LLC,PART,0
+30,Zurich American Insurance Co. v. Amazon.com Services LLC,CHAL,1
+31,Napoli v. Meta Platforms Inc.,SRC,1
+31,Napoli v. Meta Platforms Inc.,COPY,1
+31,Napoli v. Meta Platforms Inc.,USE,0
+31,Napoli v. Meta Platforms Inc.,TP,0
+31,Napoli v. Meta Platforms Inc.,NOTE,0
+31,Napoli v. Meta Platforms Inc.,SUM,0
+31,Napoli v. Meta Platforms Inc.,DER,0
+31,Napoli v. Meta Platforms Inc.,DB,0
+31,Napoli v. Meta Platforms Inc.,AI,1
+31,Napoli v. Meta Platforms Inc.,BK,0
+31,Napoli v. Meta Platforms Inc.,CERT,0
+31,Napoli v. Meta Platforms Inc.,PART,0
+31,Napoli v. Meta Platforms Inc.,CHAL,0
+32,"SitNet LLC v. Meta Platforms, Inc.",SRC,1
+32,"SitNet LLC v. Meta Platforms, Inc.",COPY,1
+32,"SitNet LLC v. Meta Platforms, Inc.",USE,1
+32,"SitNet LLC v. Meta Platforms, Inc.",TP,0
+32,"SitNet LLC v. Meta Platforms, Inc.",NOTE,0
+32,"SitNet LLC v. Meta Platforms, Inc.",SUM,1
+32,"SitNet LLC v. Meta Platforms, Inc.",DER,0
+32,"SitNet LLC v. Meta Platforms, Inc.",DB,0
+32,"SitNet LLC v. Meta Platforms, Inc.",AI,1
+32,"SitNet LLC v. Meta Platforms, Inc.",BK,1
+32,"SitNet LLC v. Meta Platforms, Inc.",CERT,1
+32,"SitNet LLC v. Meta Platforms, Inc.",PART,0
+32,"SitNet LLC v. Meta Platforms, Inc.",CHAL,1
+33,Maklani v. Amazon.com Inc.,SRC,1
+33,Maklani v. Amazon.com Inc.,COPY,1
+33,Maklani v. Amazon.com Inc.,USE,1
+33,Maklani v. Amazon.com Inc.,TP,1
+33,Maklani v. Amazon.com Inc.,NOTE,0
+33,Maklani v. Amazon.com Inc.,SUM,0
+33,Maklani v. Amazon.com Inc.,DER,0
+33,Maklani v. Amazon.com Inc.,DB,0
+33,Maklani v. Amazon.com Inc.,AI,1
+33,Maklani v. Amazon.com Inc.,BK,0
+33,Maklani v. Amazon.com Inc.,CERT,1
+33,Maklani v. Amazon.com Inc.,PART,0
+33,Maklani v. Amazon.com Inc.,CHAL,1
+34,"Taylor Haney v. Service Finance Company, LLC",SRC,1
+34,"Taylor Haney v. Service Finance Company, LLC",COPY,1
+34,"Taylor Haney v. Service Finance Company, LLC",USE,1
+34,"Taylor Haney v. Service Finance Company, LLC",TP,1
+34,"Taylor Haney v. Service Finance Company, LLC",NOTE,0
+34,"Taylor Haney v. Service Finance Company, LLC",SUM,0
+34,"Taylor Haney v. Service Finance Company, LLC",DER,0
+34,"Taylor Haney v. Service Finance Company, LLC",DB,0
+34,"Taylor Haney v. Service Finance Company, LLC",AI,1
+34,"Taylor Haney v. Service Finance Company, LLC",BK,0
+34,"Taylor Haney v. Service Finance Company, LLC",CERT,0
+34,"Taylor Haney v. Service Finance Company, LLC",PART,0
+34,"Taylor Haney v. Service Finance Company, LLC",CHAL,1
+35,Rudasill v. Swiss Re American Holding Corp.,SRC,1
+35,Rudasill v. Swiss Re American Holding Corp.,COPY,1
+35,Rudasill v. Swiss Re American Holding Corp.,USE,0
+35,Rudasill v. Swiss Re American Holding Corp.,TP,0
+35,Rudasill v. Swiss Re American Holding Corp.,NOTE,0
+35,Rudasill v. Swiss Re American Holding Corp.,SUM,0
+35,Rudasill v. Swiss Re American Holding Corp.,DER,1
+35,Rudasill v. Swiss Re American Holding Corp.,DB,0
+35,Rudasill v. Swiss Re American Holding Corp.,AI,1
+35,Rudasill v. Swiss Re American Holding Corp.,BK,0
+35,Rudasill v. Swiss Re American Holding Corp.,CERT,0
+35,Rudasill v. Swiss Re American Holding Corp.,PART,0
+35,Rudasill v. Swiss Re American Holding Corp.,CHAL,0
+36,"Meta Platforms, Inc. v. Folger",SRC,1
+36,"Meta Platforms, Inc. v. Folger",COPY,1
+36,"Meta Platforms, Inc. v. Folger",USE,0
+36,"Meta Platforms, Inc. v. Folger",TP,0
+36,"Meta Platforms, Inc. v. Folger",NOTE,0
+36,"Meta Platforms, Inc. v. Folger",SUM,0
+36,"Meta Platforms, Inc. v. Folger",DER,0
+36,"Meta Platforms, Inc. v. Folger",DB,0
+36,"Meta Platforms, Inc. v. Folger",AI,1
+36,"Meta Platforms, Inc. v. Folger",BK,0
+36,"Meta Platforms, Inc. v. Folger",CERT,0
+36,"Meta Platforms, Inc. v. Folger",PART,0
+36,"Meta Platforms, Inc. v. Folger",CHAL,0
+37,"Rumen Makaveev v. RxSight, Inc.",SRC,1
+37,"Rumen Makaveev v. RxSight, Inc.",COPY,1
+37,"Rumen Makaveev v. RxSight, Inc.",USE,1
+37,"Rumen Makaveev v. RxSight, Inc.",TP,1
+37,"Rumen Makaveev v. RxSight, Inc.",NOTE,0
+37,"Rumen Makaveev v. RxSight, Inc.",SUM,0
+37,"Rumen Makaveev v. RxSight, Inc.",DER,0
+37,"Rumen Makaveev v. RxSight, Inc.",DB,0
+37,"Rumen Makaveev v. RxSight, Inc.",AI,1
+37,"Rumen Makaveev v. RxSight, Inc.",BK,0
+37,"Rumen Makaveev v. RxSight, Inc.",CERT,0
+37,"Rumen Makaveev v. RxSight, Inc.",PART,0
+37,"Rumen Makaveev v. RxSight, Inc.",CHAL,1
+38,"Palantir Technologies, Inc. v. Jain",SRC,1
+38,"Palantir Technologies, Inc. v. Jain",COPY,1
+38,"Palantir Technologies, Inc. v. Jain",USE,0
+38,"Palantir Technologies, Inc. v. Jain",TP,1
+38,"Palantir Technologies, Inc. v. Jain",NOTE,0
+38,"Palantir Technologies, Inc. v. Jain",SUM,1
+38,"Palantir Technologies, Inc. v. Jain",DER,0
+38,"Palantir Technologies, Inc. v. Jain",DB,0
+38,"Palantir Technologies, Inc. v. Jain",AI,0
+38,"Palantir Technologies, Inc. v. Jain",BK,1
+38,"Palantir Technologies, Inc. v. Jain",CERT,1
+38,"Palantir Technologies, Inc. v. Jain",PART,0
+38,"Palantir Technologies, Inc. v. Jain",CHAL,0
+39,"MCM Construction, Inc. v. Zurich American Insurance Co.",SRC,1
+39,"MCM Construction, Inc. v. Zurich American Insurance Co.",COPY,0
+39,"MCM Construction, Inc. v. Zurich American Insurance Co.",USE,0
+39,"MCM Construction, Inc. v. Zurich American Insurance Co.",TP,1
+39,"MCM Construction, Inc. v. Zurich American Insurance Co.",NOTE,0
+39,"MCM Construction, Inc. v. Zurich American Insurance Co.",SUM,0
+39,"MCM Construction, Inc. v. Zurich American Insurance Co.",DER,0
+39,"MCM Construction, Inc. v. Zurich American Insurance Co.",DB,0
+39,"MCM Construction, Inc. v. Zurich American Insurance Co.",AI,0
+39,"MCM Construction, Inc. v. Zurich American Insurance Co.",BK,0
+39,"MCM Construction, Inc. v. Zurich American Insurance Co.",CERT,0
+39,"MCM Construction, Inc. v. Zurich American Insurance Co.",PART,0
+39,"MCM Construction, Inc. v. Zurich American Insurance Co.",CHAL,0
+40,Doe v. Hill,SRC,1
+40,Doe v. Hill,COPY,1
+40,Doe v. Hill,USE,0
+40,Doe v. Hill,TP,0
+40,Doe v. Hill,NOTE,0
+40,Doe v. Hill,SUM,0
+40,Doe v. Hill,DER,0
+40,Doe v. Hill,DB,0
+40,Doe v. Hill,AI,0
+40,Doe v. Hill,BK,0
+40,Doe v. Hill,CERT,1
+40,Doe v. Hill,PART,0
+40,Doe v. Hill,CHAL,0

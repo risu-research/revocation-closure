@@ -122,6 +122,12 @@ The [actor and deadline experiment](experiments/actor_clock/README.md) replays s
 
 The [court-order transfer experiment](experiments/court_order_transfer/README.md) evaluates a fixed lexical policy extractor on selected clauses from three court-entered orders. Three of 20 coded obligations were recovered in full from the first two orders. The unchanged extractor recovered zero of eight obligations from a third order. The accompanying HTTP/SQLite study records 11 prohibited writes with cached authorization and two with current-policy checks, including missed-notice cases.
 
+## Additional evidence
+
+The [court-order coding tables](experiments/court_coding/README.md) include the original 520-cell matrix, 40 source links, 77 reviewed disagreements and 40 event-specific records. The checker reproduces the initial core frequencies and the event totals.
+
+The [program-bound execution test](experiments/program_binding/README.md) checks signed read, program and output evidence against actual recipient writes. The approval control commits a protected program literal after the program digest is admitted.
+
 ## Evidence boundary
 
 The court orders are cited as public source documents. A human translated selected clauses into test fixtures. Passing tests confirm that the implemented interpreter and replay harness behave as those fixtures specify. They do not certify compliance by any real workflow, law firm, or AI provider. Missing or falsely complete dependency information remains a failure boundary.

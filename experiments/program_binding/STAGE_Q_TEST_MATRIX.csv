@@ -1,0 +1,23 @@
+test,type,program,status,persisted,policy_epoch,source_count,notes
+pre_reverse,recipient_effect,reverse_bytes.py,ALLOW_SCOPED,1,0,1,BROKER_VERIFIED
+post_reverse,recipient_effect,reverse_bytes.py,BLOCK,0,3,1,BROKER_VERIFIED
+clean_hash,recipient_effect,clean_hash.py,ALLOW_SCOPED,1,3,1,BROKER_VERIFIED
+mixed_sources,recipient_effect,concat_sources.py,BLOCK,0,3,2,BROKER_VERIFIED
+parent_derived,recipient_effect,parent_transform.py,BLOCK,0,3,2,BROKER_VERIFIED
+camm_priv_transform,recipient_effect,camm_summary.py,BLOCK,0,3,1,BROKER_VERIFIED
+camm_clean_transform,recipient_effect,camm_clean.py,ALLOW_SCOPED,1,3,1,BROKER_VERIFIED
+napoli_priv_transform,recipient_effect,napoli_analysis.py,BLOCK,0,3,1,BROKER_VERIFIED
+napoli_clean_transform,recipient_effect,napoli_clean.py,ALLOW_SCOPED,1,3,1,BROKER_VERIFIED
+literal_launder,recipient_effect,literal_launder.py,HOLD,0,3,0,UNAPPROVED_PROGRAM
+stdout_exfil,recipient_effect,sidechannel_attack.py,BLOCK,0,3,1,BROKER_VERIFIED
+alter_output,recipient_effect,(mutated proof or replay),HOLD,0,3,0,INVALID_EXECUTION_PROOF
+alter_code_hash,recipient_effect,(mutated proof or replay),HOLD,0,3,0,INVALID_EXECUTION_PROOF
+alter_read_set,recipient_effect,(mutated proof or replay),HOLD,0,3,0,INVALID_EXECUTION_PROOF
+alter_legacy_seal,recipient_effect,(mutated proof or replay),HOLD,0,3,0,INVALID_EXECUTION_PROOF
+replay_clean,recipient_effect,(mutated proof or replay),HOLD,0,3,0,INVALID_OR_INCOMPLETE
+clean_conflict,recipient_effect,clean_hash.py,HOLD,0,3,1,CLIENT_PROVENANCE_CONFLICT
+no_read,runner_execution,constant_no_read.py,NO_SEAL,0,,,worker_rc=1;broker_rc=1
+vault_escape,runner_execution,direct_vault_attack.py,NO_SEAL,0,,,worker_rc=1;broker_rc=1
+network_escape,runner_execution,network_attack.py,NO_SEAL,0,,,worker_rc=1;broker_rc=1
+fork_escape,runner_execution,fork_attack.py,NO_SEAL,0,,,worker_rc=1;broker_rc=1
+runtime_failure,runner_execution,exception_after_read.py,NO_SEAL,0,,,worker_rc=1;broker_rc=1

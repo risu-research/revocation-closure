@@ -1,0 +1,78 @@
+order_id,code,frozen,second_pass,adjudicated,changed,clause_location,event_scope
+1,BK,0,1,1,1,§21 (counsel archive; back-up tapes),F_FINAL_ARCHIVE_OR_SYSTEM_BACKUP
+1,CERT,0,1,1,1,§21 (written certification),F_FINAL_OR_C_PRIV_CONDITIONAL
+1,SUM,0,1,1,1,"§21 (abstracts, compilations, summaries)",ORDER_WIDE_SUMMARY_PROTECTION_OR_FINAL_DISPOSITION
+3,AI,0,1,1,1,§24(b)(iii) (AI retained data),F_FINAL_AI_TOOL
+3,BK,0,1,0,0,"§24(b)(iii) (AI data retention, NOT backup)",F_FINAL_ARCHIVE_OR_SYSTEM_BACKUP
+3,SUM,0,1,0,0,"§19 (summary judgment, NOT derivative summary)",ORDER_WIDE_SUMMARY_PROTECTION_OR_FINAL_DISPOSITION
+4,BK,0,1,1,1,§21(d)–(e),F_FINAL_ARCHIVE_OR_SYSTEM_BACKUP
+4,CERT,0,1,1,1,§21(a),F_FINAL_OR_C_PRIV_CONDITIONAL
+5,BK,0,1,1,1,§21 (retained counsel files and backup),F_FINAL_ARCHIVE_OR_SYSTEM_BACKUP
+5,CERT,0,1,1,1,§21 (written destruction statement),F_FINAL_OR_C_PRIV_CONDITIONAL
+6,DER,0,1,1,1,§22 (other documents generated or maintained),C_PRIV_OTHER_GENERATED_OBJECT
+6,TP,0,1,1,1,§22 (recall after prior disclosure),C_PRIV_PRIOR_RECIPIENT_RETRIEVAL
+7,BK,0,1,1,1,§22 (counsel retained filings),F_FINAL_ARCHIVE_OR_SYSTEM_BACKUP
+7,CERT,0,1,1,1,§21 (certification at final disposition),F_FINAL_OR_C_PRIV_CONDITIONAL
+7,DER,0,1,1,1,§5 (information derived from designated material),ORDER_WIDE_DERIVED_INFORMATION
+8,BK,0,1,1,1,§21 (counsel file retention),F_FINAL_ARCHIVE_OR_SYSTEM_BACKUP
+8,CERT,0,1,1,1,§21 (end-of-case certificate),F_FINAL_OR_C_PRIV_CONDITIONAL
+8,DER,0,1,1,1,§5 (derived information in disclosure limits),ORDER_WIDE_DERIVED_INFORMATION
+9,BK,0,1,1,1,§16 (working files retention exception),F_FINAL_ARCHIVE_OR_SYSTEM_BACKUP
+10,CERT,0,1,0,0,§19(a) (passive certificate condition),F_FINAL_OR_C_PRIV_CONDITIONAL
+10,DER,1,0,0,1,"§17(d) (references, but not named other derivative)",ORDER_WIDE_DERIVED_INFORMATION
+10,SUM,0,1,1,1,§12 (filing substantially summarizing confidential material),GENERAL_COURT_FILING
+10,TP,0,1,1,1,§17(e) (retrieve previously disclosed Identified Materials),C_PRIV_PRIOR_RECIPIENT_RETRIEVAL
+11,CERT,0,1,1,1,§14 (destruction certificate),F_FINAL_OR_C_PRIV_CONDITIONAL
+12,CERT,0,1,1,1,§13 (destruction certification),F_FINAL_OR_C_PRIV_CONDITIONAL
+12,DB,0,1,1,1,"§16(c) (review databases, e-rooms)",C_PRIV_SYSTEM_DISPOSITION
+12,TP,0,1,1,1,§16(e) (recover previously disclosed material),C_PRIV_PRIOR_RECIPIENT_RETRIEVAL
+13,SUM,0,1,1,1,"§3 (copies, extracts, summaries); §8 (compilations)",ORDER_WIDE_SUMMARY_PROTECTION_OR_FINAL_DISPOSITION
+14,SUM,0,1,1,1,§6 (extracts and summaries),ORDER_WIDE_SUMMARY_PROTECTION_OR_FINAL_DISPOSITION
+14,TP,0,1,1,1,§7.4 (unauthorized disclosure recovery),GENERAL_UNAUTHORIZED_RETRIEVAL
+15,CERT,0,1,1,1,§16 (end-of-case written certificate),F_FINAL_OR_C_PRIV_CONDITIONAL
+15,SUM,0,1,1,1,§6 (extracts and summaries),ORDER_WIDE_SUMMARY_PROTECTION_OR_FINAL_DISPOSITION
+15,TP,0,1,1,1,§7.4 (retrieve unauthorized copies),GENERAL_UNAUTHORIZED_RETRIEVAL
+16,BK,0,1,1,1,§15(b) (retained counsel work product),F_FINAL_ARCHIVE_OR_SYSTEM_BACKUP
+16,CERT,0,1,1,1,§15(b) (written certification),F_FINAL_OR_C_PRIV_CONDITIONAL
+16,DB,0,1,1,1,§12(c) (review databases and e-rooms),C_PRIV_SYSTEM_DISPOSITION
+16,SUM,0,1,1,1,§3 (summary-like derivatives),ORDER_WIDE_SUMMARY_PROTECTION_OR_FINAL_DISPOSITION
+16,TP,0,1,1,1,§12(e) (retrieve prior disclosures),C_PRIV_PRIOR_RECIPIENT_RETRIEVAL
+17,BK,0,1,1,1,¶26 (counsel archive),F_FINAL_ARCHIVE_OR_SYSTEM_BACKUP
+17,CERT,0,1,1,1,¶26 (written final disposition certificate),F_FINAL_OR_C_PRIV_CONDITIONAL
+18,BK,0,1,1,1,¶26 (counsel archive),F_FINAL_ARCHIVE_OR_SYSTEM_BACKUP
+18,CERT,0,1,1,1,¶26 (written final disposition certificate),F_FINAL_OR_C_PRIV_CONDITIONAL
+19,BK,0,1,1,1,§14 (counsel archival exception),F_FINAL_ARCHIVE_OR_SYSTEM_BACKUP
+19,CERT,0,1,1,1,§14 (written certificate),F_FINAL_OR_C_PRIV_CONDITIONAL
+19,SUM,0,1,1,1,"§3 (copies, excerpts and summaries)",ORDER_WIDE_SUMMARY_PROTECTION_OR_FINAL_DISPOSITION
+20,TP,0,1,1,1,§11 (third-party disclosure retrieval),GENERAL_UNAUTHORIZED_RETRIEVAL
+21,BK,0,1,1,1,§15 (counsel archival work product),F_FINAL_ARCHIVE_OR_SYSTEM_BACKUP
+21,DB,1,0,0,1,§11 (electronic copies only; no named database delete),C_PRIV_SYSTEM_DISPOSITION
+21,NOTE,0,1,1,1,§15 (legal memoranda and work-product archive),ORDER_WIDE_NOTE_NOT_EQUIVALENT_TO_C_PRIV_PURGE
+21,SUM,0,1,1,1,§3 and §15 (summaries and captured formats),ORDER_WIDE_SUMMARY_PROTECTION_OR_FINAL_DISPOSITION
+22,NOTE,0,1,1,1,"§15 (notations, mental impressions and work product)",ORDER_WIDE_NOTE_NOT_EQUIVALENT_TO_C_PRIV_PURGE
+22,SUM,0,1,1,1,§15 (summations),ORDER_WIDE_SUMMARY_PROTECTION_OR_FINAL_DISPOSITION
+23,NOTE,0,1,1,1,§13 (legal memoranda and attorney work product),ORDER_WIDE_NOTE_NOT_EQUIVALENT_TO_C_PRIV_PURGE
+24,BK,0,1,1,1,§19(a) (archive and backup exceptions),F_FINAL_ARCHIVE_OR_SYSTEM_BACKUP
+24,CERT,0,1,1,1,§19(a) (written certificate),F_FINAL_OR_C_PRIV_CONDITIONAL
+24,DER,0,1,1,1,§2.6 (information derived),ORDER_WIDE_DERIVED_INFORMATION
+24,NOTE,0,1,1,1,§2.6 (notes or other records),ORDER_WIDE_NOTE_NOT_EQUIVALENT_TO_C_PRIV_PURGE
+24,SUM,0,1,1,1,§2.6 (abstracts and summaries),ORDER_WIDE_SUMMARY_PROTECTION_OR_FINAL_DISPOSITION
+25,BK,0,1,1,1,§10.1 (counsel archival exception),F_FINAL_ARCHIVE_OR_SYSTEM_BACKUP
+25,CERT,0,1,1,1,§10.1 (written certification),F_FINAL_OR_C_PRIV_CONDITIONAL
+25,DER,0,1,1,1,§2.3 (derivatives),ORDER_WIDE_DERIVED_INFORMATION
+25,NOTE,0,1,1,1,§10.1 (attorney work product),ORDER_WIDE_NOTE_NOT_EQUIVALENT_TO_C_PRIV_PURGE
+25,SUM,0,1,1,1,"§2.3; §10.1 (summaries, compilations)",ORDER_WIDE_SUMMARY_PROTECTION_OR_FINAL_DISPOSITION
+26,BK,0,1,1,1,§11(c) (counsel work-product exception),F_FINAL_ARCHIVE_OR_SYSTEM_BACKUP
+26,CERT,0,1,1,1,§11(b) (written destruction certificate),F_FINAL_OR_C_PRIV_CONDITIONAL
+26,DER,0,1,1,1,§1 (information directly derived),ORDER_WIDE_DERIVED_INFORMATION
+26,NOTE,0,1,1,1,§11(c) (work product and mental impressions),ORDER_WIDE_NOTE_NOT_EQUIVALENT_TO_C_PRIV_PURGE
+26,SUM,0,1,1,1,"§3; §11 (summaries, extracts)",ORDER_WIDE_SUMMARY_PROTECTION_OR_FINAL_DISPOSITION
+27,BK,0,1,1,1,§13 (counsel archival exception),F_FINAL_ARCHIVE_OR_SYSTEM_BACKUP
+27,NOTE,0,1,1,1,§13 (legal memoranda and work product),ORDER_WIDE_NOTE_NOT_EQUIVALENT_TO_C_PRIV_PURGE
+28,BK,0,1,1,1,§13 (counsel archival exception),F_FINAL_ARCHIVE_OR_SYSTEM_BACKUP
+28,NOTE,0,1,1,1,§13 (legal memoranda and work product),ORDER_WIDE_NOTE_NOT_EQUIVALENT_TO_C_PRIV_PURGE
+29,BK,0,1,1,1,§13 (counsel archival exception),F_FINAL_ARCHIVE_OR_SYSTEM_BACKUP
+29,CERT,0,1,1,1,§13 (written certification),F_FINAL_OR_C_PRIV_CONDITIONAL
+29,NOTE,0,1,1,1,§13 (legal memoranda and work product),ORDER_WIDE_NOTE_NOT_EQUIVALENT_TO_C_PRIV_PURGE
+29,SUM,0,1,1,1,"§3; §13 (summaries, compilations)",ORDER_WIDE_SUMMARY_PROTECTION_OR_FINAL_DISPOSITION
+30,SUM,0,1,1,1,§6 (extracts and summaries),ORDER_WIDE_SUMMARY_PROTECTION_OR_FINAL_DISPOSITION
