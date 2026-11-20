@@ -61,4 +61,4 @@ assert sum(int(x['order_id'])<=30 for x in changes)==76
 print('PASS 40 orders x 13 codes, 520 original cells and 120 mapped revisions')
 print('PASS 118 additions, 2 removals, 262 original and 378 conditional positives')
 print('PASS 13 code frequency pairs, 76 core and 44 supplementary changes')
-print('PASS 5 open source-verification flags preserved')
+print('PASS 5 historical source-verification flags preserved')
