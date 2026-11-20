@@ -1,0 +1,28 @@
+{
+  "study": "policy-integrity-recipient-check",
+  "unit": "46 fixed HTTP writes per receiver using synthetic source records",
+  "baseline": {
+    "attempts": 46,
+    "physical_writes": 17,
+    "oracle_unsafe_writes": 9,
+    "clean_writes": 8
+  },
+  "with_policy_check": {
+    "attempts": 46,
+    "physical_writes": 12,
+    "oracle_unsafe_writes": 4,
+    "clean_writes": 8
+  },
+  "mutations": {
+    "policy_mutations_detected": 13,
+    "real_http_mutations": 12,
+    "protected_writes_persisted": 0,
+    "clean_writes_preserved": 12
+  },
+  "inputs": {
+    "rule_count": 18,
+    "deadline_count": 8,
+    "typed_policy_sha256": "121b3d4c0d6e9db36f6df3840bae156d4031fdd5c0be0d00dcdc3b573b0d8d24"
+  },
+  "independent_sql_tamper_rejected": true
+}

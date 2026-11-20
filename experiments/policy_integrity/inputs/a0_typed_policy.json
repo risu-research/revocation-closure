@@ -1,0 +1,944 @@
+{
+  "active_policy_mode": "TRUSTED_MANUAL_MAPPING_AND_STRUCTURAL_CHECKS",
+  "duties": [
+    {
+      "action": "deliver_privilege_log_and_redacted_replacement",
+      "actor": "producing_party",
+      "case": "iottie",
+      "clause": "§9.2",
+      "clock": {
+        "amount": 10,
+        "start": "producer_notice",
+        "unit": "business_days"
+      },
+      "effect_type": "OBLIGATION_CLOCK_RECORD_ONLY",
+      "id": "I-09-PRODUCER-LOG-10BD",
+      "meaning_review": "MANUAL_RULE_MAPPING",
+      "source_pages": "13",
+      "source_review": "SAMPLED_ORDER_PAGE_REVIEWED",
+      "source_url": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1:2025cv02642/639666/59/0.pdf",
+      "stage_n_implementation": "MISSING_PRODUCER_DUTY",
+      "trigger": "producer_notice"
+    },
+    {
+      "action": "file_challenge_or_dispose_reserved_copy",
+      "actor": "receiving_challenger",
+      "case": "iottie",
+      "clause": "§9.2",
+      "clock": {
+        "amount": 7,
+        "start": "receipt_of_log_and_replacement",
+        "unit": "business_days"
+      },
+      "effect_type": "OBLIGATION_CLOCK_RECORD_ONLY",
+      "exception_gate": "single_restricted_challenge_copy",
+      "id": "I-09-CHALLENGE",
+      "meaning_review": "MANUAL_RULE_MAPPING",
+      "source_pages": "13",
+      "source_review": "SAMPLED_ORDER_PAGE_REVIEWED",
+      "source_url": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1:2025cv02642/639666/59/0.pdf",
+      "stage_n_implementation": "ENCODED_METADATA_ONLY",
+      "trigger": "receipt_of_log_and_replacement"
+    },
+    {
+      "action": "final_return_or_destruction_subject_to_counsel_exception",
+      "actor": "receiving_party",
+      "case": "iottie",
+      "clause": "§19",
+      "clock": {
+        "amount": 2,
+        "start": "final_termination",
+        "unit": "months"
+      },
+      "effect_type": "OBLIGATION_CLOCK_RECORD_ONLY",
+      "id": "I-19-FINAL-DISPOSITION",
+      "meaning_review": "MANUAL_RULE_MAPPING",
+      "source_pages": "17-18",
+      "source_review": "SAMPLED_ORDER_PAGE_REVIEWED",
+      "source_url": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1:2025cv02642/639666/59/0.pdf",
+      "stage_n_implementation": "ENCODED_METADATA_ONLY",
+      "trigger": "final_termination"
+    },
+    {
+      "action": "return_sequester_or_destroy_and_suspend_use",
+      "actor": "receiving_party",
+      "case": "camm",
+      "clause": "§20",
+      "clock": {
+        "amount": 5,
+        "start": "producer_notice",
+        "unit": "business_days"
+      },
+      "effect_type": "OBLIGATION_CLOCK_RECORD_ONLY",
+      "id": "C-20-SOURCE",
+      "meaning_review": "MANUAL_RULE_MAPPING",
+      "source_pages": "12",
+      "source_review": "SAMPLED_ORDER_PAGE_REVIEWED",
+      "source_url": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1:2025cv01921/638232/38/0.pdf",
+      "stage_n_implementation": "ENCODED_METADATA_ONLY",
+      "trigger": "producer_notice"
+    },
+    {
+      "action": "return_confidential_documents_subject_to_exceptions",
+      "actor": "receiving_party",
+      "case": "camm",
+      "clause": "§11(b)",
+      "clock": {
+        "amount": 60,
+        "start": "final_termination",
+        "unit": "calendar_days"
+      },
+      "effect_type": "OBLIGATION_CLOCK_RECORD_ONLY",
+      "id": "C-11-FINAL-DISPOSITION",
+      "meaning_review": "MANUAL_RULE_MAPPING",
+      "source_pages": "8",
+      "source_review": "SAMPLED_ORDER_PAGE_REVIEWED",
+      "source_url": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1:2025cv01921/638232/38/0.pdf",
+      "stage_n_implementation": "ENCODED_METADATA_ONLY",
+      "trigger": "final_termination"
+    },
+    {
+      "action": "return_delete_and_destroy_relevant_copies",
+      "actor": "receiving_party",
+      "case": "napoli",
+      "clause": "§13",
+      "clock": {
+        "amount": 7,
+        "start": "producer_notice",
+        "unit": "calendar_days"
+      },
+      "effect_type": "OBLIGATION_CLOCK_RECORD_ONLY",
+      "id": "N-13-SOURCE",
+      "meaning_review": "MANUAL_RULE_MAPPING",
+      "source_pages": "9",
+      "source_review": "SAMPLED_ORDER_PAGE_REVIEWED",
+      "source_url": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1:2025cv02872/640129/37/0.pdf",
+      "stage_n_implementation": "ENCODED_METADATA_ONLY",
+      "trigger": "producer_notice"
+    },
+    {
+      "action": "return_or_destroy_covered_confidential_records",
+      "actor": "receiving_party",
+      "case": "napoli",
+      "clause": "§10",
+      "clock": {
+        "amount": 30,
+        "start": "final_termination",
+        "unit": "calendar_days"
+      },
+      "effect_type": "OBLIGATION_CLOCK_RECORD_ONLY",
+      "id": "N-10-FINAL",
+      "meaning_review": "MANUAL_RULE_MAPPING",
+      "source_pages": "7-8",
+      "source_review": "SAMPLED_ORDER_PAGE_REVIEWED",
+      "source_url": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1:2025cv02872/640129/37/0.pdf",
+      "stage_n_implementation": "MISSING_DEADLINE_FIELD",
+      "trigger": "final_termination"
+    },
+    {
+      "action": "written_confirmation_letter",
+      "actor": "receiving_counsel",
+      "case": "napoli",
+      "clause": "§10",
+      "clock": {
+        "amount": 10,
+        "start": "return_or_destruction",
+        "unit": "calendar_days"
+      },
+      "effect_type": "OBLIGATION_CLOCK_RECORD_ONLY",
+      "exception_gate": "requires_recorded_return_or_destruction",
+      "id": "N-10-CERTIFICATION-10CD",
+      "meaning_review": "MANUAL_RULE_MAPPING",
+      "source_pages": "8",
+      "source_review": "SAMPLED_ORDER_PAGE_REVIEWED",
+      "source_url": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1:2025cv02872/640129/37/0.pdf",
+      "stage_n_implementation": "MISSING_SEPARATE_CERTIFICATION_CLOCK",
+      "trigger": "return_or_destruction"
+    }
+  ],
+  "legal_source_disclaimer": "Only source page locators are retained; original PDFs are not pinned by local byte hash; a source locator is not proof of legal entailment.",
+  "original_hashes": {
+    "stage_n": "1b302e6eefaa5e3b68b1f31b352fc89d400de272e3e8f4b38ebf6bafdc525934",
+    "stage_r_duties": "693ba4be4385873a39b038266b11869fccedc74f11398b8765f1eb10f57624cf"
+  },
+  "outside_selected_scope": [
+    {
+      "case": "camm",
+      "clause": "§10",
+      "comment": "Additional confidentiality/AI processing duty; outside the eighteen selected revocation declarations",
+      "pdf_page_1based": [
+        7,
+        8
+      ],
+      "source_url": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1:2025cv01921/638232/38/0.pdf",
+      "status": "DISCOVERED_NOT_COMPILED",
+      "topic": "conditional AI-tool upload requirements"
+    },
+    {
+      "case": "napoli",
+      "clause": "§9",
+      "comment": "Not safe to assert whole-order A0 completeness",
+      "pdf_page_1based": [
+        7
+      ],
+      "source_url": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1:2025cv02872/640129/37/0.pdf",
+      "status": "DISCOVERED_NOT_COMPILED",
+      "topic": "restriction on uploading another party confidential material to open LLMs; platform deletion preparation"
+    }
+  ],
+  "repairs": [
+    {
+      "id": "I-09-PRODUCER-LOG-10BD",
+      "kind": "ADD_DUTY",
+      "status": "MODELED_IN_STAGE_R_NOT_IN_STAGE_N"
+    },
+    {
+      "id": "N-10-FINAL",
+      "kind": "PATCH_CLOCK_METADATA",
+      "status": "MISSING_STAGE_N_DEADLINE"
+    },
+    {
+      "id": "N-10-CERTIFICATION-10CD",
+      "kind": "ADD_DUTY",
+      "status": "MODELED_IN_STAGE_R_NOT_IN_STAGE_N"
+    }
+  ],
+  "rules": [
+    {
+      "case": "iottie",
+      "clause": "FRCP 26(b)(5)(B)",
+      "deadline": null,
+      "duty_actor": "receiving_party",
+      "effect": "RESTRICT_CLAIMED_CONTENT",
+      "events": [
+        "C_PRIV_NOTICE",
+        "C_PRIV_DISPUTED"
+      ],
+      "id": "IOTTIE-R26-RESTRICTION",
+      "interpretation": "After an asserted privilege notice, stop use/disclosure; sequester, return or destroy specified information and copies, including reproductions inside mixed files. No automatic whole-file deletion.",
+      "object_kinds": [
+        "source_copy",
+        "mixed_note",
+        "summary",
+        "independent_note",
+        "legal_memo",
+        "work_product_index",
+        "confidential_inspection_note"
+      ],
+      "origin": "FRCP26_INTERPRETATION",
+      "pdf": "https://www.govinfo.gov/content/pkg/USCODE-2024-title28/pdf/USCODE-2024-title28-app-federalru-dup1-rule26.pdf",
+      "pdf_page_1based": [
+        1
+      ],
+      "predicates": {
+        "contains_specified": true
+      },
+      "rule_kind": "scoped_operative_rule",
+      "source_link": {
+        "assessment": "RETAINED_STAGE_M_N_LOCATOR",
+        "clause": "FRCP 26(b)(5)(B)",
+        "meaning_entailment": "MANUAL_ADJUDICATION_NOT_FORMALLY_PROVEN",
+        "page_1based": [
+          1
+        ],
+        "quote_span": "NOT_AVAILABLE_IN_PINNED_LOCAL_PDF",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title28/pdf/USCODE-2024-title28-app-federalru-dup1-rule26.pdf"
+      }
+    },
+    {
+      "case": "camm",
+      "clause": "FRCP 26(b)(5)(B)",
+      "deadline": null,
+      "duty_actor": "receiving_party",
+      "effect": "RESTRICT_CLAIMED_CONTENT",
+      "events": [
+        "C_PRIV_NOTICE",
+        "C_PRIV_DISPUTED"
+      ],
+      "id": "CAMM-R26-RESTRICTION",
+      "interpretation": "After an asserted privilege notice, stop use/disclosure; sequester, return or destroy specified information and copies, including reproductions inside mixed files. No automatic whole-file deletion.",
+      "object_kinds": [
+        "source_copy",
+        "mixed_note",
+        "summary",
+        "independent_note",
+        "legal_memo",
+        "work_product_index",
+        "confidential_inspection_note"
+      ],
+      "origin": "FRCP26_INTERPRETATION",
+      "pdf": "https://www.govinfo.gov/content/pkg/USCODE-2024-title28/pdf/USCODE-2024-title28-app-federalru-dup1-rule26.pdf",
+      "pdf_page_1based": [
+        1
+      ],
+      "predicates": {
+        "contains_specified": true
+      },
+      "rule_kind": "scoped_operative_rule",
+      "source_link": {
+        "assessment": "RETAINED_STAGE_M_N_LOCATOR",
+        "clause": "FRCP 26(b)(5)(B)",
+        "meaning_entailment": "MANUAL_ADJUDICATION_NOT_FORMALLY_PROVEN",
+        "page_1based": [
+          1
+        ],
+        "quote_span": "NOT_AVAILABLE_IN_PINNED_LOCAL_PDF",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title28/pdf/USCODE-2024-title28-app-federalru-dup1-rule26.pdf"
+      }
+    },
+    {
+      "case": "napoli",
+      "clause": "FRCP 26(b)(5)(B)",
+      "deadline": null,
+      "duty_actor": "receiving_party",
+      "effect": "RESTRICT_CLAIMED_CONTENT",
+      "events": [
+        "C_PRIV_NOTICE",
+        "C_PRIV_DISPUTED"
+      ],
+      "id": "NAPOLI-R26-RESTRICTION",
+      "interpretation": "After an asserted privilege notice, stop use/disclosure; sequester, return or destroy specified information and copies, including reproductions inside mixed files. No automatic whole-file deletion.",
+      "object_kinds": [
+        "source_copy",
+        "mixed_note",
+        "summary",
+        "independent_note",
+        "legal_memo",
+        "work_product_index",
+        "confidential_inspection_note"
+      ],
+      "origin": "FRCP26_INTERPRETATION",
+      "pdf": "https://www.govinfo.gov/content/pkg/USCODE-2024-title28/pdf/USCODE-2024-title28-app-federalru-dup1-rule26.pdf",
+      "pdf_page_1based": [
+        1
+      ],
+      "predicates": {
+        "contains_specified": true
+      },
+      "rule_kind": "scoped_operative_rule",
+      "source_link": {
+        "assessment": "RETAINED_STAGE_M_N_LOCATOR",
+        "clause": "FRCP 26(b)(5)(B)",
+        "meaning_entailment": "MANUAL_ADJUDICATION_NOT_FORMALLY_PROVEN",
+        "page_1based": [
+          1
+        ],
+        "quote_span": "NOT_AVAILABLE_IN_PINNED_LOCAL_PDF",
+        "url": "https://www.govinfo.gov/content/pkg/USCODE-2024-title28/pdf/USCODE-2024-title28-app-federalru-dup1-rule26.pdf"
+      }
+    },
+    {
+      "case": "iottie",
+      "clause": "§9.2",
+      "deadline": null,
+      "duty_actor": "receiving_party",
+      "effect": "REMEDIATE_SPECIFIED_SOURCE",
+      "events": [
+        "C_PRIV_NOTICE",
+        "C_PRIV_DISPUTED"
+      ],
+      "id": "I-09-SOURCE",
+      "interpretation": "Claimed inadvertently produced source and copies; narrow challenge-copy exception separate from general notes.",
+      "object_kinds": [
+        "source_copy"
+      ],
+      "origin": "COURT_TEXT",
+      "pdf": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1%3A2025cv02642/639666/59/0.pdf",
+      "pdf_page_1based": [
+        12,
+        13,
+        14
+      ],
+      "predicates": {
+        "contains_specified": true
+      },
+      "rule_kind": "scoped_operative_rule",
+      "source_link": {
+        "assessment": "REOPENED_PDF_PAGE_LOCATOR",
+        "clause": "§9.2",
+        "meaning_entailment": "MANUAL_ADJUDICATION_NOT_FORMALLY_PROVEN",
+        "page_1based": [
+          12,
+          13,
+          14
+        ],
+        "quote_span": "NOT_AVAILABLE_IN_PINNED_LOCAL_PDF",
+        "url": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1%3A2025cv02642/639666/59/0.pdf"
+      }
+    },
+    {
+      "case": "iottie",
+      "clause": "§9.2",
+      "deadline": {
+        "amount": 7,
+        "start": "receipt_of_log_and_replacement",
+        "unit": "business_days"
+      },
+      "duty_actor": "receiving_challenger",
+      "effect": "LIMITED_CHALLENGE_COPY",
+      "events": [
+        "PRIVILEGE_CHALLENGE"
+      ],
+      "id": "I-09-CHALLENGE",
+      "interpretation": "One narrowly retained source copy for challenge; missed challenge deadline requires disposition; no general file reuse.",
+      "object_kinds": [
+        "source_copy"
+      ],
+      "origin": "COURT_TEXT",
+      "pdf": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1%3A2025cv02642/639666/59/0.pdf",
+      "pdf_page_1based": [
+        13,
+        14
+      ],
+      "predicates": {
+        "contains_specified": true,
+        "explicit_challenge_authorization": true
+      },
+      "rule_kind": "restricted_challenge",
+      "source_link": {
+        "assessment": "REOPENED_PDF_PAGE_LOCATOR",
+        "clause": "§9.2",
+        "meaning_entailment": "MANUAL_ADJUDICATION_NOT_FORMALLY_PROVEN",
+        "page_1based": [
+          13,
+          14
+        ],
+        "quote_span": "NOT_AVAILABLE_IN_PINNED_LOCAL_PDF",
+        "url": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1%3A2025cv02642/639666/59/0.pdf"
+      }
+    },
+    {
+      "case": "iottie",
+      "clause": "§3.3",
+      "deadline": null,
+      "duty_actor": "receiving_party",
+      "effect": "INSPECTION_CONFIDENTIALITY",
+      "events": [
+        "CONFIDENTIALITY_REDESIGNATION"
+      ],
+      "id": "I-03-INSPECTION",
+      "interpretation": "Inspection notes inherit designated protection; this is confidentiality, not post-notice privilege purge.",
+      "object_kinds": [
+        "confidential_inspection_note"
+      ],
+      "origin": "COURT_TEXT",
+      "pdf": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1%3A2025cv02642/639666/59/0.pdf",
+      "pdf_page_1based": [
+        5
+      ],
+      "predicates": {
+        "inspection_note": true,
+        "protected_material": true
+      },
+      "rule_kind": "scoped_operative_rule",
+      "source_link": {
+        "assessment": "RETAINED_STAGE_M_N_LOCATOR",
+        "clause": "§3.3",
+        "meaning_entailment": "MANUAL_ADJUDICATION_NOT_FORMALLY_PROVEN",
+        "page_1based": [
+          5
+        ],
+        "quote_span": "NOT_AVAILABLE_IN_PINNED_LOCAL_PDF",
+        "url": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1%3A2025cv02642/639666/59/0.pdf"
+      }
+    },
+    {
+      "case": "iottie",
+      "clause": "§19",
+      "deadline": {
+        "amount": 2,
+        "start": "final_termination",
+        "unit": "months"
+      },
+      "duty_actor": "receiving_party",
+      "effect": "FINAL_DISPOSITION",
+      "events": [
+        "FINAL_TERMINATION"
+      ],
+      "id": "I-19-FINAL-DISPOSITION",
+      "interpretation": "Final-only return or destruction of materials furnished and designated by another party, subject to counsel-record and backup exclusions.",
+      "object_kinds": [
+        "source_copy",
+        "mixed_note",
+        "summary",
+        "independent_note",
+        "legal_memo",
+        "work_product_index",
+        "confidential_inspection_note"
+      ],
+      "origin": "COURT_TEXT",
+      "pdf": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1%3A2025cv02642/639666/59/0.pdf",
+      "pdf_page_1based": [
+        17,
+        18
+      ],
+      "predicates": {
+        "is_covered_final_material": true
+      },
+      "rule_kind": "scoped_operative_rule",
+      "source_link": {
+        "assessment": "REOPENED_PDF_PAGE_LOCATOR",
+        "clause": "§19",
+        "meaning_entailment": "MANUAL_ADJUDICATION_NOT_FORMALLY_PROVEN",
+        "page_1based": [
+          17,
+          18
+        ],
+        "quote_span": "NOT_AVAILABLE_IN_PINNED_LOCAL_PDF",
+        "url": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1%3A2025cv02642/639666/59/0.pdf"
+      }
+    },
+    {
+      "case": "iottie",
+      "clause": "§19",
+      "deadline": null,
+      "duty_actor": "receiving_counsel",
+      "effect": "QUALIFIED_FINAL_ARCHIVE",
+      "events": [
+        "FINAL_TERMINATION"
+      ],
+      "id": "I-19-ARCHIVE",
+      "interpretation": "Litigation counsel may retain qualifying legal memoranda and work product, confidentiality restrictions persist.",
+      "object_kinds": [
+        "mixed_note",
+        "legal_memo",
+        "work_product_index"
+      ],
+      "origin": "COURT_TEXT",
+      "pdf": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1%3A2025cv02642/639666/59/0.pdf",
+      "pdf_page_1based": [
+        17,
+        18
+      ],
+      "predicates": {
+        "counsel_record": true,
+        "qualified_archive": true
+      },
+      "rule_kind": "restricted_archive",
+      "source_link": {
+        "assessment": "RETAINED_STAGE_M_N_LOCATOR",
+        "clause": "§19",
+        "meaning_entailment": "MANUAL_ADJUDICATION_NOT_FORMALLY_PROVEN",
+        "page_1based": [
+          17,
+          18
+        ],
+        "quote_span": "NOT_AVAILABLE_IN_PINNED_LOCAL_PDF",
+        "url": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1%3A2025cv02642/639666/59/0.pdf"
+      }
+    },
+    {
+      "case": "camm",
+      "clause": "§20",
+      "deadline": {
+        "amount": 5,
+        "start": "producer_notice",
+        "unit": "business_days"
+      },
+      "duty_actor": "receiving_party",
+      "effect": "REMEDIATE_SPECIFIED_SOURCE",
+      "events": [
+        "C_PRIV_NOTICE",
+        "C_PRIV_DISPUTED"
+      ],
+      "id": "C-20-SOURCE",
+      "interpretation": "Five-business-day disposition for specified privileged information/document and copies, regardless of dispute.",
+      "object_kinds": [
+        "source_copy"
+      ],
+      "origin": "COURT_TEXT",
+      "pdf": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1%3A2025cv01921/638232/38/0.pdf",
+      "pdf_page_1based": [
+        11,
+        12
+      ],
+      "predicates": {
+        "contains_specified": true
+      },
+      "rule_kind": "scoped_operative_rule",
+      "source_link": {
+        "assessment": "REOPENED_PDF_PAGE_LOCATOR",
+        "clause": "§20",
+        "meaning_entailment": "MANUAL_ADJUDICATION_NOT_FORMALLY_PROVEN",
+        "page_1based": [
+          11,
+          12
+        ],
+        "quote_span": "NOT_AVAILABLE_IN_PINNED_LOCAL_PDF",
+        "url": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1%3A2025cv01921/638232/38/0.pdf"
+      }
+    },
+    {
+      "case": "camm",
+      "clause": "§3 (as used in this Order) + §20",
+      "deadline": {
+        "amount": 5,
+        "start": "producer_notice",
+        "unit": "business_days"
+      },
+      "duty_actor": "scope_only",
+      "effect": "CONDITIONAL_COPY_BRIDGE",
+      "events": [
+        "C_PRIV_NOTICE",
+        "C_PRIV_DISPUTED"
+      ],
+      "id": "C-03-20-COPY-BRIDGE",
+      "interpretation": "Global copies definition includes extracts/summaries/descriptions containing Confidential Information; cannot assume all notes or privilege-only material qualify.",
+      "object_kinds": [
+        "summary",
+        "mixed_note",
+        "legal_memo"
+      ],
+      "origin": "COURT_TEXT",
+      "pdf": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1%3A2025cv01921/638232/38/0.pdf",
+      "pdf_page_1based": [
+        3,
+        4,
+        11,
+        12
+      ],
+      "predicates": {
+        "confidential_information_included": true,
+        "contains_specified": true,
+        "reproduces_confidential_text": true
+      },
+      "rule_kind": "copy_definition_scope",
+      "source_link": {
+        "assessment": "RETAINED_STAGE_M_N_LOCATOR",
+        "clause": "§3 (as used in this Order) + §20",
+        "meaning_entailment": "MANUAL_ADJUDICATION_NOT_FORMALLY_PROVEN",
+        "page_1based": [
+          3,
+          4,
+          11,
+          12
+        ],
+        "quote_span": "NOT_AVAILABLE_IN_PINNED_LOCAL_PDF",
+        "url": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1%3A2025cv01921/638232/38/0.pdf"
+      }
+    },
+    {
+      "case": "camm",
+      "clause": "§11(b)",
+      "deadline": {
+        "amount": 60,
+        "start": "final_termination",
+        "unit": "calendar_days"
+      },
+      "duty_actor": "receiving_party",
+      "effect": "FINAL_DISPOSITION",
+      "events": [
+        "FINAL_TERMINATION"
+      ],
+      "id": "C-11-FINAL-DISPOSITION",
+      "interpretation": "Final-only return within 60 days, with destruction alternative and counsel carveout.",
+      "object_kinds": [
+        "source_copy",
+        "mixed_note",
+        "summary",
+        "independent_note",
+        "legal_memo",
+        "work_product_index",
+        "confidential_inspection_note"
+      ],
+      "origin": "COURT_TEXT",
+      "pdf": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1%3A2025cv01921/638232/38/0.pdf",
+      "pdf_page_1based": [
+        8,
+        9
+      ],
+      "predicates": {
+        "is_covered_final_material": true
+      },
+      "rule_kind": "scoped_operative_rule",
+      "source_link": {
+        "assessment": "REOPENED_PDF_PAGE_LOCATOR",
+        "clause": "§11(b)",
+        "meaning_entailment": "MANUAL_ADJUDICATION_NOT_FORMALLY_PROVEN",
+        "page_1based": [
+          8,
+          9
+        ],
+        "quote_span": "NOT_AVAILABLE_IN_PINNED_LOCAL_PDF",
+        "url": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1%3A2025cv01921/638232/38/0.pdf"
+      }
+    },
+    {
+      "case": "camm",
+      "clause": "§11(c)",
+      "deadline": null,
+      "duty_actor": "receiving_counsel",
+      "effect": "QUALIFIED_FINAL_ARCHIVE",
+      "events": [
+        "FINAL_TERMINATION"
+      ],
+      "id": "C-11-ARCHIVE",
+      "interpretation": "Counsel work product/indexes retention conditional on not substantially duplicating source and maintaining protection.",
+      "object_kinds": [
+        "mixed_note",
+        "legal_memo",
+        "work_product_index"
+      ],
+      "origin": "COURT_TEXT",
+      "pdf": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1%3A2025cv01921/638232/38/0.pdf",
+      "pdf_page_1based": [
+        8,
+        9
+      ],
+      "predicates": {
+        "counsel_record": true,
+        "qualified_archive": true
+      },
+      "rule_kind": "restricted_archive",
+      "source_link": {
+        "assessment": "RETAINED_STAGE_M_N_LOCATOR",
+        "clause": "§11(c)",
+        "meaning_entailment": "MANUAL_ADJUDICATION_NOT_FORMALLY_PROVEN",
+        "page_1based": [
+          8,
+          9
+        ],
+        "quote_span": "NOT_AVAILABLE_IN_PINNED_LOCAL_PDF",
+        "url": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1%3A2025cv01921/638232/38/0.pdf"
+      }
+    },
+    {
+      "case": "napoli",
+      "clause": "§13",
+      "deadline": {
+        "amount": 7,
+        "start": "producer_notice",
+        "unit": "calendar_days"
+      },
+      "duty_actor": "receiving_party",
+      "effect": "REMEDIATE_SPECIFIED_SOURCE",
+      "events": [
+        "C_PRIV_NOTICE",
+        "C_PRIV_DISPUTED"
+      ],
+      "id": "N-13-SOURCE",
+      "interpretation": "Producer notice starts seven-day period for specified copies; self-discovery triggers immediate halt/sequester, not this seven-day producer clock.",
+      "object_kinds": [
+        "source_copy"
+      ],
+      "origin": "COURT_TEXT",
+      "pdf": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1%3A2025cv02872/640129/37/0.pdf",
+      "pdf_page_1based": [
+        8,
+        9
+      ],
+      "predicates": {
+        "contains_specified": true
+      },
+      "rule_kind": "scoped_operative_rule",
+      "source_link": {
+        "assessment": "REOPENED_PDF_PAGE_LOCATOR",
+        "clause": "§13",
+        "meaning_entailment": "MANUAL_ADJUDICATION_NOT_FORMALLY_PROVEN",
+        "page_1based": [
+          8,
+          9
+        ],
+        "quote_span": "NOT_AVAILABLE_IN_PINNED_LOCAL_PDF",
+        "url": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1%3A2025cv02872/640129/37/0.pdf"
+      }
+    },
+    {
+      "case": "napoli",
+      "clause": "§13",
+      "deadline": null,
+      "duty_actor": "receiving_party",
+      "effect": "RESTRICT_CLAIMED_CONTENT",
+      "events": [
+        "C_PRIV_SELF_DISCOVERY"
+      ],
+      "id": "N-13-SELF-DISCOVERY",
+      "interpretation": "Recipient discovery of apparently privileged content calls for immediate halt and segregation; a producer notice clock is not invented.",
+      "object_kinds": [
+        "source_copy",
+        "mixed_note",
+        "summary",
+        "independent_note",
+        "legal_memo",
+        "work_product_index",
+        "confidential_inspection_note"
+      ],
+      "origin": "COURT_TEXT",
+      "pdf": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1%3A2025cv02872/640129/37/0.pdf",
+      "pdf_page_1based": [
+        8,
+        9
+      ],
+      "predicates": {
+        "contains_specified": true
+      },
+      "rule_kind": "scoped_operative_rule",
+      "source_link": {
+        "assessment": "REOPENED_PDF_PAGE_LOCATOR",
+        "clause": "§13",
+        "meaning_entailment": "MANUAL_ADJUDICATION_NOT_FORMALLY_PROVEN",
+        "page_1based": [
+          8,
+          9
+        ],
+        "quote_span": "NOT_AVAILABLE_IN_PINNED_LOCAL_PDF",
+        "url": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1%3A2025cv02872/640129/37/0.pdf"
+      }
+    },
+    {
+      "case": "napoli",
+      "clause": "§14",
+      "deadline": null,
+      "duty_actor": "receiving_party",
+      "effect": "LIMITED_CHALLENGE_COPY",
+      "events": [
+        "C_PRIV_DISPUTED"
+      ],
+      "id": "N-14-CHALLENGE",
+      "interpretation": "Narrow court challenge only; no unrestricted use of claimed material.",
+      "object_kinds": [
+        "source_copy"
+      ],
+      "origin": "COURT_TEXT",
+      "pdf": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1%3A2025cv02872/640129/37/0.pdf",
+      "pdf_page_1based": [
+        9
+      ],
+      "predicates": {
+        "contains_specified": true,
+        "explicit_challenge_authorization": true
+      },
+      "rule_kind": "restricted_challenge",
+      "source_link": {
+        "assessment": "REOPENED_PDF_PAGE_LOCATOR",
+        "clause": "§14",
+        "meaning_entailment": "MANUAL_ADJUDICATION_NOT_FORMALLY_PROVEN",
+        "page_1based": [
+          9
+        ],
+        "quote_span": "NOT_AVAILABLE_IN_PINNED_LOCAL_PDF",
+        "url": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1%3A2025cv02872/640129/37/0.pdf"
+      }
+    },
+    {
+      "case": "napoli",
+      "clause": "§10",
+      "deadline": null,
+      "duty_actor": "receiving_party",
+      "effect": "FINAL_DISPOSITION",
+      "events": [
+        "FINAL_TERMINATION"
+      ],
+      "id": "N-10-FINAL",
+      "interpretation": "This Paragraph extends final disposition to derivatives, not to a separate privilege-clawback clause.",
+      "object_kinds": [
+        "source_copy",
+        "mixed_note",
+        "summary",
+        "independent_note",
+        "legal_memo",
+        "work_product_index",
+        "confidential_inspection_note"
+      ],
+      "origin": "COURT_TEXT",
+      "pdf": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1%3A2025cv02872/640129/37/0.pdf",
+      "pdf_page_1based": [
+        7,
+        8
+      ],
+      "predicates": {
+        "is_covered_final_material": true
+      },
+      "rule_kind": "scoped_operative_rule",
+      "source_link": {
+        "assessment": "REOPENED_PDF_PAGE_LOCATOR",
+        "clause": "§10",
+        "meaning_entailment": "MANUAL_ADJUDICATION_NOT_FORMALLY_PROVEN",
+        "page_1based": [
+          7,
+          8
+        ],
+        "quote_span": "NOT_AVAILABLE_IN_PINNED_LOCAL_PDF",
+        "url": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1%3A2025cv02872/640129/37/0.pdf"
+      }
+    },
+    {
+      "case": "napoli",
+      "clause": "§11",
+      "deadline": null,
+      "duty_actor": "receiving_counsel",
+      "effect": "QUALIFIED_FINAL_ARCHIVE",
+      "events": [
+        "FINAL_TERMINATION"
+      ],
+      "id": "N-11-ARCHIVE",
+      "interpretation": "Notwithstanding the foregoing paragraph allows conditional litigation working-file preservation; it does not override §13.",
+      "object_kinds": [
+        "mixed_note",
+        "legal_memo",
+        "work_product_index"
+      ],
+      "origin": "COURT_TEXT",
+      "pdf": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1%3A2025cv02872/640129/37/0.pdf",
+      "pdf_page_1based": [
+        8
+      ],
+      "predicates": {
+        "counsel_record": true,
+        "qualified_archive": true
+      },
+      "rule_kind": "restricted_archive",
+      "source_link": {
+        "assessment": "REOPENED_PDF_PAGE_LOCATOR",
+        "clause": "§11",
+        "meaning_entailment": "MANUAL_ADJUDICATION_NOT_FORMALLY_PROVEN",
+        "page_1based": [
+          8
+        ],
+        "quote_span": "NOT_AVAILABLE_IN_PINNED_LOCAL_PDF",
+        "url": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1%3A2025cv02872/640129/37/0.pdf"
+      }
+    },
+    {
+      "case": "napoli",
+      "clause": "§10 (This Paragraph) versus §13",
+      "deadline": null,
+      "duty_actor": "scope_only",
+      "effect": "NO_GLOBAL_FINAL_SCOPE_BRIDGE",
+      "events": [
+        "C_PRIV_NOTICE",
+        "C_PRIV_DISPUTED"
+      ],
+      "id": "N-10-NO-IMPORT",
+      "interpretation": "Explicit scope marker forbids interpreting the final-only derivative definition as a global clawback order.",
+      "object_kinds": [
+        "mixed_note",
+        "summary",
+        "legal_memo"
+      ],
+      "origin": "COURT_TEXT",
+      "pdf": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1%3A2025cv02872/640129/37/0.pdf",
+      "pdf_page_1based": [
+        7,
+        8,
+        9
+      ],
+      "predicates": {},
+      "rule_kind": "limited_clause_scope",
+      "source_link": {
+        "assessment": "RETAINED_STAGE_M_N_LOCATOR",
+        "clause": "§10 (This Paragraph) versus §13",
+        "meaning_entailment": "MANUAL_ADJUDICATION_NOT_FORMALLY_PROVEN",
+        "page_1based": [
+          7,
+          8,
+          9
+        ],
+        "quote_span": "NOT_AVAILABLE_IN_PINNED_LOCAL_PDF",
+        "url": "https://cases.justia.com/federal/district-courts/new-york/nysdce/1%3A2025cv02872/640129/37/0.pdf"
+      }
+    }
+  ],
+  "schema": "source-located-a0-assurance-ir-v1",
+  "scope": "eighteen original Stage N declarations plus eight selected Stage R duties"
+}
