@@ -24,3 +24,7 @@ Order PDFs remain at their linked public sources. The repository holds only our 
 ## Conditional order-wide reconciliation
 
 The [120-cell adjudication ledger](adjudicated_changes_120.csv) and [complete conditional 520-cell table](conditional_520.csv) reconstruct the later order-wide labels from the original frozen matrix. [Methods and source-check flags](CONDITIONAL_CODING.md) distinguish that coding scope from the event-triggered predicates. Run `python verify_conditional_coding.py` in this directory to check all 120 changes and the 13-code totals.
+
+## Source-page follow-up
+
+[The November 20 source-page review](SOURCE_REVIEW_REPORT_2026-11-20.md) confirms the exact PDF pages for four archived-copy and certification cells. It also records the narrow database-code reasoning for Voltstar. The earlier `source_checks_pending.csv` remains the unchanged R15 audit snapshot.
