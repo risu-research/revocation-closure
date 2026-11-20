@@ -72,6 +72,18 @@ bash experiments/independent_recipient/run.sh holdout
 
 The recipient keeps its own policy and SQLite effect ledger. The evaluation contains 576 historical-checkpoint replays across four recipient modes. The protocol records missed-notice and false-clean-issuance controls.
 
+## Document-to-effect replay
+
+Requires Python 3.13 and `cryptography==46.0.4`, with local HTTP and SQLite support.
+
+```bash
+python -m pip install -r experiments/document_to_effect/requirements.txt
+cd experiments/document_to_effect
+python tests/reproduce.py
+```
+
+The test replays 46 synthetic write attempts through a separate HTTP/SQLite recipient, checks 17 persisted writes and nine unsafe control outcomes, and reconstructs the decisions in a read-only SQL audit. For the saved request and database evidence, see [the module instructions](experiments/document_to_effect/README.md).
+
 ## Inputs and evidence
 
 Every experiment uses synthetic source records and researcher-specified legal-policy fixtures. The original result JSON, source revisions, independent audit procedures and GitHub Actions records are linked from the [results directory](results/). Repeated seeds vary synthetic identifiers within fixed scenario families.

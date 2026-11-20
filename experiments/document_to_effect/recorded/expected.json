@@ -1,0 +1,19 @@
+{
+  "agent_kind": "deterministic tool-using agent, no LLM",
+  "attempts": 46,
+  "cases": 2,
+  "decisions": {
+    "ALLOW": 17,
+    "BLOCK_DUPLICATE": 2,
+    "BLOCK_REVOKED": 13,
+    "HOLD_INVALID_EVIDENCE": 14
+  },
+  "oracle_unsafe_persisted": 9,
+  "persisted": 17,
+  "recipient_databases": 5,
+  "recipient_processes": 7,
+  "source_kind": "locally frozen public order summaries and wholly invented protected records",
+  "source_read_rows": 18,
+  "tool_calls": 18,
+  "unique_generated_docs": 10
+}

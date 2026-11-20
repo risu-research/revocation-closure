@@ -1,0 +1,9 @@
+# Locally generated experiment evidence
+/results/
+__pycache__/
+*.pyc
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.log
+*.hex

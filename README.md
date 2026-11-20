@@ -102,6 +102,12 @@ A sixth controlled module places the **actual effect ledger and current revocati
 
 The held-out matrix includes 576 synthetic historical checkpoint replays. It distinguishes an open effect endpoint, old signed permits, recipient-side current-policy enforcement, and the addition of a separate owner credential. The recipient blocks correctly identified revoked-source writes after it acknowledges a notice, but **a missed notice or falsely clean original issuance remains unsafe**. This is an independent target-specific protection, not a claim about arbitrary internet egress or all provider systems.
 
+## Document-to-effect replay
+
+The [document-to-effect experiment](experiments/document_to_effect/README.md) connects recorded HTTP source reads, signed write permits, producer notices and physically committed recipient effects. It includes two public court-order references, synthetic source records, a deterministic document-producing agent and a separate read-only auditor.
+
+The fixed evaluation has 46 write attempts and 17 persisted writes, including nine unsafe control outcomes. [Run the evaluation locally](experiments/document_to_effect/README.md#run-the-experiment) or use the [repository reproduction guide](REPRODUCING.md#document-to-effect-replay).
+
 ## Evidence boundary
 
 The court orders are cited as public source documents. A human translated selected clauses into test fixtures. Passing tests confirm that the implemented interpreter and replay harness behave as those fixtures specify. They do not certify compliance by any real workflow, law firm, or AI provider. Missing or falsely complete dependency information remains a failure boundary.
