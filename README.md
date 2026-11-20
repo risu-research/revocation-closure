@@ -108,6 +108,12 @@ The [document-to-effect experiment](experiments/document_to_effect/README.md) co
 
 The fixed evaluation has 46 write attempts and 17 persisted writes, including nine unsafe control outcomes. [Run the evaluation locally](experiments/document_to_effect/README.md#run-the-experiment) or use the [repository reproduction guide](REPRODUCING.md#document-to-effect-replay).
 
+## Policy integrity at the recipient
+
+The [policy-integrity experiment](experiments/policy_integrity/README.md) runs a selected, manually reviewed policy through a structural validator before the HTTP/SQLite recipient commits a new document. It tests 18 rules, eight duty and deadline records, and 13 altered-policy cases. In the matched 46-attempt comparison, unsafe control writes fell from nine to four and eight clean writes were preserved.
+
+Run the [full reproduction](experiments/policy_integrity/README.md#run) to rebuild the policy and verify the SQL effects.
+
 ## Evidence boundary
 
 The court orders are cited as public source documents. A human translated selected clauses into test fixtures. Passing tests confirm that the implemented interpreter and replay harness behave as those fixtures specify. They do not certify compliance by any real workflow, law firm, or AI provider. Missing or falsely complete dependency information remains a failure boundary.

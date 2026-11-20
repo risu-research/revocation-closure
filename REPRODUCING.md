@@ -84,6 +84,18 @@ python tests/reproduce.py
 
 The test replays 46 synthetic write attempts through a separate HTTP/SQLite recipient, checks 17 persisted writes and nine unsafe control outcomes, and reconstructs the decisions in a read-only SQL audit. For the saved request and database evidence, see [the module instructions](experiments/document_to_effect/README.md).
 
+## Policy integrity at the recipient
+
+Requires Python 3.11 or later with local HTTP and SQLite support.
+
+```bash
+python -m pip install -r experiments/policy_integrity/requirements.txt
+cd experiments/policy_integrity
+python reproduce.py
+```
+
+The runner compares the original and policy-checked recipients, audits their actual SQL writes, checks 13 injected policy defects and tests detection of altered stored content. The [module README](experiments/policy_integrity/README.md) gives the recorded results and source mapping.
+
 ## Inputs and evidence
 
 Every experiment uses synthetic source records and researcher-specified legal-policy fixtures. The original result JSON, source revisions, independent audit procedures and GitHub Actions records are linked from the [results directory](results/). Repeated seeds vary synthetic identifiers within fixed scenario families.
