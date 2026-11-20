@@ -28,3 +28,5 @@ The [120-cell adjudication ledger](adjudicated_changes_120.csv) and [complete co
 ## Source-page follow-up
 
 [The November 20 source-page review](SOURCE_REVIEW_REPORT_2026-11-20.md) confirms the exact PDF pages for four archived-copy and certification cells. It also records the narrow database-code reasoning for Voltstar. The earlier `source_checks_pending.csv` remains the unchanged R15 audit snapshot.
+
+The [Voltstar DB source-scope review](VOLTSTAR_DB_SOURCE_SCOPE_REVIEW.md) records the full-text clause check and a positive comparison under the same codebook rule.
