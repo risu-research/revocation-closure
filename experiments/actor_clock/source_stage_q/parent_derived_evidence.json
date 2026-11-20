@@ -1,0 +1,49 @@
+{
+  "execution_attestation": {
+    "body": {
+      "artifact_id": "PARENT_DERIVED",
+      "broker_uid": 23322,
+      "case": "iottie",
+      "events_sha256": "8155ed99a64bfaa910760b80ee691b240b8dcb27947354ff6113f465e19ff236",
+      "kind": "summary",
+      "launcher_sha256": "073e538bd5bf66ffd8b3ea30ea9f1b1bd5a48fee5aefac3c2609008d070b0dde",
+      "legacy_seal_sha256": "11ac7ceb4b22818b38de9c4bbb36ca46d0aff1c3df6819a96868ba9b185e784f",
+      "observed_event_count": 2,
+      "output_sha256": "9715240109fcede05125ac8685e7336cf6b8ac13a8a846b740d372111d9784c9",
+      "program_sha256": "b284b9796652ad56640af29418f4363a6541a250cba1f0c1c263e07655baf228",
+      "run_id": "run_parent_derived",
+      "sandbox_profile": "uid-dac-no-new-privs-seccomp-deny-v1",
+      "schema": "broker-run-code-binding-v1",
+      "worker_uid": 23321
+    },
+    "signature": "dff1d0adea313e8161ccd4cf091dfba33d5a2047168075c28dc0dd8c92e60f9807d1305f087bf3f817b725567ab9adba3bfb8e74f695bc0fc02b9c179ff9720a"
+  },
+  "legacy_seal": {
+    "body": {
+      "artifact_id": "PARENT_DERIVED",
+      "case": "iottie",
+      "closed": true,
+      "events": [
+        {
+          "id": "PRE_REVERSE",
+          "seq": 1,
+          "source_sha256": null,
+          "type": "parent"
+        },
+        {
+          "id": "iottie_CLEAN",
+          "seq": 2,
+          "source_sha256": "f1e7453e7cfd5508fd0b474b76fda11a257f6d83bc493fd56fd5b2b6ebb62d81",
+          "type": "source"
+        }
+      ],
+      "kind": "summary",
+      "output_sha256": "9715240109fcede05125ac8685e7336cf6b8ac13a8a846b740d372111d9784c9",
+      "run_id": "run_parent_derived",
+      "schema": "broker-observed-reads-v1"
+    },
+    "signature": "567718ca20c5b2f6b9ea25f5adbfb6116f83e361c5fcd8f243d31a3091ca7feb35e5051cf787ea07645cf5ef9bb32215cce3a4c8d8cc29b007f512396adcb300"
+  },
+  "output_b64": "Q0hJTERfT0Z8UFJFX1JFVkVSU0V8U1lO",
+  "schema": "trusted-transform-bundle-v1"
+}

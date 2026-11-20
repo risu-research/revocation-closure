@@ -1,0 +1,19 @@
+scenario_id,case_id,real_event,source_kind,requested_effect,actor,expected,receiver_notice,evidence_reason
+DB01,dobbs,self_discovery,protected,external_write,recipient,BLOCK,recipient_informed,§19(c) immediate nonuse
+DB02,dobbs,producer_notice,protected,external_write,recipient,BLOCK,recipient_informed,§19(c) return request
+DB03,dobbs,producer_notice,clean,external_write,recipient,ALLOW,recipient_informed,Independent clean source
+DB04,dobbs,pre_notice,clean,external_write,recipient,ALLOW,recipient_uninformed,Independent clean source
+DB05,dobbs,producer_notice,protected,external_write_with_old_token,recipient,BLOCK,recipient_informed,Stale token cannot override notice
+DB06,dobbs,producer_notice,protected,external_write_with_old_token,recipient,BLOCK,recipient_uninformed,Intentional notice non-delivery boundary
+DB07,dobbs,challenge_notice,protected,ordinary_redisclosure,recipient,BLOCK,recipient_informed,Limited challenge retention is not general-use permission
+DB08,dobbs,final_disposition,protected,restricted_archive,counsel,ALLOW,recipient_informed,§23 limited counsel archive
+DB09,dobbs,final_disposition,protected,ordinary_redisclosure,counsel,BLOCK,recipient_informed,Archived protection continues
+LV01,louis_vuitton,producer_written_request,protected,external_write,recipient,BLOCK,recipient_informed,§12.2 return / no new use
+LV02,louis_vuitton,producer_written_request,clean,external_write,recipient,ALLOW,recipient_informed,Independent clean source
+LV03,louis_vuitton,producer_written_request,protected,external_write_with_old_token,recipient,BLOCK,recipient_informed,No stale token override
+LV04,louis_vuitton,producer_written_request,protected,external_write_with_old_token,recipient,BLOCK,recipient_uninformed,Undelivered producer request boundary
+LV05,louis_vuitton,timely_challenge,protected,ordinary_redisclosure,recipient,BLOCK,recipient_informed,Sealed retention under §12.2 permits no use
+LV06,louis_vuitton,timely_challenge,protected,sealed_challenge_retention,recipient,ALLOW,recipient_informed,§12.2 pending ruling limited retention
+LV07,louis_vuitton,final_disposition_plus_designator_written_request,protected,restricted_archive,counsel,ALLOW,recipient_informed,§14 counsel archival copy
+LV08,louis_vuitton,final_disposition_plus_designator_written_request,protected,ordinary_redisclosure,counsel,BLOCK,recipient_informed,§14 archive remains confidential
+LV09,louis_vuitton,final_disposition_plus_designator_written_request,clean,external_write,recipient,ALLOW,recipient_informed,Independent clean source

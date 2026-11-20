@@ -1,0 +1,43 @@
+{
+  "execution_attestation": {
+    "body": {
+      "artifact_id": "POST_REVERSE",
+      "broker_uid": 23322,
+      "case": "iottie",
+      "events_sha256": "fb59ecd55037610a325333b7a9c8bbd99ff3af225b1941392fbcf0c4dcc45eba",
+      "kind": "mixed_note",
+      "launcher_sha256": "073e538bd5bf66ffd8b3ea30ea9f1b1bd5a48fee5aefac3c2609008d070b0dde",
+      "legacy_seal_sha256": "b44366951f3f494dbeeb012d61bf1a52115ae00cdbb81ebcf9563d0a73e1b105",
+      "observed_event_count": 1,
+      "output_sha256": "31cada4160b3325effb3d872319c2eb27e6ae6626cdbebfcfd42b3aa3d94fa23",
+      "program_sha256": "1265e2c3ba9e8b63d09376357ac3f009c4fe6822a7da62c1998406e3bdc00fff",
+      "run_id": "run_post_reverse",
+      "sandbox_profile": "uid-dac-no-new-privs-seccomp-deny-v1",
+      "schema": "broker-run-code-binding-v1",
+      "worker_uid": 23321
+    },
+    "signature": "d4534d1d4e36315cc8e03f918c86ce01dc56efeae71143963086a0a7bed1e51f7b0b49746a357060bc41f1445c71a259c8d53e5328533c84473d5622db82960c"
+  },
+  "legacy_seal": {
+    "body": {
+      "artifact_id": "POST_REVERSE",
+      "case": "iottie",
+      "closed": true,
+      "events": [
+        {
+          "id": "iottie_PRIV",
+          "seq": 1,
+          "source_sha256": "e47189bc8d8661c90d4a66e6de5f0d3bd27e957d6625d3c0be8b910f05081af8",
+          "type": "source"
+        }
+      ],
+      "kind": "mixed_note",
+      "output_sha256": "31cada4160b3325effb3d872319c2eb27e6ae6626cdbebfcfd42b3aa3d94fa23",
+      "run_id": "run_post_reverse",
+      "schema": "broker-observed-reads-v1"
+    },
+    "signature": "46712d536bb23b450dbef7447858ee6e5b7e19db995830360ed4c814e54afd8d3eeeaa3519e1842ba0ec53ceca561f66f0525d384e2b7ed96a3a16ec63460d02"
+  },
+  "output_b64": "UkVWRVJTRUR8MzBfMVZfZWl0dG9pX1JPRl9FQ1JVT1NfVklSUF9DSVRFSFROWVM=",
+  "schema": "trusted-transform-bundle-v1"
+}

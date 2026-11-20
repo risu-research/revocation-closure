@@ -114,13 +114,21 @@ The [policy-integrity experiment](experiments/policy_integrity/README.md) runs a
 
 Run the [full reproduction](experiments/policy_integrity/README.md#run) to rebuild the policy and verify the SQL effects.
 
+## Actor and deadline checks at the recipient
+
+The [actor and deadline experiment](experiments/actor_clock/README.md) replays signed synthetic source evidence against a recipient that checks actor roles, dated events and eight duty templates. Six recipient instances handle 17 write attempts and persist five effects, including one missed-notice control. A separate auditor reads the resulting SQL rows.
+
+## Court-order policy transfer
+
+The [court-order transfer experiment](experiments/court_order_transfer/README.md) evaluates a fixed lexical policy extractor on selected clauses from three court-entered orders. Three of 20 coded obligations were recovered in full from the first two orders. The unchanged extractor recovered zero of eight obligations from a third order. The accompanying HTTP/SQLite study records 11 prohibited writes with cached authorization and two with current-policy checks, including missed-notice cases.
+
 ## Evidence boundary
 
 The court orders are cited as public source documents. A human translated selected clauses into test fixtures. Passing tests confirm that the implemented interpreter and replay harness behave as those fixtures specify. They do not certify compliance by any real workflow, law firm, or AI provider. Missing or falsely complete dependency information remains a failure boundary.
 
 Earlier component-level tests using Chroma, Qdrant and PostgreSQL-backed LangGraph are distinct evidence and are not represented as rerun by this module. They are tracked in the research recovery materials.
 
-The source records are linked rather than copied into the repository. Tests and source code are maintained separately from the manuscript's frozen submitted experimental results. The camera-ready artifact scope will be explicitly tagged when the final evaluation is settled.
+Public court-order links and selected passages accompany their coded inputs. Tests and source code are maintained separately from the manuscript's frozen submitted experimental results. The camera-ready artifact scope will be explicitly tagged when the final evaluation is settled.
 
 ## License and citation
 

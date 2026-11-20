@@ -1,0 +1,91 @@
+{
+  "schema": "source-only-lexical-proposals-v1",
+  "source_sha256": "015c4c1b62857e52e5dfb2b04d7ad7440f1756491cd75aa35b0c866970f65093",
+  "proposals": [
+    {
+      "candidate_id": "ty_walmart:T21:0",
+      "case_id": "ty_walmart",
+      "passage_id": "T21",
+      "actor": "counsel",
+      "trigger": "producer_written_request",
+      "action": "return_confidential_material",
+      "clock_unit": "none",
+      "clock_amount": 0,
+      "clock_start": "none",
+      "exception": "none",
+      "evidence_excerpt": "Upon final termination of this action, including any and all appeals, counsel for each party must, upon request of the producing party, return all confidential information to the p",
+      "missing_critical_fields": [],
+      "proposal_status": "LEXICAL_ONLY_UNVERIFIED"
+    },
+    {
+      "candidate_id": "ty_walmart:T21:1",
+      "case_id": "ty_walmart",
+      "passage_id": "T21",
+      "actor": "counsel",
+      "trigger": "unknown",
+      "action": "unknown",
+      "clock_unit": "none",
+      "clock_amount": 0,
+      "clock_start": "none",
+      "exception": "none",
+      "evidence_excerpt": "Notwithstanding the foregoing, counsel for each party may retain all pleadings, briefs, memoranda, motions, and other documents filed with the Court that refer to or incorporate co",
+      "missing_critical_fields": [
+        "trigger",
+        "action"
+      ],
+      "proposal_status": "UNRESOLVED"
+    },
+    {
+      "candidate_id": "ty_walmart:T31:0",
+      "case_id": "ty_walmart",
+      "passage_id": "T31",
+      "actor": "recipient",
+      "trigger": "unknown",
+      "action": "sealed_retention_no_use",
+      "clock_unit": "immediate",
+      "clock_amount": 0,
+      "clock_start": "none",
+      "exception": "none",
+      "evidence_excerpt": "If the receiving party has reason to believe that a produced document or other information may reasonably be subject to a claim of privilege, then the receiving party shall immedia",
+      "missing_critical_fields": [
+        "trigger"
+      ],
+      "proposal_status": "UNRESOLVED"
+    },
+    {
+      "candidate_id": "ty_walmart:T32:0",
+      "case_id": "ty_walmart",
+      "passage_id": "T32",
+      "actor": "producer",
+      "trigger": "unknown",
+      "action": "unknown",
+      "clock_unit": "none",
+      "clock_amount": 0,
+      "clock_start": "none",
+      "exception": "none",
+      "evidence_excerpt": "A producing party must give written notice to any receiving party asserting a claim of privilege, work-product protection, or other ground for reclaiming documents or information (",
+      "missing_critical_fields": [
+        "trigger",
+        "action"
+      ],
+      "proposal_status": "UNRESOLVED"
+    },
+    {
+      "candidate_id": "ty_walmart:T32:1",
+      "case_id": "ty_walmart",
+      "passage_id": "T32",
+      "actor": "recipient",
+      "trigger": "unknown",
+      "action": "sealed_retention_no_use",
+      "clock_unit": "immediate",
+      "clock_amount": 0,
+      "clock_start": "none",
+      "exception": "none",
+      "evidence_excerpt": "After a clawback request is received, the receiving party shall immediately sequester the document (if not already sequestered) and shall not review or use that document, or any wo",
+      "missing_critical_fields": [
+        "trigger"
+      ],
+      "proposal_status": "UNRESOLVED"
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "scope": "Selected clawback and final-disposition paragraphs only, NOT complete orders. Court-docket HTML transcription. Source PDF bytes not retrieved.",
+  "orders": {
+    "dobbs": {
+      "case": "Dobbs et al. v. Bank of New York Mellon",
+      "docket": "1:25-cv-02114-JAV, Filing 72",
+      "judge": "Jeannette A. Vargas",
+      "signed": "2026-03-02",
+      "url": "https://docs.justia.com/cases/federal/district-courts/new-york/nysdce/1:2025cv02114/638629/72",
+      "passages": [
+        {
+          "id": "D19a",
+          "clause": "§19(a)",
+          "text": "If a producing Party has a good faith belief that a privileged document has been inadvertently produced, it shall take reasonable steps to correct the error, including notifying the receiving Party in writing of the producing Party’s claim of privilege and request to the receiving Party for its return."
+        },
+        {
+          "id": "D19ci",
+          "clause": "§19(c)(i)-(ii)",
+          "text": "Upon a receiving Party’s discovery of the inadvertent production of any document or testimony that the receiving Party knows or reasonably should know is Inadvertent Production Material, or upon request by any Party for the return of Inadvertent Production Material, subject to the provisions in this subsection, the receiving Party shall: (i) immediately refrain from any further examination or disclosure of the Inadvertent Production Material; (ii) promptly notify counsel for the producing Party of the inadvertent production of the Inadvertent Production Material (if no request for return of Inadvertent Production Material has been received);"
+        },
+        {
+          "id": "D19ciii",
+          "clause": "§19(c)(iii)-(v)",
+          "text": "(iii) promptly, but in all instances, no later than five (5) business days after receipt of a request for the return of Inadvertent Production Material, return the Inadvertent Production Material to counsel for the producing Party and destroy all copies thereof (including any summaries and excerpts), and confirm that fact in writing; (iv) promptly inform any party or person to whom the receiving Party has transmitted the Inadvertent Production Material of the inadvertent disclosure of the producing Party’s Inadvertent Production Material and retrieve and destroy or return the Inadvertent Production Material in accordance with this subsection; and (v) not use the Inadvertent Production Material for any purpose until further order of the Court."
+        },
+        {
+          "id": "D19chal",
+          "clause": "§19 challenge paragraph",
+          "text": "In all events, such return, destruction, and certification must occur within 5 business days of receipt of the request, unless the receiving Party provides notice of its intent to challenge the assertion of a claim of protection under Fed. R. Civ. P. 26(b)(5) (the “Challenge Notice”), in which event the receiving Party may retain no more copies (the “Retained Copies”) of the Inadvertent Production Material than are sufficient to prosecute its challenge to the assertion of protection. Having provided a Challenge Notice, the Receiving Party must raise a challenge with the Court within 5 business days of that Challenge Notice, or otherwise return or destroy the Retained Copies within that period. ... the receiving Party ... shall sequester the challenged materials until the Challenge is resolved."
+        },
+        {
+          "id": "D20",
+          "clause": "§20",
+          "text": "Within five business days of the certification that such Inadvertently Disclosed Information has been returned or destroyed, the disclosing party shall produce a privilege log with respect to the Inadvertently Disclosed Information."
+        },
+        {
+          "id": "D23",
+          "clause": "§23",
+          "text": "Within 30 days of the final disposition of this action, all Discovery Material designated Confidential, and all copies thereof, shall promptly be returned to the producing person. Alternatively, upon permission of the producing person, all Confidential Discovery Material, and all copies thereof, shall be destroyed. In either event, by the 30-day deadline, the recipient must certify the return or destruction of all Confidential Discovery Material, and all copies thereof, by submitting a written certification to the producing Party."
+        },
+        {
+          "id": "D23archive",
+          "clause": "§23 archival exception",
+          "text": "Notwithstanding this provision, the attorneys specifically retained by the Parties for representation in this action may retain an archival copy of all pleadings, motion papers, transcripts, expert reports, legal memoranda, correspondence, or attorney work product, even if such materials contain Confidential Discovery Material. Any such archival copies that contain or constitute Confidential Discovery Material remain subject to this Order."
+        }
+      ]
+    },
+    "louis_vuitton": {
+      "case": "Louis Vuitton Malletier SAS v. Kimera International",
+      "docket": "2:25-cv-10232-CAS-PD, Filing 28",
+      "judge": "Patricia Donahue",
+      "signed": "2026-02-09",
+      "url": "https://docs.justia.com/cases/federal/district-courts/california/cacdce/2:2025cv10232/992589/28",
+      "passages": [
+        {
+          "id": "L12return",
+          "clause": "§12.2",
+          "text": "upon written request made by the Producing Party of such inadvertent production, the information for which a claim of inadvertent production is made, including all copies, shall be returned within two (2) court days of such request unless the receiving party intends to challenge the producing party’s assertion of privilege or protection."
+        },
+        {
+          "id": "L12derived",
+          "clause": "§12.2",
+          "text": "All copies of inadvertently produced documents shall be destroyed, and any document or material information reflecting the contents of the inadvertently produced information shall be expunged."
+        },
+        {
+          "id": "L12chal",
+          "clause": "§12.2",
+          "text": "If a Receiving Party objects to the return of such information within the two (2) court day period described above, the Receiving Party may move the Court for an order determining the status of the information following the procedures of Local Rule 37.1. Pending the ruling, a Receiving Party may retain the inadvertently produced documents in a sealed envelope and shall not make any use of such information."
+        },
+        {
+          "id": "L14return",
+          "clause": "§14",
+          "text": "After the final disposition of this Action, as defined in Section 3, within 60 days of a written request by the Designating Party, each Receiving Party must return all Protected Material to the Producing Party or destroy such material. As used in this subdivision, “all Protected Material” includes all copies, abstracts, compilations, summaries, and any other format reproducing or capturing any of the Protected Material."
+        },
+        {
+          "id": "L14cert",
+          "clause": "§14",
+          "text": "Whether the Protected Material is returned or destroyed, the Receiving Party must submit a written certification to the Producing Party (and, if not the same person or entity, to the Designating Party) by the 60 day deadline that (1) identifies (by category, where appropriate) all the Protected Material that was returned or destroyed and (2) affirms that the Receiving Party has not retained any copies, abstracts, compilations, summaries or any other format reproducing or capturing any of the Protected Material."
+        },
+        {
+          "id": "L14archive",
+          "clause": "§14",
+          "text": "Notwithstanding this provision, Counsel are entitled to retain an archival copy of all pleadings, motion papers, trial, deposition, and hearing transcripts, legal memoranda, correspondence, deposition and trial exhibits, expert reports, attorney work product, and consultant and expert work product, even if such materials contain Protected Material. Any such archival copies that contain or constitute Protected Material remain subject to this Protective Order as set forth in Section 5 (DURATION)."
+        }
+      ]
+    }
+  }
+}

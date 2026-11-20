@@ -1,0 +1,43 @@
+{
+  "execution_attestation": {
+    "body": {
+      "artifact_id": "STDOUT_EXFIL",
+      "broker_uid": 23322,
+      "case": "iottie",
+      "events_sha256": "fb59ecd55037610a325333b7a9c8bbd99ff3af225b1941392fbcf0c4dcc45eba",
+      "kind": "mixed_note",
+      "launcher_sha256": "073e538bd5bf66ffd8b3ea30ea9f1b1bd5a48fee5aefac3c2609008d070b0dde",
+      "legacy_seal_sha256": "aec11a2fcde7eb4c7a20d8ca06f1653683b9b7f2f69fabc83b3c25538ce924f7",
+      "observed_event_count": 1,
+      "output_sha256": "16fc8b2f149847af2e81ec48bbc6b3be04769f8dbea91f110217491e2ada4003",
+      "program_sha256": "320d6308ee8eb2579d0ceaff3c299ed925c048dc1e63fc83f3e9f2cbe59b5bc1",
+      "run_id": "run_stdout_exfil",
+      "sandbox_profile": "uid-dac-no-new-privs-seccomp-deny-v1",
+      "schema": "broker-run-code-binding-v1",
+      "worker_uid": 23321
+    },
+    "signature": "6a85bc2e5d55e8034fca78819632695dc6ea5ec6bfe4f5460400f2024e3e3809f5b6924f6fb92fa824e0c6d9eba54d5e9a88ee0a6f0edf2202eca65ee9603109"
+  },
+  "legacy_seal": {
+    "body": {
+      "artifact_id": "STDOUT_EXFIL",
+      "case": "iottie",
+      "closed": true,
+      "events": [
+        {
+          "id": "iottie_PRIV",
+          "seq": 1,
+          "source_sha256": "e47189bc8d8661c90d4a66e6de5f0d3bd27e957d6625d3c0be8b910f05081af8",
+          "type": "source"
+        }
+      ],
+      "kind": "mixed_note",
+      "output_sha256": "16fc8b2f149847af2e81ec48bbc6b3be04769f8dbea91f110217491e2ada4003",
+      "run_id": "run_stdout_exfil",
+      "schema": "broker-observed-reads-v1"
+    },
+    "signature": "a03dc96edddeb5b6cf882dc1e459dac81d08f4512ec4f19b214f8d82b011762c0b9887db3ce279af712d87ccc8195757e15569338067be708443f3f50340230e"
+  },
+  "output_b64": "TUFSS0VSX09OTFk=",
+  "schema": "trusted-transform-bundle-v1"
+}

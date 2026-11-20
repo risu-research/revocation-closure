@@ -1,0 +1,28 @@
+{
+  "scope": "Selected paragraphs 21,31,32 of an unrelated new court order; text transcribed from publicly available court-entered filing HTML; no complete original PDF locally.",
+  "orders": {
+    "ty_walmart": {
+      "case": "Ty v. Walmart Inc.",
+      "docket": "3:25-cv-03757-AJB-JLB, Document 11",
+      "signed": "2026-03-16",
+      "url": "https://law.justia.com/cases/federal/district-courts/california/casdce/3:2025cv03757/838713/11/",
+      "passages": [
+        {
+          "id": "T21",
+          "clause": "¶21",
+          "text": "Upon final termination of this action, including any and all appeals, counsel for each party must, upon request of the producing party, return all confidential information to the party that produced the information, including any copies, excerpts, and summaries of that information, or must destroy same at the option of the receiving party, and must purge all such information from all machine-readable media on which it resides. Notwithstanding the foregoing, counsel for each party may retain all pleadings, briefs, memoranda, motions, and other documents filed with the Court that refer to or incorporate confidential information, and will continue to be bound by this Order with respect to all such retained information."
+        },
+        {
+          "id": "T31",
+          "clause": "¶31",
+          "text": "If the receiving party has reason to believe that a produced document or other information may reasonably be subject to a claim of privilege, then the receiving party shall immediately sequester the document or information, cease using the document or information and cease using any work product containing the information and shall inform the producing party of the beginning BATES number of the document or, if no BATES number is available, shall otherwise inform the producing party of the information."
+        },
+        {
+          "id": "T32",
+          "clause": "¶32",
+          "text": "A producing party must give written notice to any receiving party asserting a claim of privilege, work-product protection, or other ground for reclaiming documents or information (a “clawback request”). After a clawback request is received, the receiving party shall immediately sequester the document (if not already sequestered) and shall not review or use that document, or any work product containing information taken from that document, for any purpose."
+        }
+      ]
+    }
+  }
+}

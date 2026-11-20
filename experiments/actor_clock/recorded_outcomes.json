@@ -1,0 +1,13 @@
+{
+  "archive_records": 3,
+  "deadline_assertions": 17,
+  "event_attempts": 17,
+  "event_rejections": 2,
+  "external_effect_requests": 17,
+  "missed_notice_unsafe_effects": 1,
+  "persisted_external_effects": 5,
+  "restricted_challenge_copy_records": 1,
+  "scenarios": 29,
+  "sessions": 6,
+  "typed_duty_templates": 8
+}

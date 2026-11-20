@@ -1,0 +1,53 @@
+{
+  "summary": {
+    "confirmatory_new_order": "Ty v. Walmart Inc.",
+    "gold_duties": 8,
+    "new_fragments": 5,
+    "action_detected": 0,
+    "full_tuples_correct": 0,
+    "extractor_source_sha256": "3d3dacf271cae5235478444572edf16e746c50dd9a352347fb4eb38dd69c87ef",
+    "note": "Extractor code hash was fixed before this additional court order was selected and its reference table created; no retraining or feedback tuning was performed."
+  },
+  "by_duty": [
+    {
+      "id": "T01",
+      "status": "missed_action",
+      "proposal": null
+    },
+    {
+      "id": "T02",
+      "status": "missed_action",
+      "proposal": null
+    },
+    {
+      "id": "T03",
+      "status": "missed_action",
+      "proposal": null
+    },
+    {
+      "id": "T04",
+      "status": "missed_action",
+      "proposal": null
+    },
+    {
+      "id": "T05",
+      "status": "missed_action",
+      "proposal": null
+    },
+    {
+      "id": "T06",
+      "status": "missed_action",
+      "proposal": null
+    },
+    {
+      "id": "T07",
+      "status": "missed_action",
+      "proposal": null
+    },
+    {
+      "id": "T08",
+      "status": "missed_action",
+      "proposal": null
+    }
+  ]
+}

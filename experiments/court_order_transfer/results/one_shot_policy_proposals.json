@@ -1,0 +1,416 @@
+{
+  "schema": "source-only-lexical-proposals-v1",
+  "source_sha256": "293a0523814c2febf4c15d06e98863e7e573324ebc342585305d320a4755b07b",
+  "proposals": [
+    {
+      "candidate_id": "dobbs:D19a:0",
+      "case_id": "dobbs",
+      "passage_id": "D19a",
+      "actor": "producer",
+      "trigger": "unknown",
+      "action": "written_notice_and_request",
+      "clock_unit": "none",
+      "clock_amount": 0,
+      "clock_start": "none",
+      "exception": "none",
+      "evidence_excerpt": "If a producing Party has a good faith belief that a privileged document has been inadvertently produced, it shall take reasonable steps to correct the error, including notifying th",
+      "missing_critical_fields": [
+        "trigger"
+      ],
+      "proposal_status": "UNRESOLVED"
+    },
+    {
+      "candidate_id": "dobbs:D19ci:0",
+      "case_id": "dobbs",
+      "passage_id": "D19ci",
+      "actor": "recipient",
+      "trigger": "self_discovery_or_request",
+      "action": "return_claimed_material",
+      "clock_unit": "immediate",
+      "clock_amount": 0,
+      "clock_start": "none",
+      "exception": "none",
+      "evidence_excerpt": "Upon a receiving Party’s discovery of the inadvertent production of any document or testimony that the receiving Party knows or reasonably should know is Inadvertent Production Mat",
+      "missing_critical_fields": [],
+      "proposal_status": "LEXICAL_ONLY_UNVERIFIED"
+    },
+    {
+      "candidate_id": "dobbs:D19ci:1",
+      "case_id": "dobbs",
+      "passage_id": "D19ci",
+      "actor": "unknown",
+      "trigger": "unknown",
+      "action": "notify_producer_counsel",
+      "clock_unit": "prompt",
+      "clock_amount": 0,
+      "clock_start": "none",
+      "exception": "none",
+      "evidence_excerpt": "(ii) promptly notify counsel for the producing Party of the inadvertent production of the Inadvertent Production Material (if no request for return of Inadvertent Production Materi",
+      "missing_critical_fields": [
+        "actor",
+        "trigger"
+      ],
+      "proposal_status": "UNRESOLVED"
+    },
+    {
+      "candidate_id": "dobbs:D19ciii:0",
+      "case_id": "dobbs",
+      "passage_id": "D19ciii",
+      "actor": "unknown",
+      "trigger": "receipt_of_return_request",
+      "action": "certify_final_disposition",
+      "clock_unit": "business_days",
+      "clock_amount": 5,
+      "clock_start": "receipt_of_return_request",
+      "exception": "none",
+      "evidence_excerpt": "(iii) promptly, but in all instances, no later than five (5) business days after receipt of a request for the return of Inadvertent Production Material, return the Inadvertent Prod",
+      "missing_critical_fields": [
+        "actor"
+      ],
+      "proposal_status": "UNRESOLVED"
+    },
+    {
+      "candidate_id": "dobbs:D19ciii:1",
+      "case_id": "dobbs",
+      "passage_id": "D19ciii",
+      "actor": "unknown",
+      "trigger": "unknown",
+      "action": "return_claimed_material",
+      "clock_unit": "prompt",
+      "clock_amount": 0,
+      "clock_start": "none",
+      "exception": "none",
+      "evidence_excerpt": "(iv) promptly inform any party or person to whom the receiving Party has transmitted the Inadvertent Production Material of the inadvertent disclosure of the producing Party’s Inad",
+      "missing_critical_fields": [
+        "actor",
+        "trigger"
+      ],
+      "proposal_status": "UNRESOLVED"
+    },
+    {
+      "candidate_id": "dobbs:D19ciii:2",
+      "case_id": "dobbs",
+      "passage_id": "D19ciii",
+      "actor": "unknown",
+      "trigger": "unknown",
+      "action": "suspend_use",
+      "clock_unit": "until_court_order",
+      "clock_amount": 0,
+      "clock_start": "none",
+      "exception": "none",
+      "evidence_excerpt": "and (v) not use the Inadvertent Production Material for any purpose until further order of the Court.",
+      "missing_critical_fields": [
+        "actor",
+        "trigger"
+      ],
+      "proposal_status": "UNRESOLVED"
+    },
+    {
+      "candidate_id": "dobbs:D19chal:0",
+      "case_id": "dobbs",
+      "passage_id": "D19chal",
+      "actor": "unknown",
+      "trigger": "return_or_destruction_certification",
+      "action": "unknown",
+      "clock_unit": "business_days",
+      "clock_amount": 5,
+      "clock_start": "return_or_destruction_certification",
+      "exception": "timely_challenge",
+      "evidence_excerpt": "In all events, such return, destruction, and certification must occur within 5 business days of receipt of the request, unless the receiving Party provides notice of its intent to ",
+      "missing_critical_fields": [
+        "actor",
+        "action"
+      ],
+      "proposal_status": "UNRESOLVED"
+    },
+    {
+      "candidate_id": "dobbs:D19chal:3",
+      "case_id": "dobbs",
+      "passage_id": "D19chal",
+      "actor": "recipient",
+      "trigger": "challenge_notice",
+      "action": "limited_challenge_retention",
+      "clock_unit": "none",
+      "clock_amount": 0,
+      "clock_start": "none",
+      "exception": "no_more_copies_than_needed",
+      "evidence_excerpt": "P. 26(b)(5) (the “Challenge Notice”), in which event the receiving Party may retain no more copies (the “Retained Copies”) of the Inadvertent Production Material than are sufficien",
+      "missing_critical_fields": [],
+      "proposal_status": "LEXICAL_ONLY_UNVERIFIED"
+    },
+    {
+      "candidate_id": "dobbs:D19chal:4",
+      "case_id": "dobbs",
+      "passage_id": "D19chal",
+      "actor": "recipient",
+      "trigger": "challenge_notice",
+      "action": "sealed_retention_no_use",
+      "clock_unit": "business_days",
+      "clock_amount": 5,
+      "clock_start": "challenge_notice",
+      "exception": "none",
+      "evidence_excerpt": "Having provided a Challenge Notice, the Receiving Party must raise a challenge with the Court within 5 business days of that Challenge Notice, or otherwise return or destroy the Re",
+      "missing_critical_fields": [],
+      "proposal_status": "LEXICAL_ONLY_UNVERIFIED"
+    },
+    {
+      "candidate_id": "dobbs:D20:0",
+      "case_id": "dobbs",
+      "passage_id": "D20",
+      "actor": "producer",
+      "trigger": "return_or_destruction_certification",
+      "action": "produce_privilege_log",
+      "clock_unit": "business_days",
+      "clock_amount": 5,
+      "clock_start": "return_or_destruction_certification",
+      "exception": "none",
+      "evidence_excerpt": "Within five business days of the certification that such Inadvertently Disclosed Information has been returned or destroyed, the disclosing party shall produce a privilege log with",
+      "missing_critical_fields": [],
+      "proposal_status": "LEXICAL_ONLY_UNVERIFIED"
+    },
+    {
+      "candidate_id": "dobbs:D23:0",
+      "case_id": "dobbs",
+      "passage_id": "D23",
+      "actor": "unknown",
+      "trigger": "final_disposition",
+      "action": "unknown",
+      "clock_unit": "calendar_days",
+      "clock_amount": 30,
+      "clock_start": "final_disposition",
+      "exception": "none",
+      "evidence_excerpt": "Within 30 days of the final disposition of this action, all Discovery Material designated Confidential, and all copies thereof, shall promptly be returned to the producing person.",
+      "missing_critical_fields": [
+        "actor",
+        "action"
+      ],
+      "proposal_status": "UNRESOLVED"
+    },
+    {
+      "candidate_id": "dobbs:D23:1",
+      "case_id": "dobbs",
+      "passage_id": "D23",
+      "actor": "unknown",
+      "trigger": "unknown",
+      "action": "destroy_copies_and_derivatives",
+      "clock_unit": "none",
+      "clock_amount": 0,
+      "clock_start": "none",
+      "exception": "producer_permission_to_destroy",
+      "evidence_excerpt": "Alternatively, upon permission of the producing person, all Confidential Discovery Material, and all copies thereof, shall be destroyed.",
+      "missing_critical_fields": [
+        "actor",
+        "trigger"
+      ],
+      "proposal_status": "UNRESOLVED"
+    },
+    {
+      "candidate_id": "dobbs:D23:2",
+      "case_id": "dobbs",
+      "passage_id": "D23",
+      "actor": "recipient",
+      "trigger": "unknown",
+      "action": "certify_final_disposition",
+      "clock_unit": "none",
+      "clock_amount": 0,
+      "clock_start": "none",
+      "exception": "none",
+      "evidence_excerpt": "In either event, by the 30-day deadline, the recipient must certify the return or destruction of all Confidential Discovery Material, and all copies thereof, by submitting a writte",
+      "missing_critical_fields": [
+        "trigger"
+      ],
+      "proposal_status": "UNRESOLVED"
+    },
+    {
+      "candidate_id": "dobbs:D23archive:0",
+      "case_id": "dobbs",
+      "passage_id": "D23archive",
+      "actor": "counsel",
+      "trigger": "unknown",
+      "action": "restricted_archival_retention",
+      "clock_unit": "none",
+      "clock_amount": 0,
+      "clock_start": "none",
+      "exception": "protected_archive",
+      "evidence_excerpt": "Notwithstanding this provision, the attorneys specifically retained by the Parties for representation in this action may retain an archival copy of all pleadings, motion papers, tr",
+      "missing_critical_fields": [
+        "trigger"
+      ],
+      "proposal_status": "UNRESOLVED"
+    },
+    {
+      "candidate_id": "dobbs:D23archive:1",
+      "case_id": "dobbs",
+      "passage_id": "D23archive",
+      "actor": "unknown",
+      "trigger": "unknown",
+      "action": "unknown",
+      "clock_unit": "none",
+      "clock_amount": 0,
+      "clock_start": "none",
+      "exception": "none",
+      "evidence_excerpt": "Any such archival copies that contain or constitute Confidential Discovery Material remain subject to this Order.",
+      "missing_critical_fields": [
+        "actor",
+        "trigger",
+        "action"
+      ],
+      "proposal_status": "UNRESOLVED"
+    },
+    {
+      "candidate_id": "louis_vuitton:L12return:0",
+      "case_id": "louis_vuitton",
+      "passage_id": "L12return",
+      "actor": "unknown",
+      "trigger": "producer_written_request",
+      "action": "unknown",
+      "clock_unit": "court_days",
+      "clock_amount": 2,
+      "clock_start": "producer_written_request",
+      "exception": "timely_challenge",
+      "evidence_excerpt": "upon written request made by the Producing Party of such inadvertent production, the information for which a claim of inadvertent production is made, including all copies, shall be",
+      "missing_critical_fields": [
+        "actor",
+        "action"
+      ],
+      "proposal_status": "UNRESOLVED"
+    },
+    {
+      "candidate_id": "louis_vuitton:L12derived:0",
+      "case_id": "louis_vuitton",
+      "passage_id": "L12derived",
+      "actor": "unknown",
+      "trigger": "unknown",
+      "action": "destroy_copies_and_derivatives",
+      "clock_unit": "none",
+      "clock_amount": 0,
+      "clock_start": "none",
+      "exception": "none",
+      "evidence_excerpt": "All copies of inadvertently produced documents shall be destroyed, and any document or material information reflecting the contents of the inadvertently produced information shall ",
+      "missing_critical_fields": [
+        "actor",
+        "trigger"
+      ],
+      "proposal_status": "UNRESOLVED"
+    },
+    {
+      "candidate_id": "louis_vuitton:L12chal:0",
+      "case_id": "louis_vuitton",
+      "passage_id": "L12chal",
+      "actor": "recipient",
+      "trigger": "unknown",
+      "action": "court_challenge",
+      "clock_unit": "none",
+      "clock_amount": 0,
+      "clock_start": "none",
+      "exception": "none",
+      "evidence_excerpt": "If a Receiving Party objects to the return of such information within the two (2) court day period described above, the Receiving Party may move the Court for an order determining ",
+      "missing_critical_fields": [
+        "trigger"
+      ],
+      "proposal_status": "UNRESOLVED"
+    },
+    {
+      "candidate_id": "louis_vuitton:L12chal:1",
+      "case_id": "louis_vuitton",
+      "passage_id": "L12chal",
+      "actor": "recipient",
+      "trigger": "pending_ruling",
+      "action": "sealed_retention_no_use",
+      "clock_unit": "until_resolution",
+      "clock_amount": 0,
+      "clock_start": "none",
+      "exception": "none",
+      "evidence_excerpt": "Pending the ruling, a Receiving Party may retain the inadvertently produced documents in a sealed envelope and shall not make any use of such information.",
+      "missing_critical_fields": [],
+      "proposal_status": "LEXICAL_ONLY_UNVERIFIED"
+    },
+    {
+      "candidate_id": "louis_vuitton:L14return:0",
+      "case_id": "louis_vuitton",
+      "passage_id": "L14return",
+      "actor": "producer",
+      "trigger": "final_disposition_plus_designator_written_request",
+      "action": "return_or_destroy_protected_material",
+      "clock_unit": "calendar_days",
+      "clock_amount": 60,
+      "clock_start": "producer_written_request",
+      "exception": "none",
+      "evidence_excerpt": "After the final disposition of this Action, as defined in Section 3, within 60 days of a written request by the Designating Party, each Receiving Party must return all Protected Ma",
+      "missing_critical_fields": [],
+      "proposal_status": "LEXICAL_ONLY_UNVERIFIED"
+    },
+    {
+      "candidate_id": "louis_vuitton:L14return:1",
+      "case_id": "louis_vuitton",
+      "passage_id": "L14return",
+      "actor": "unknown",
+      "trigger": "unknown",
+      "action": "unknown",
+      "clock_unit": "none",
+      "clock_amount": 0,
+      "clock_start": "none",
+      "exception": "none",
+      "evidence_excerpt": "As used in this subdivision, “all Protected Material” includes all copies, abstracts, compilations, summaries, and any other format reproducing or capturing any of the Protected Ma",
+      "missing_critical_fields": [
+        "actor",
+        "trigger",
+        "action"
+      ],
+      "proposal_status": "UNRESOLVED"
+    },
+    {
+      "candidate_id": "louis_vuitton:L14cert:0",
+      "case_id": "louis_vuitton",
+      "passage_id": "L14cert",
+      "actor": "recipient",
+      "trigger": "unknown",
+      "action": "certify_final_disposition",
+      "clock_unit": "none",
+      "clock_amount": 0,
+      "clock_start": "none",
+      "exception": "none",
+      "evidence_excerpt": "Whether the Protected Material is returned or destroyed, the Receiving Party must submit a written certification to the Producing Party (and, if not the same person or entity, to t",
+      "missing_critical_fields": [
+        "trigger"
+      ],
+      "proposal_status": "UNRESOLVED"
+    },
+    {
+      "candidate_id": "louis_vuitton:L14archive:0",
+      "case_id": "louis_vuitton",
+      "passage_id": "L14archive",
+      "actor": "counsel",
+      "trigger": "unknown",
+      "action": "restricted_archival_retention",
+      "clock_unit": "none",
+      "clock_amount": 0,
+      "clock_start": "none",
+      "exception": "protected_archive",
+      "evidence_excerpt": "Notwithstanding this provision, Counsel are entitled to retain an archival copy of all pleadings, motion papers, trial, deposition, and hearing transcripts, legal memoranda, corres",
+      "missing_critical_fields": [
+        "trigger"
+      ],
+      "proposal_status": "UNRESOLVED"
+    },
+    {
+      "candidate_id": "louis_vuitton:L14archive:1",
+      "case_id": "louis_vuitton",
+      "passage_id": "L14archive",
+      "actor": "unknown",
+      "trigger": "unknown",
+      "action": "unknown",
+      "clock_unit": "none",
+      "clock_amount": 0,
+      "clock_start": "none",
+      "exception": "none",
+      "evidence_excerpt": "Any such archival copies that contain or constitute Protected Material remain subject to this Protective Order as set forth in Section 5 (DURATION).",
+      "missing_critical_fields": [
+        "actor",
+        "trigger",
+        "action"
+      ],
+      "proposal_status": "UNRESOLVED"
+    }
+  ]
+}

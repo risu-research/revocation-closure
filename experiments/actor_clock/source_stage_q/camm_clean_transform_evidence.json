@@ -1,0 +1,43 @@
+{
+  "execution_attestation": {
+    "body": {
+      "artifact_id": "CAMM_CLEAN_TRANSFORM",
+      "broker_uid": 23322,
+      "case": "camm",
+      "events_sha256": "66196d3b4a13a89bd94a57963c6bdd5a518d98964a9c3e891895309fc6ee33f1",
+      "kind": "summary",
+      "launcher_sha256": "073e538bd5bf66ffd8b3ea30ea9f1b1bd5a48fee5aefac3c2609008d070b0dde",
+      "legacy_seal_sha256": "515cfbeb6fe645189f23fc25f6931efb7ed4a3888f9669dbeae783fe5fec253a",
+      "observed_event_count": 1,
+      "output_sha256": "9335e069bd87694ca23f92847123b925d94bd78acc11f264d0cd7130498a8f21",
+      "program_sha256": "87ef6883ddda7d53a77432d584d343ba7360223cbafc68599d3e54e5d409a78d",
+      "run_id": "run_camm_clean_transform",
+      "sandbox_profile": "uid-dac-no-new-privs-seccomp-deny-v1",
+      "schema": "broker-run-code-binding-v1",
+      "worker_uid": 23321
+    },
+    "signature": "b2079910fda77ce06aa743ca3ebba75dc1e90914ee3cc0ee90df85eab9e9f3b4a330bbb59f8a38c6efb5e71289df5fe04991b153b20f657b88ae299496fe9604"
+  },
+  "legacy_seal": {
+    "body": {
+      "artifact_id": "CAMM_CLEAN_TRANSFORM",
+      "case": "camm",
+      "closed": true,
+      "events": [
+        {
+          "id": "camm_CLEAN",
+          "seq": 1,
+          "source_sha256": "b9e873cd2e2418357c7ae9cd557569baac5a8ab4d36dfbe078296a61b0175dd4",
+          "type": "source"
+        }
+      ],
+      "kind": "summary",
+      "output_sha256": "9335e069bd87694ca23f92847123b925d94bd78acc11f264d0cd7130498a8f21",
+      "run_id": "run_camm_clean_transform",
+      "schema": "broker-observed-reads-v1"
+    },
+    "signature": "c5a9c1174f36ad91f11ebab522e5eb7c089205e9419b33d49b1eb269ead6c27dcc3e13b2bf35194444efefeaee0657b7c8446aed7ddea39a1ee8731313e7660c"
+  },
+  "output_b64": "Q0FNTV9DTEVBTl9BTkFMWVNJU3xIRVRJQ19DTEVBTl9TTw==",
+  "schema": "trusted-transform-bundle-v1"
+}

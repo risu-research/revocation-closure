@@ -1,0 +1,52 @@
+{
+  "approved_program_sha256": [
+    "1265e2c3ba9e8b63d09376357ac3f009c4fe6822a7da62c1998406e3bdc00fff",
+    "02edffed72ee169fbd27dd8923087db7fdf803bc2f5bbfdfa50698ca3a00b476",
+    "66534e23083fda9be5e48c1e36e153a3ad845adaa7924e034cbbb32b72818aec",
+    "b284b9796652ad56640af29418f4363a6541a250cba1f0c1c263e07655baf228",
+    "74e95cf5752fc55d42f1f199d5e2a0f1461fa77ba6a457728048729001851918",
+    "87ef6883ddda7d53a77432d584d343ba7360223cbafc68599d3e54e5d409a78d",
+    "0b14cf704f2b267e99cf991f4d7d5859ab17705868782f34fc4e91cf7a309d9f",
+    "d13c41d3ef268a33d33528126a27e5ae6d9cbc61ede32e841527b32fe061095c",
+    "320d6308ee8eb2579d0ceaff3c299ed925c048dc1e63fc83f3e9f2cbe59b5bc1"
+  ],
+  "broker_public_key_pem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAoqkVmhuAqVXa189iD8ci4GuqLMxgKcm+/gWVR0FfOnI=\n-----END PUBLIC KEY-----\n",
+  "launcher_sha256": "073e538bd5bf66ffd8b3ea30ea9f1b1bd5a48fee5aefac3c2609008d070b0dde",
+  "owner_pubs": {
+    "camm": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAIQSt7xAw0IXk9uJiGuwJOKjh4x6+DnVb2D9mWeVBGrc=\n-----END PUBLIC KEY-----\n",
+    "iottie": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAIZjr7jTuOaPQORon6OQGtpfWx0VvHty0Tx9ulGXYGcE=\n-----END PUBLIC KEY-----\n",
+    "napoli": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAFe4YApMXmpZqzcixwm6XqTbs19OFcX1Tdj3bC02s8BY=\n-----END PUBLIC KEY-----\n"
+  },
+  "pinned_source_digests": [
+    [
+      "iottie",
+      "iottie_PRIV",
+      "e47189bc8d8661c90d4a66e6de5f0d3bd27e957d6625d3c0be8b910f05081af8"
+    ],
+    [
+      "iottie",
+      "iottie_CLEAN",
+      "f1e7453e7cfd5508fd0b474b76fda11a257f6d83bc493fd56fd5b2b6ebb62d81"
+    ],
+    [
+      "camm",
+      "camm_PRIV",
+      "e083bc9fdd0bb014048db832d96a75424f7b821f1e670b248989c98ee4119619"
+    ],
+    [
+      "camm",
+      "camm_CLEAN",
+      "b9e873cd2e2418357c7ae9cd557569baac5a8ab4d36dfbe078296a61b0175dd4"
+    ],
+    [
+      "napoli",
+      "napoli_PRIV",
+      "c1909a46e8265f7a0846c63f3d130576bd3dd10d07841e623b1fc7447388f0c3"
+    ],
+    [
+      "napoli",
+      "napoli_CLEAN",
+      "f19478a57315496c9d42a0fccd416adbd8075b80f9cd46838d99733b3d39fead"
+    ]
+  ]
+}

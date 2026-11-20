@@ -1,0 +1,9 @@
+id,case_id,passage_id,actor,trigger,action,clock_unit,clock_amount,clock_start,exception
+T01,ty_walmart,T21,counsel,final_termination_plus_producer_request,return_destroy_and_purge_machine,none,0,none,counsel_archive
+T02,ty_walmart,T21,counsel,final_termination,restricted_archival_retention,none,0,none,protected_archive
+T03,ty_walmart,T31,recipient,reasonable_belief_privilege,sequester_document,immediate,0,none,none
+T04,ty_walmart,T31,recipient,reasonable_belief_privilege,cease_using_source_and_work_product,immediate,0,none,none
+T05,ty_walmart,T31,recipient,reasonable_belief_privilege,notify_producer_identification,none,0,none,none
+T06,ty_walmart,T32,producer,assertion_of_privilege,written_clawback_notice,none,0,none,none
+T07,ty_walmart,T32,recipient,receipt_of_clawback_request,sequester_document,immediate,0,none,none
+T08,ty_walmart,T32,recipient,receipt_of_clawback_request,cease_review_use_and_work_product,immediate,0,none,none

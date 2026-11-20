@@ -1,0 +1,43 @@
+{
+  "execution_attestation": {
+    "body": {
+      "artifact_id": "NAPOLI_CLEAN_TRANSFORM",
+      "broker_uid": 23322,
+      "case": "napoli",
+      "events_sha256": "9c41a6c7378d84f69f7a3dd16b391b546fd5499c93f411786d225e3bbabedc9d",
+      "kind": "independent_note",
+      "launcher_sha256": "073e538bd5bf66ffd8b3ea30ea9f1b1bd5a48fee5aefac3c2609008d070b0dde",
+      "legacy_seal_sha256": "7de157bf0ece95a31cd0fc053756183d169cf504636579777e4927b1877f2e22",
+      "observed_event_count": 1,
+      "output_sha256": "e8d7e1d3d9180fc10e07baba1ab316e33f86a9cad6be7ba52806789aade9e8c3",
+      "program_sha256": "d13c41d3ef268a33d33528126a27e5ae6d9cbc61ede32e841527b32fe061095c",
+      "run_id": "run_napoli_clean_transform",
+      "sandbox_profile": "uid-dac-no-new-privs-seccomp-deny-v1",
+      "schema": "broker-run-code-binding-v1",
+      "worker_uid": 23321
+    },
+    "signature": "903f2de85e69d0aa9a68837c7d80c414a976ed337ca648f329e3fc6119b3e27a590bb020edaee37dbc7d67cc673ba9f044c75bc7ff0831c258536250cdce0b02"
+  },
+  "legacy_seal": {
+    "body": {
+      "artifact_id": "NAPOLI_CLEAN_TRANSFORM",
+      "case": "napoli",
+      "closed": true,
+      "events": [
+        {
+          "id": "napoli_CLEAN",
+          "seq": 1,
+          "source_sha256": "f19478a57315496c9d42a0fccd416adbd8075b80f9cd46838d99733b3d39fead",
+          "type": "source"
+        }
+      ],
+      "kind": "independent_note",
+      "output_sha256": "e8d7e1d3d9180fc10e07baba1ab316e33f86a9cad6be7ba52806789aade9e8c3",
+      "run_id": "run_napoli_clean_transform",
+      "schema": "broker-observed-reads-v1"
+    },
+    "signature": "ed52d00f30fd7a5c4d8b899c27c265c7209eaaa1ec21dc6051bc5d1d45fefe581674a906adf759b1ade4296a2e3b00b4d38f460fb5784fe6e5b833e7dfc1b701"
+  },
+  "output_b64": "TkFQT0xJX0NMRUFOfENMRUFOfDM5",
+  "schema": "trusted-transform-bundle-v1"
+}

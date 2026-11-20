@@ -96,6 +96,31 @@ python reproduce.py
 
 The runner compares the original and policy-checked recipients, audits their actual SQL writes, checks 13 injected policy defects and tests detection of altered stored content. The [module README](experiments/policy_integrity/README.md) gives the recorded results and source mapping.
 
+## Actor and deadline replay
+
+Requires Python 3.11+, `cryptography`, and a disposable Linux environment where a root-owned test runner can create separate unprivileged worker and recipient users.
+
+```bash
+cd experiments/actor_clock
+python -m pip install 'cryptography>=42,<48'
+python -m unittest discover -s tests -p 'test_*.py' -v
+python -m stage_r.run_study --out /tmp/actor_clock_fresh
+python tests/check_public_reproduction.py /tmp/actor_clock_fresh
+```
+
+The independent auditor checks physical effects and signed case events against recorded expectations. [Source-linked duty inputs and methods](experiments/actor_clock/README.md).
+
+## Court-order policy transfer
+
+Requires Python 3.10+ with the standard library.
+
+```bash
+cd experiments/court_order_transfer
+python tests/check_public_reproduction.py
+```
+
+The check verifies court-order inputs, source-code seals, extracted policy results, fresh HTTP/SQLite effects and an altered-row rejection test. [Inputs and method](experiments/court_order_transfer/README.md).
+
 ## Inputs and evidence
 
 Every experiment uses synthetic source records and researcher-specified legal-policy fixtures. The original result JSON, source revisions, independent audit procedures and GitHub Actions records are linked from the [results directory](results/). Repeated seeds vary synthetic identifiers within fixed scenario families.

@@ -1,0 +1,43 @@
+{
+  "execution_attestation": {
+    "body": {
+      "artifact_id": "CLEAN_CONFLICT",
+      "broker_uid": 23322,
+      "case": "iottie",
+      "events_sha256": "cb8132290d6caef24c4b4f32890fe5a40f2d24ad51bf31e96ac6f7147577aeb7",
+      "kind": "independent_note",
+      "launcher_sha256": "073e538bd5bf66ffd8b3ea30ea9f1b1bd5a48fee5aefac3c2609008d070b0dde",
+      "legacy_seal_sha256": "0e16e40f4e128d83f732ef40d83678b347608a49dd5a373f7ce6aced58db9428",
+      "observed_event_count": 1,
+      "output_sha256": "b2c90ca650267ef80a2b4646518bc0c29808101e580c25403c7f22e822db2d13",
+      "program_sha256": "02edffed72ee169fbd27dd8923087db7fdf803bc2f5bbfdfa50698ca3a00b476",
+      "run_id": "run_clean_conflict",
+      "sandbox_profile": "uid-dac-no-new-privs-seccomp-deny-v1",
+      "schema": "broker-run-code-binding-v1",
+      "worker_uid": 23321
+    },
+    "signature": "06ce5703ca7da514a00270f72afd98f528dae4a92ef174b20d62f1128253259404a2a63233025f03e406b14ce704391df6c8307eac2bea899487070c41162c06"
+  },
+  "legacy_seal": {
+    "body": {
+      "artifact_id": "CLEAN_CONFLICT",
+      "case": "iottie",
+      "closed": true,
+      "events": [
+        {
+          "id": "iottie_CLEAN",
+          "seq": 1,
+          "source_sha256": "f1e7453e7cfd5508fd0b474b76fda11a257f6d83bc493fd56fd5b2b6ebb62d81",
+          "type": "source"
+        }
+      ],
+      "kind": "independent_note",
+      "output_sha256": "b2c90ca650267ef80a2b4646518bc0c29808101e580c25403c7f22e822db2d13",
+      "run_id": "run_clean_conflict",
+      "schema": "broker-observed-reads-v1"
+    },
+    "signature": "d9e574d10ff85f0cfd599fb4c272f561ebb6dc4750417861bc1bf47405352a91046e76c28bf681da4a85b44792653ccdd608e3727022222bc2af23929236f20d"
+  },
+  "output_b64": "RElHRVNUfGYxZTc0NTNlN2NmZDU1MDhmZDBiNDc0Yjc2ZmRhMTFhMjU3ZjZkODNiYzQ5M2ZkNTZmZDViMmI2ZWJiNjJkODE=",
+  "schema": "trusted-transform-bundle-v1"
+}

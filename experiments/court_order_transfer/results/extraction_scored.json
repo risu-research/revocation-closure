@@ -1,0 +1,583 @@
+{
+  "summary": {
+    "gold_duties": 20,
+    "source_passages": 13,
+    "generated_fragments": 24,
+    "generated_with_missing_critical_fields": 18,
+    "action_detected": 13,
+    "action_recall": 0.65,
+    "complete_tuple_correct": 3,
+    "actor_correct_on_detected": 9,
+    "trigger_correct_on_detected": 4,
+    "exceptions_correct_on_detected": 9,
+    "clock_bearing_duties": 9,
+    "clock_full_correct": 1,
+    "cases": {
+      "dobbs": {
+        "gold": 13,
+        "action_detected": 7
+      },
+      "louis_vuitton": {
+        "gold": 7,
+        "action_detected": 6
+      }
+    },
+    "important_note": "Proposal strings use source only, but authoring of generic patterns followed human gold construction; this is a fixed one-shot exploratory artifact-separated evaluation, not external blind predictive validation."
+  },
+  "by_duty": [
+    {
+      "id": "D01",
+      "case_id": "dobbs",
+      "passage_id": "D19a",
+      "status": "action_detected",
+      "gold": {
+        "actor": "producer",
+        "trigger": "good_faith_discovery",
+        "action": "written_notice_and_request",
+        "clock_unit": "none",
+        "clock_amount": 0,
+        "clock_start": "none",
+        "exception": "none"
+      },
+      "proposed": {
+        "actor": "producer",
+        "trigger": "unknown",
+        "action": "written_notice_and_request",
+        "clock_unit": "none",
+        "clock_amount": 0,
+        "clock_start": "none",
+        "exception": "none"
+      },
+      "field_matches": {
+        "actor": true,
+        "trigger": false,
+        "action": true,
+        "clock_unit": true,
+        "clock_amount": true,
+        "clock_start": true,
+        "exception": true
+      },
+      "proposal_id": "dobbs:D19a:0"
+    },
+    {
+      "id": "D02",
+      "case_id": "dobbs",
+      "passage_id": "D19ci",
+      "status": "missed_action",
+      "gold": {
+        "actor": "recipient",
+        "trigger": "self_discovery_or_request",
+        "action": "stop_examination_disclosure",
+        "clock_unit": "immediate",
+        "clock_amount": 0,
+        "clock_start": "none",
+        "exception": "none"
+      },
+      "proposal_id": null
+    },
+    {
+      "id": "D03",
+      "case_id": "dobbs",
+      "passage_id": "D19ci",
+      "status": "action_detected",
+      "gold": {
+        "actor": "recipient",
+        "trigger": "self_discovery_without_request",
+        "action": "notify_producer_counsel",
+        "clock_unit": "prompt",
+        "clock_amount": 0,
+        "clock_start": "none",
+        "exception": "none"
+      },
+      "proposed": {
+        "actor": "unknown",
+        "trigger": "unknown",
+        "action": "notify_producer_counsel",
+        "clock_unit": "prompt",
+        "clock_amount": 0,
+        "clock_start": "none",
+        "exception": "none"
+      },
+      "field_matches": {
+        "actor": false,
+        "trigger": false,
+        "action": true,
+        "clock_unit": true,
+        "clock_amount": true,
+        "clock_start": true,
+        "exception": true
+      },
+      "proposal_id": "dobbs:D19ci:1"
+    },
+    {
+      "id": "D04",
+      "case_id": "dobbs",
+      "passage_id": "D19ciii",
+      "status": "missed_action",
+      "gold": {
+        "actor": "recipient",
+        "trigger": "receipt_of_return_request",
+        "action": "return_destroy_and_certify",
+        "clock_unit": "business_days",
+        "clock_amount": 5,
+        "clock_start": "receipt_of_return_request",
+        "exception": "challenge_notice"
+      },
+      "proposal_id": null
+    },
+    {
+      "id": "D05",
+      "case_id": "dobbs",
+      "passage_id": "D19ciii",
+      "status": "missed_action",
+      "gold": {
+        "actor": "recipient",
+        "trigger": "downstream_transmission_plus_discovery_or_request",
+        "action": "notify_downstream_and_retrieve",
+        "clock_unit": "prompt",
+        "clock_amount": 0,
+        "clock_start": "none",
+        "exception": "none"
+      },
+      "proposal_id": null
+    },
+    {
+      "id": "D06",
+      "case_id": "dobbs",
+      "passage_id": "D19ciii",
+      "status": "action_detected",
+      "gold": {
+        "actor": "recipient",
+        "trigger": "self_discovery_or_request",
+        "action": "suspend_use",
+        "clock_unit": "until_court_order",
+        "clock_amount": 0,
+        "clock_start": "none",
+        "exception": "none"
+      },
+      "proposed": {
+        "actor": "unknown",
+        "trigger": "unknown",
+        "action": "suspend_use",
+        "clock_unit": "until_court_order",
+        "clock_amount": 0,
+        "clock_start": "none",
+        "exception": "none"
+      },
+      "field_matches": {
+        "actor": false,
+        "trigger": false,
+        "action": true,
+        "clock_unit": true,
+        "clock_amount": true,
+        "clock_start": true,
+        "exception": true
+      },
+      "proposal_id": "dobbs:D19ciii:2"
+    },
+    {
+      "id": "D07",
+      "case_id": "dobbs",
+      "passage_id": "D19chal",
+      "status": "action_detected",
+      "gold": {
+        "actor": "recipient",
+        "trigger": "challenge_notice",
+        "action": "limited_challenge_retention",
+        "clock_unit": "none",
+        "clock_amount": 0,
+        "clock_start": "none",
+        "exception": "no_more_copies_than_needed"
+      },
+      "proposed": {
+        "actor": "recipient",
+        "trigger": "challenge_notice",
+        "action": "limited_challenge_retention",
+        "clock_unit": "none",
+        "clock_amount": 0,
+        "clock_start": "none",
+        "exception": "no_more_copies_than_needed"
+      },
+      "field_matches": {
+        "actor": true,
+        "trigger": true,
+        "action": true,
+        "clock_unit": true,
+        "clock_amount": true,
+        "clock_start": true,
+        "exception": true
+      },
+      "proposal_id": "dobbs:D19chal:3"
+    },
+    {
+      "id": "D08",
+      "case_id": "dobbs",
+      "passage_id": "D19chal",
+      "status": "missed_action",
+      "gold": {
+        "actor": "recipient",
+        "trigger": "challenge_notice",
+        "action": "file_challenge_or_dispose",
+        "clock_unit": "business_days",
+        "clock_amount": 5,
+        "clock_start": "challenge_notice",
+        "exception": "none"
+      },
+      "proposal_id": null
+    },
+    {
+      "id": "D09",
+      "case_id": "dobbs",
+      "passage_id": "D19chal",
+      "status": "missed_action",
+      "gold": {
+        "actor": "recipient",
+        "trigger": "challenge_notice",
+        "action": "sequester_pending_ruling",
+        "clock_unit": "until_resolution",
+        "clock_amount": 0,
+        "clock_start": "none",
+        "exception": "none"
+      },
+      "proposal_id": null
+    },
+    {
+      "id": "D10",
+      "case_id": "dobbs",
+      "passage_id": "D20",
+      "status": "action_detected",
+      "gold": {
+        "actor": "producer",
+        "trigger": "return_or_destruction_certification",
+        "action": "produce_privilege_log",
+        "clock_unit": "business_days",
+        "clock_amount": 5,
+        "clock_start": "return_or_destruction_certification",
+        "exception": "none"
+      },
+      "proposed": {
+        "actor": "producer",
+        "trigger": "return_or_destruction_certification",
+        "action": "produce_privilege_log",
+        "clock_unit": "business_days",
+        "clock_amount": 5,
+        "clock_start": "return_or_destruction_certification",
+        "exception": "none"
+      },
+      "field_matches": {
+        "actor": true,
+        "trigger": true,
+        "action": true,
+        "clock_unit": true,
+        "clock_amount": true,
+        "clock_start": true,
+        "exception": true
+      },
+      "proposal_id": "dobbs:D20:0"
+    },
+    {
+      "id": "D11",
+      "case_id": "dobbs",
+      "passage_id": "D23",
+      "status": "missed_action",
+      "gold": {
+        "actor": "recipient",
+        "trigger": "final_disposition",
+        "action": "return_confidential_material",
+        "clock_unit": "calendar_days",
+        "clock_amount": 30,
+        "clock_start": "final_disposition",
+        "exception": "producer_permission_to_destroy"
+      },
+      "proposal_id": null
+    },
+    {
+      "id": "D12",
+      "case_id": "dobbs",
+      "passage_id": "D23",
+      "status": "action_detected",
+      "gold": {
+        "actor": "recipient",
+        "trigger": "final_disposition",
+        "action": "certify_final_disposition",
+        "clock_unit": "calendar_days",
+        "clock_amount": 30,
+        "clock_start": "final_disposition",
+        "exception": "counsel_archive"
+      },
+      "proposed": {
+        "actor": "recipient",
+        "trigger": "unknown",
+        "action": "certify_final_disposition",
+        "clock_unit": "none",
+        "clock_amount": 0,
+        "clock_start": "none",
+        "exception": "none"
+      },
+      "field_matches": {
+        "actor": true,
+        "trigger": false,
+        "action": true,
+        "clock_unit": false,
+        "clock_amount": false,
+        "clock_start": false,
+        "exception": false
+      },
+      "proposal_id": "dobbs:D23:2"
+    },
+    {
+      "id": "D13",
+      "case_id": "dobbs",
+      "passage_id": "D23archive",
+      "status": "action_detected",
+      "gold": {
+        "actor": "counsel",
+        "trigger": "final_disposition",
+        "action": "restricted_archival_retention",
+        "clock_unit": "none",
+        "clock_amount": 0,
+        "clock_start": "none",
+        "exception": "protected_archive"
+      },
+      "proposed": {
+        "actor": "counsel",
+        "trigger": "unknown",
+        "action": "restricted_archival_retention",
+        "clock_unit": "none",
+        "clock_amount": 0,
+        "clock_start": "none",
+        "exception": "protected_archive"
+      },
+      "field_matches": {
+        "actor": true,
+        "trigger": false,
+        "action": true,
+        "clock_unit": true,
+        "clock_amount": true,
+        "clock_start": true,
+        "exception": true
+      },
+      "proposal_id": "dobbs:D23archive:0"
+    },
+    {
+      "id": "L01",
+      "case_id": "louis_vuitton",
+      "passage_id": "L12return",
+      "status": "missed_action",
+      "gold": {
+        "actor": "recipient",
+        "trigger": "producer_written_request",
+        "action": "return_claimed_material",
+        "clock_unit": "court_days",
+        "clock_amount": 2,
+        "clock_start": "producer_written_request",
+        "exception": "timely_challenge"
+      },
+      "proposal_id": null
+    },
+    {
+      "id": "L02",
+      "case_id": "louis_vuitton",
+      "passage_id": "L12derived",
+      "status": "action_detected",
+      "gold": {
+        "actor": "recipient",
+        "trigger": "producer_written_request",
+        "action": "destroy_copies_and_derivatives",
+        "clock_unit": "none",
+        "clock_amount": 0,
+        "clock_start": "none",
+        "exception": "timely_challenge"
+      },
+      "proposed": {
+        "actor": "unknown",
+        "trigger": "unknown",
+        "action": "destroy_copies_and_derivatives",
+        "clock_unit": "none",
+        "clock_amount": 0,
+        "clock_start": "none",
+        "exception": "none"
+      },
+      "field_matches": {
+        "actor": false,
+        "trigger": false,
+        "action": true,
+        "clock_unit": true,
+        "clock_amount": true,
+        "clock_start": true,
+        "exception": false
+      },
+      "proposal_id": "louis_vuitton:L12derived:0"
+    },
+    {
+      "id": "L03",
+      "case_id": "louis_vuitton",
+      "passage_id": "L12chal",
+      "status": "action_detected",
+      "gold": {
+        "actor": "recipient",
+        "trigger": "timely_challenge",
+        "action": "court_challenge",
+        "clock_unit": "court_days",
+        "clock_amount": 2,
+        "clock_start": "producer_written_request",
+        "exception": "none"
+      },
+      "proposed": {
+        "actor": "recipient",
+        "trigger": "unknown",
+        "action": "court_challenge",
+        "clock_unit": "none",
+        "clock_amount": 0,
+        "clock_start": "none",
+        "exception": "none"
+      },
+      "field_matches": {
+        "actor": true,
+        "trigger": false,
+        "action": true,
+        "clock_unit": false,
+        "clock_amount": false,
+        "clock_start": false,
+        "exception": true
+      },
+      "proposal_id": "louis_vuitton:L12chal:0"
+    },
+    {
+      "id": "L04",
+      "case_id": "louis_vuitton",
+      "passage_id": "L12chal",
+      "status": "action_detected",
+      "gold": {
+        "actor": "recipient",
+        "trigger": "pending_ruling",
+        "action": "sealed_retention_no_use",
+        "clock_unit": "until_resolution",
+        "clock_amount": 0,
+        "clock_start": "none",
+        "exception": "none"
+      },
+      "proposed": {
+        "actor": "recipient",
+        "trigger": "pending_ruling",
+        "action": "sealed_retention_no_use",
+        "clock_unit": "until_resolution",
+        "clock_amount": 0,
+        "clock_start": "none",
+        "exception": "none"
+      },
+      "field_matches": {
+        "actor": true,
+        "trigger": true,
+        "action": true,
+        "clock_unit": true,
+        "clock_amount": true,
+        "clock_start": true,
+        "exception": true
+      },
+      "proposal_id": "louis_vuitton:L12chal:1"
+    },
+    {
+      "id": "L05",
+      "case_id": "louis_vuitton",
+      "passage_id": "L14return",
+      "status": "action_detected",
+      "gold": {
+        "actor": "recipient",
+        "trigger": "final_disposition_plus_designator_written_request",
+        "action": "return_or_destroy_protected_material",
+        "clock_unit": "calendar_days",
+        "clock_amount": 60,
+        "clock_start": "designator_written_request_after_final",
+        "exception": "counsel_archive"
+      },
+      "proposed": {
+        "actor": "producer",
+        "trigger": "final_disposition_plus_designator_written_request",
+        "action": "return_or_destroy_protected_material",
+        "clock_unit": "calendar_days",
+        "clock_amount": 60,
+        "clock_start": "producer_written_request",
+        "exception": "none"
+      },
+      "field_matches": {
+        "actor": false,
+        "trigger": true,
+        "action": true,
+        "clock_unit": true,
+        "clock_amount": true,
+        "clock_start": false,
+        "exception": false
+      },
+      "proposal_id": "louis_vuitton:L14return:0"
+    },
+    {
+      "id": "L06",
+      "case_id": "louis_vuitton",
+      "passage_id": "L14cert",
+      "status": "action_detected",
+      "gold": {
+        "actor": "recipient",
+        "trigger": "final_disposition_plus_designator_written_request",
+        "action": "certify_final_disposition",
+        "clock_unit": "calendar_days",
+        "clock_amount": 60,
+        "clock_start": "designator_written_request_after_final",
+        "exception": "counsel_archive"
+      },
+      "proposed": {
+        "actor": "recipient",
+        "trigger": "unknown",
+        "action": "certify_final_disposition",
+        "clock_unit": "none",
+        "clock_amount": 0,
+        "clock_start": "none",
+        "exception": "none"
+      },
+      "field_matches": {
+        "actor": true,
+        "trigger": false,
+        "action": true,
+        "clock_unit": false,
+        "clock_amount": false,
+        "clock_start": false,
+        "exception": false
+      },
+      "proposal_id": "louis_vuitton:L14cert:0"
+    },
+    {
+      "id": "L07",
+      "case_id": "louis_vuitton",
+      "passage_id": "L14archive",
+      "status": "action_detected",
+      "gold": {
+        "actor": "counsel",
+        "trigger": "final_disposition",
+        "action": "restricted_archival_retention",
+        "clock_unit": "none",
+        "clock_amount": 0,
+        "clock_start": "none",
+        "exception": "protected_archive"
+      },
+      "proposed": {
+        "actor": "counsel",
+        "trigger": "unknown",
+        "action": "restricted_archival_retention",
+        "clock_unit": "none",
+        "clock_amount": 0,
+        "clock_start": "none",
+        "exception": "protected_archive"
+      },
+      "field_matches": {
+        "actor": true,
+        "trigger": false,
+        "action": true,
+        "clock_unit": true,
+        "clock_amount": true,
+        "clock_start": true,
+        "exception": true
+      },
+      "proposal_id": "louis_vuitton:L14archive:0"
+    }
+  ]
+}

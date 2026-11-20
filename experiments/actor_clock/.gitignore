@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+_runs/
+results/
+results_repeat/
+*_server_stderr.txt
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
