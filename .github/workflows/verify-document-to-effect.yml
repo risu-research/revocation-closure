@@ -25,6 +25,7 @@ jobs:
           cd experiments/document_to_effect
           sha256sum -c MANIFEST_SHA256.txt
           python -m pip install --disable-pip-version-check -r requirements.txt
+          python -m unittest discover -s tests -p 'test_clause_*.py' -v
       - name: Run two fresh document-to-effect evaluations and independent audits
         shell: bash
         run: |
