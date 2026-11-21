@@ -237,7 +237,6 @@ if __name__ == '__main__':
         'holdout': check_dir(args.holdout, 'holdout'),
     }
     if args.out:
-        args.out.write_text(json.dumps(results, indent=2, sort_keys=True) + '
-')
+        args.out.write_text(json.dumps(results, indent=2, sort_keys=True) + '\n')
     for split, report in results.items():
         print(split, report['checks'], report['total_writes'], report['by_guard'])
