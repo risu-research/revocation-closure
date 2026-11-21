@@ -1,0 +1,156 @@
+name: Reproduce original component and checkpoint studies
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/reproduce-component-history.yml'
+      - 'experiments/component_history/**'
+
+permissions:
+  contents: read
+
+jobs:
+  verify-original-records:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compare original Git blobs and saved experiment outcomes
+        run: python experiments/component_history/verify_historical.py
+
+  chroma-qdrant-and-composed:
+    needs: verify-original-records
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Start real Chroma and Qdrant servers
+        shell: bash
+        run: |
+          docker run -d --rm --name rev62ch -p 8000:8000 chromadb/chroma:latest
+          docker run -d --rm --name rev62qd -p 6333:6333 qdrant/qdrant:latest
+      - name: Execute the original Chroma, Qdrant and connected LangGraph probes
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check 'langgraph==1.2.12'
+          mkdir -p "$RUNNER_TEMP/stack-results"
+          python experiments/component_history/source/chroma_qdrant.py | tee "$RUNNER_TEMP/stack-results/chroma_qdrant.log"
+          python experiments/component_history/source/composed_chroma_langgraph.py | tee "$RUNNER_TEMP/stack-results/composed.log"
+      - name: Preserve independently executed stack results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fresh-chroma-qdrant-langgraph
+          retention-days: 30
+          path: ${{ runner.temp }}/stack-results/
+          if-no-files-found: ignore
+      - name: Stop isolated test servers
+        if: always()
+        run: |
+          docker rm -f rev62ch rev62qd >/dev/null 2>&1 || true
+
+  haystack-llama-langgraph:
+    needs: verify-original-records
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install studied Python package versions
+        run: python -m pip install --disable-pip-version-check 'haystack-ai==3.3.0' 'llama-index-core==0.14.25' 'langgraph==1.2.12'
+      - name: Repeat original document deletion, default and strict options, and checkpoint checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/stack-results"
+          python experiments/component_history/source/haystack_llama_base.py | tee "$RUNNER_TEMP/stack-results/haystack-llama-base.log"
+          python experiments/component_history/source/haystack_llama_followup.py | tee "$RUNNER_TEMP/stack-results/haystack-llama-followup.log"
+      - name: Preserve fresh framework output
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fresh-haystack-llama-langgraph
+          retention-days: 30
+          path: ${{ runner.temp }}/stack-results/
+          if-no-files-found: ignore
+
+  inmemory-checkpoint-effects:
+    needs: verify-original-records
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Execute the exact original seven-case InMemorySaver runner
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check 'langgraph==1.2.12'
+          mkdir -p "$RUNNER_TEMP/replay-inmemory"
+          cd "$RUNNER_TEMP/replay-inmemory"
+          python "$GITHUB_WORKSPACE/experiments/component_history/source/replay_inmemory.py" | tee run.log
+      - name: Preserve individual SQL rows and decisions
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fresh-inmemory-checkpoint-effects
+          retention-days: 30
+          path: ${{ runner.temp }}/replay-inmemory/
+          if-no-files-found: ignore
+
+  postgres-checkpoint-effects:
+    needs: verify-original-records
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_PASSWORD: localpass
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install original tested PostgreSQL saver versions
+        run: python -m pip install --disable-pip-version-check 'langgraph==1.2.12' 'langgraph-checkpoint-postgres==3.1.2' 'psycopg[binary]'
+      - name: Execute original PostgresSaver checkpoint history test
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/replay-postgres"
+          cd "$RUNNER_TEMP/replay-postgres"
+          python "$GITHUB_WORKSPACE/experiments/component_history/source/postgres_saver.py" | tee history.log
+      - name: Execute the exact original seven-case PostgresSaver-to-SQL runner
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "$RUNNER_TEMP/replay-postgres"
+          python "$GITHUB_WORKSPACE/experiments/component_history/source/replay_postgres.py" | tee run.log
+      - name: Preserve physical effect rows and executed history checks
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fresh-postgres-checkpoint-effects
+          retention-days: 30
+          path: ${{ runner.temp }}/replay-postgres/
+          if-no-files-found: ignore

@@ -1,0 +1,193 @@
+{
+  "cases": {
+    "chroma_qdrant": {
+      "actions_run": 36926079202,
+      "archive_name": "j-a4c2d19_chroma_qdrant.zip",
+      "archive_sha256": "b9121a20fde3d6f12036cf329b75d83dfb2b0762425d96ef136bb351930cd0ba",
+      "result": {
+        "chroma": {
+          "after_source_delete_ids": [
+            "src-clean",
+            "der-mixed",
+            "der-clean"
+          ],
+          "automatic_cascade": false,
+          "before_ids": [
+            "src-rev",
+            "src-clean",
+            "der-mixed",
+            "der-clean"
+          ],
+          "clean_survives_source_delete": true,
+          "derived_rev_survives_source_delete": true,
+          "filter_cleanup_preserved_clean": true,
+          "filter_cleanup_removed_mixed": true,
+          "granularity": "record/filter"
+        },
+        "qdrant": {
+          "after_source_delete_ids": [
+            "der-clean",
+            "der-mixed",
+            "src-clean"
+          ],
+          "automatic_cascade": false,
+          "clean_survives_source_delete": true,
+          "derived_rev_survives_source_delete": true,
+          "filter_cleanup_preserved_clean": true,
+          "filter_cleanup_removed_mixed": true,
+          "granularity": "point/filter"
+        }
+      },
+      "source_blob_sha1": "fe37263b59ed27084751f9c1ee4ee80bfc7d552a",
+      "source_commit": "7d0043e6f7e6ae4cebfe6857f67424dbdf3c9028"
+    },
+    "composed_chroma_langgraph": {
+      "actions_run": 36927069080,
+      "archive_name": "j-d28a5c3_composed_chroma_qdrant_langgraph.zip",
+      "archive_sha256": "4b3a1fa4f6c9a22a47e67a790cdf2cf37f3e85a9d5a69b5c06ab4154c78a9cb2",
+      "result": {
+        "checkpoint_count_after_current_repair": 4,
+        "checkpoint_count_before": 3,
+        "current_state_after_precise_repair_contains_clean": true,
+        "current_state_after_precise_repair_contains_revoked": false,
+        "current_state_after_source_delete_contains_revoked": true,
+        "historical_checkpoints_with_clean_marker_after_current_repair": 4,
+        "historical_checkpoints_with_revoked_marker_after_current_repair": 3,
+        "langgraph_version": "1.2.12",
+        "retrieval_clean_after_native_source_delete": true,
+        "state_before_contains_revoked": true,
+        "thread_delete_remaining_checkpoints": 0,
+        "thread_delete_removed_clean_history_too": true
+      },
+      "source_blob_sha1": "bf65fd8507f66987042f29cfcb2fd9bde88ca6d5",
+      "source_commit": "55b9a3899ce0994916514f00d261e8c4de7a2578"
+    },
+    "haystack_llama_base": {
+      "actions_run": 36926310521,
+      "archive_name": "j-b7e41f2_haystack_llama_langgraph.zip",
+      "archive_sha256": "6180e3cd03fbf8c8baf67e1818b1c4539b3eda60707583f5460a7f69efec9d6e",
+      "result": {
+        "haystack": {
+          "after_source_delete_ids": [
+            "der-clean",
+            "der-mixed",
+            "src-clean"
+          ],
+          "automatic_cascade": false,
+          "clean_survives_source_delete": true,
+          "derived_rev_survives_source_delete": true,
+          "explicit_descendant_cleanup_preserves_clean": true,
+          "native_delete_granularity": "document_ids",
+          "version": "3.3.0"
+        },
+        "langgraph": {
+          "checkpoint_count_before": 3,
+          "checkpoint_retains_clean_marker_before_thread_delete": true,
+          "checkpoint_retains_revoked_marker_after_external_source_delete": true,
+          "native_delete_granularity": "thread (all checkpoints/writes)",
+          "thread_delete_remaining_checkpoints": 0,
+          "thread_delete_removes_clean_state_too": true,
+          "version": "1.2.12"
+        },
+        "llamaindex": {
+          "after_source_delete_ref_docs": [
+            "der-clean",
+            "der-mixed",
+            "src-clean"
+          ],
+          "automatic_cross_ref_cascade": false,
+          "before_ref_docs": [
+            "der-clean",
+            "der-mixed",
+            "src-clean",
+            "src-rev"
+          ],
+          "clean_survives_source_delete": true,
+          "derived_rev_survives_source_delete": true,
+          "explicit_descendant_cleanup_preserves_clean": true,
+          "native_delete_granularity": "ref_doc -> associated nodes",
+          "source_ref_removed": true,
+          "version": "0.14.25"
+        }
+      },
+      "source_blob_sha1": "aeaf20b85871943fd829595a37ae41ba4eae6cfc",
+      "source_commit": "684cc51877c1be817918c9718f9f269ca200cd16"
+    },
+    "haystack_llama_followup": {
+      "actions_run": 36926948898,
+      "archive_name": "j-b7e41f2_llama_haystack_langgraph_followup.zip",
+      "archive_sha256": "4ec64ed0f96f8b90e89c2b2ccf482a52a701e675a7c42c066a32863c22330c20",
+      "result": {
+        "haystack_filter": {
+          "delete_by_filter_result": 1,
+          "filter_cleanup_preserved_clean": true,
+          "filter_matched_ids": [
+            "der-mixed"
+          ],
+          "has_delete_by_filter": true,
+          "remaining_ids": [
+            "der-clean",
+            "src-clean",
+            "src-rev"
+          ],
+          "version": "3.3.0",
+          "whole_mixed_document_removed": true
+        },
+        "langgraph_history": {
+          "checkpoint_count_before_current_repair": 3,
+          "history_checkpoint_count_after_current_repair": 4,
+          "history_checkpoints_with_clean_marker": 4,
+          "history_checkpoints_with_revoked_marker": 3,
+          "latest_current_state_has_clean_marker": true,
+          "latest_current_state_has_revoked_marker": false,
+          "thread_delete_remaining_checkpoints": 0,
+          "thread_delete_removes_clean_history_too": true,
+          "version": "1.2.12"
+        },
+        "llama_default_vs_strict": {
+          "before_ref_docs": [
+            "der-clean",
+            "der-mixed",
+            "src-clean",
+            "src-rev"
+          ],
+          "default_docstore_ref_info_survives": true,
+          "default_docstore_residual_node_count": 1,
+          "default_docstore_retrievable_node_count": 1,
+          "default_independent_derived_survives": true,
+          "default_index_view_source_removed": true,
+          "documented_default_delete_from_docstore": false,
+          "strict_docstore_ref_info_removed": true,
+          "strict_independent_derived_survives": true,
+          "strict_index_view_source_removed": true,
+          "version": "0.14.25"
+        }
+      },
+      "source_blob_sha1": "9ff9d933d80d4bcac6a99d2842453f68f9a83377",
+      "source_commit": "142de7a56d01e48f08c57be7401edadf9aa35f08"
+    },
+    "postgres_saver": {
+      "actions_run": 36927335530,
+      "archive_name": "j-e67c4a2_postgres_saver.zip",
+      "archive_sha256": "65d7659af6cd21bde5df320ca879a4d11ebe7db1ef0ea95bd3aa45428c2c695b",
+      "result": {
+        "after_delete_thread": 0,
+        "checkpoint_count_after_current_repair": 4,
+        "checkpoint_count_before_repair": 3,
+        "checkpoint_postgres_version": "3.1.2",
+        "history_with_clean": 4,
+        "history_with_revoked": 3,
+        "langgraph_version": "1.2.12",
+        "latest_has_clean": true,
+        "latest_has_revoked": false
+      },
+      "source_blob_sha1": "5e738118f03f8056c43123aadfa7bfee4b163d62",
+      "source_commit": "8c8f43ae2a35a06fa26ed4b2f62162573ab4130e"
+    }
+  },
+  "original_research_repo": "risu-research/formal-exec-2609",
+  "schema": "historical-component-stack-evidence-v1",
+  "source_files_at_fixed_commits": "run.py",
+  "source_master_sha256": "67297e646493146c08dd1ee1b553774acc7c1950a2ddee00dee5b3061ce7784f",
+  "study": "After the Clawback"
+}

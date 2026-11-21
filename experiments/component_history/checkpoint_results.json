@@ -1,0 +1,615 @@
+{
+  "cases": {
+    "inmemory": {
+      "actions_run": 44450492824,
+      "artifact_sha256": "dabde68d42c4039f263ff383dff12b9ca210b2143b7ba407cc79dbcc86934680",
+      "recorded_result_sha256": "ac47645eae17c94ecdf3c46722b99befdc38ab3aa360a8d867112aeca6e6c45a",
+      "result": {
+        "all_assertions_passed": true,
+        "case_count": 7,
+        "cases": [
+          {
+            "attempts": [
+              {
+                "decision": "allowed",
+                "version": 1
+              },
+              {
+                "decision": "allowed",
+                "version": 2
+              }
+            ],
+            "baseline_effects": 1,
+            "checkpoint_count_after_repair": 7,
+            "checkpoint_count_before": 4,
+            "declared_deps": [
+              "SOURCE_R_SYNTHETIC",
+              "SOURCE_K_SYNTHETIC"
+            ],
+            "first_replay_decision": "allowed",
+            "first_replay_new_effects": 1,
+            "guard_mode": "none",
+            "latest_view_repaired": true,
+            "name": "no_guard",
+            "old_checkpoint_retained": true,
+            "oracle_truth_deps": [
+              "SOURCE_R_SYNTHETIC",
+              "SOURCE_K_SYNTHETIC"
+            ],
+            "rows": [
+              [
+                1,
+                "R_and_K",
+                1
+              ],
+              [
+                2,
+                "R_and_K",
+                2
+              ]
+            ],
+            "total_effects_after_replays": 2,
+            "unauthorized_effect_observed": true
+          },
+          {
+            "attempts": [
+              {
+                "decision": "allowed",
+                "version": 1
+              },
+              {
+                "decision": "allowed",
+                "version": 2
+              }
+            ],
+            "baseline_effects": 1,
+            "checkpoint_count_after_repair": 7,
+            "checkpoint_count_before": 4,
+            "declared_deps": [
+              "SOURCE_R_SYNTHETIC",
+              "SOURCE_K_SYNTHETIC"
+            ],
+            "first_replay_decision": "allowed",
+            "first_replay_new_effects": 1,
+            "guard_mode": "entry",
+            "latest_view_repaired": true,
+            "name": "entry_only",
+            "old_checkpoint_retained": true,
+            "oracle_truth_deps": [
+              "SOURCE_R_SYNTHETIC",
+              "SOURCE_K_SYNTHETIC"
+            ],
+            "rows": [
+              [
+                1,
+                "R_and_K",
+                1
+              ],
+              [
+                2,
+                "R_and_K",
+                2
+              ]
+            ],
+            "total_effects_after_replays": 2,
+            "unauthorized_effect_observed": true
+          },
+          {
+            "attempts": [
+              {
+                "decision": "allowed",
+                "version": 1
+              },
+              {
+                "decision": "blocked",
+                "version": 2
+              }
+            ],
+            "baseline_effects": 1,
+            "checkpoint_count_after_repair": 7,
+            "checkpoint_count_before": 4,
+            "declared_deps": [
+              "SOURCE_R_SYNTHETIC",
+              "SOURCE_K_SYNTHETIC"
+            ],
+            "first_replay_decision": "blocked",
+            "first_replay_new_effects": 0,
+            "guard_mode": "sink",
+            "latest_view_repaired": true,
+            "name": "pre_effect",
+            "old_checkpoint_retained": true,
+            "oracle_truth_deps": [
+              "SOURCE_R_SYNTHETIC",
+              "SOURCE_K_SYNTHETIC"
+            ],
+            "rows": [
+              [
+                1,
+                "R_and_K",
+                1
+              ]
+            ],
+            "total_effects_after_replays": 1,
+            "unauthorized_effect_observed": false
+          },
+          {
+            "attempts": [
+              {
+                "decision": "allowed",
+                "version": 1
+              },
+              {
+                "decision": "allowed",
+                "version": 2
+              }
+            ],
+            "baseline_effects": 1,
+            "checkpoint_count_after_repair": 7,
+            "checkpoint_count_before": 4,
+            "declared_deps": [
+              "SOURCE_K_SYNTHETIC"
+            ],
+            "first_replay_decision": "allowed",
+            "first_replay_new_effects": 1,
+            "guard_mode": "sink",
+            "latest_view_repaired": true,
+            "name": "clean_independent",
+            "old_checkpoint_retained": true,
+            "oracle_truth_deps": [
+              "SOURCE_K_SYNTHETIC"
+            ],
+            "rows": [
+              [
+                1,
+                "K_only",
+                1
+              ],
+              [
+                2,
+                "K_only",
+                2
+              ]
+            ],
+            "total_effects_after_replays": 2,
+            "unauthorized_effect_observed": false
+          },
+          {
+            "attempts": [
+              {
+                "decision": "unresolved",
+                "version": 1
+              },
+              {
+                "decision": "unresolved",
+                "version": 2
+              }
+            ],
+            "baseline_effects": 0,
+            "checkpoint_count_after_repair": 7,
+            "checkpoint_count_before": 4,
+            "declared_deps": null,
+            "first_replay_decision": "unresolved",
+            "first_replay_new_effects": 0,
+            "guard_mode": "sink",
+            "latest_view_repaired": true,
+            "name": "unknown_dependency",
+            "old_checkpoint_retained": true,
+            "oracle_truth_deps": [
+              "SOURCE_R_SYNTHETIC",
+              "SOURCE_K_SYNTHETIC"
+            ],
+            "rows": [],
+            "total_effects_after_replays": 0,
+            "unauthorized_effect_observed": false
+          },
+          {
+            "attempts": [
+              {
+                "decision": "allowed",
+                "version": 1
+              },
+              {
+                "decision": "allowed",
+                "version": 2
+              }
+            ],
+            "baseline_effects": 1,
+            "checkpoint_count_after_repair": 7,
+            "checkpoint_count_before": 4,
+            "declared_deps": [
+              "SOURCE_K_SYNTHETIC"
+            ],
+            "first_replay_decision": "allowed",
+            "first_replay_new_effects": 1,
+            "guard_mode": "sink",
+            "latest_view_repaired": true,
+            "name": "false_complete_metadata",
+            "old_checkpoint_retained": true,
+            "oracle_truth_deps": [
+              "SOURCE_R_SYNTHETIC",
+              "SOURCE_K_SYNTHETIC"
+            ],
+            "rows": [
+              [
+                1,
+                "R_and_K",
+                1
+              ],
+              [
+                2,
+                "R_and_K",
+                2
+              ]
+            ],
+            "total_effects_after_replays": 2,
+            "unauthorized_effect_observed": true
+          },
+          {
+            "attempts": [
+              {
+                "decision": "allowed",
+                "version": 1
+              },
+              {
+                "decision": "blocked",
+                "version": 2
+              },
+              {
+                "decision": "allowed",
+                "version": 3
+              }
+            ],
+            "baseline_effects": 1,
+            "checkpoint_count_after_repair": 9,
+            "checkpoint_count_before": 4,
+            "declared_deps": [
+              "SOURCE_R_SYNTHETIC",
+              "SOURCE_K_SYNTHETIC"
+            ],
+            "first_replay_decision": "blocked",
+            "first_replay_new_effects": 0,
+            "guard_mode": "sink",
+            "latest_view_repaired": true,
+            "name": "release_after_sequester",
+            "old_checkpoint_retained": true,
+            "oracle_truth_deps": [
+              "SOURCE_R_SYNTHETIC",
+              "SOURCE_K_SYNTHETIC"
+            ],
+            "rows": [
+              [
+                1,
+                "R_and_K",
+                1
+              ],
+              [
+                2,
+                "R_and_K",
+                3
+              ]
+            ],
+            "total_effects_after_replays": 2,
+            "unauthorized_effect_observed": false
+          }
+        ],
+        "langgraph_version": "1.2.12",
+        "limitations": [
+          "Constructed synthetic markers",
+          "InMemorySaver only",
+          "SQLite effect sink is local",
+          "Incorrectly complete dependency metadata remains unsafe"
+        ],
+        "schema": "checkpoint-effect-v1"
+      },
+      "source_commit": "9b80d8f911e331e9fb5bc016c024b62276dae194",
+      "source_file": "replay_probe.py"
+    },
+    "postgres": {
+      "actions_run": 44450716347,
+      "artifact_sha256": "fa177f1193df46a3ff7267fee356940dece81608d0d2198eb74cc606796e32d2",
+      "recorded_result_sha256": "057ea8ec02c40d9f167bb7b21d612297712316cbe1e7cf532b2cafd5c0c8a7ec",
+      "result": {
+        "all_assertions_passed": true,
+        "case_count": 7,
+        "cases": [
+          {
+            "attempts": [
+              {
+                "decision": "allowed",
+                "version": 1
+              },
+              {
+                "decision": "allowed",
+                "version": 2
+              }
+            ],
+            "baseline_effects": 1,
+            "checkpoint_count_after_repair": 7,
+            "checkpoint_count_before": 4,
+            "declared_deps": [
+              "SOURCE_R_SYNTHETIC",
+              "SOURCE_K_SYNTHETIC"
+            ],
+            "first_replay_decision": "allowed",
+            "first_replay_new_effects": 1,
+            "guard_mode": "none",
+            "latest_view_repaired": true,
+            "name": "no_guard",
+            "old_checkpoint_retained": true,
+            "oracle_truth_deps": [
+              "SOURCE_R_SYNTHETIC",
+              "SOURCE_K_SYNTHETIC"
+            ],
+            "rows": [
+              [
+                1,
+                "R_and_K",
+                1
+              ],
+              [
+                2,
+                "R_and_K",
+                2
+              ]
+            ],
+            "total_effects_after_replays": 2,
+            "unauthorized_effect_observed": true
+          },
+          {
+            "attempts": [
+              {
+                "decision": "allowed",
+                "version": 1
+              },
+              {
+                "decision": "allowed",
+                "version": 2
+              }
+            ],
+            "baseline_effects": 1,
+            "checkpoint_count_after_repair": 7,
+            "checkpoint_count_before": 4,
+            "declared_deps": [
+              "SOURCE_R_SYNTHETIC",
+              "SOURCE_K_SYNTHETIC"
+            ],
+            "first_replay_decision": "allowed",
+            "first_replay_new_effects": 1,
+            "guard_mode": "entry",
+            "latest_view_repaired": true,
+            "name": "entry_only",
+            "old_checkpoint_retained": true,
+            "oracle_truth_deps": [
+              "SOURCE_R_SYNTHETIC",
+              "SOURCE_K_SYNTHETIC"
+            ],
+            "rows": [
+              [
+                1,
+                "R_and_K",
+                1
+              ],
+              [
+                2,
+                "R_and_K",
+                2
+              ]
+            ],
+            "total_effects_after_replays": 2,
+            "unauthorized_effect_observed": true
+          },
+          {
+            "attempts": [
+              {
+                "decision": "allowed",
+                "version": 1
+              },
+              {
+                "decision": "blocked",
+                "version": 2
+              }
+            ],
+            "baseline_effects": 1,
+            "checkpoint_count_after_repair": 7,
+            "checkpoint_count_before": 4,
+            "declared_deps": [
+              "SOURCE_R_SYNTHETIC",
+              "SOURCE_K_SYNTHETIC"
+            ],
+            "first_replay_decision": "blocked",
+            "first_replay_new_effects": 0,
+            "guard_mode": "sink",
+            "latest_view_repaired": true,
+            "name": "pre_effect",
+            "old_checkpoint_retained": true,
+            "oracle_truth_deps": [
+              "SOURCE_R_SYNTHETIC",
+              "SOURCE_K_SYNTHETIC"
+            ],
+            "rows": [
+              [
+                1,
+                "R_and_K",
+                1
+              ]
+            ],
+            "total_effects_after_replays": 1,
+            "unauthorized_effect_observed": false
+          },
+          {
+            "attempts": [
+              {
+                "decision": "allowed",
+                "version": 1
+              },
+              {
+                "decision": "allowed",
+                "version": 2
+              }
+            ],
+            "baseline_effects": 1,
+            "checkpoint_count_after_repair": 7,
+            "checkpoint_count_before": 4,
+            "declared_deps": [
+              "SOURCE_K_SYNTHETIC"
+            ],
+            "first_replay_decision": "allowed",
+            "first_replay_new_effects": 1,
+            "guard_mode": "sink",
+            "latest_view_repaired": true,
+            "name": "clean_independent",
+            "old_checkpoint_retained": true,
+            "oracle_truth_deps": [
+              "SOURCE_K_SYNTHETIC"
+            ],
+            "rows": [
+              [
+                1,
+                "K_only",
+                1
+              ],
+              [
+                2,
+                "K_only",
+                2
+              ]
+            ],
+            "total_effects_after_replays": 2,
+            "unauthorized_effect_observed": false
+          },
+          {
+            "attempts": [
+              {
+                "decision": "unresolved",
+                "version": 1
+              },
+              {
+                "decision": "unresolved",
+                "version": 2
+              }
+            ],
+            "baseline_effects": 0,
+            "checkpoint_count_after_repair": 7,
+            "checkpoint_count_before": 4,
+            "declared_deps": null,
+            "first_replay_decision": "unresolved",
+            "first_replay_new_effects": 0,
+            "guard_mode": "sink",
+            "latest_view_repaired": true,
+            "name": "unknown_dependency",
+            "old_checkpoint_retained": true,
+            "oracle_truth_deps": [
+              "SOURCE_R_SYNTHETIC",
+              "SOURCE_K_SYNTHETIC"
+            ],
+            "rows": [],
+            "total_effects_after_replays": 0,
+            "unauthorized_effect_observed": false
+          },
+          {
+            "attempts": [
+              {
+                "decision": "allowed",
+                "version": 1
+              },
+              {
+                "decision": "allowed",
+                "version": 2
+              }
+            ],
+            "baseline_effects": 1,
+            "checkpoint_count_after_repair": 7,
+            "checkpoint_count_before": 4,
+            "declared_deps": [
+              "SOURCE_K_SYNTHETIC"
+            ],
+            "first_replay_decision": "allowed",
+            "first_replay_new_effects": 1,
+            "guard_mode": "sink",
+            "latest_view_repaired": true,
+            "name": "false_complete_metadata",
+            "old_checkpoint_retained": true,
+            "oracle_truth_deps": [
+              "SOURCE_R_SYNTHETIC",
+              "SOURCE_K_SYNTHETIC"
+            ],
+            "rows": [
+              [
+                1,
+                "R_and_K",
+                1
+              ],
+              [
+                2,
+                "R_and_K",
+                2
+              ]
+            ],
+            "total_effects_after_replays": 2,
+            "unauthorized_effect_observed": true
+          },
+          {
+            "attempts": [
+              {
+                "decision": "allowed",
+                "version": 1
+              },
+              {
+                "decision": "blocked",
+                "version": 2
+              },
+              {
+                "decision": "allowed",
+                "version": 3
+              }
+            ],
+            "baseline_effects": 1,
+            "checkpoint_count_after_repair": 9,
+            "checkpoint_count_before": 4,
+            "declared_deps": [
+              "SOURCE_R_SYNTHETIC",
+              "SOURCE_K_SYNTHETIC"
+            ],
+            "first_replay_decision": "blocked",
+            "first_replay_new_effects": 0,
+            "guard_mode": "sink",
+            "latest_view_repaired": true,
+            "name": "release_after_sequester",
+            "old_checkpoint_retained": true,
+            "oracle_truth_deps": [
+              "SOURCE_R_SYNTHETIC",
+              "SOURCE_K_SYNTHETIC"
+            ],
+            "rows": [
+              [
+                1,
+                "R_and_K",
+                1
+              ],
+              [
+                2,
+                "R_and_K",
+                3
+              ]
+            ],
+            "total_effects_after_replays": 2,
+            "unauthorized_effect_observed": false
+          }
+        ],
+        "langgraph_version": "1.2.12",
+        "limitations": [
+          "Constructed synthetic markers",
+          "InMemorySaver only",
+          "SQLite effect sink is local",
+          "Incorrectly complete dependency metadata remains unsafe"
+        ],
+        "postgres_saver_version": "3.1.2",
+        "schema": "checkpoint-effect-v1"
+      },
+      "source_commit": "9093676a87f1d0ee1c0661077d23ec6284e74100",
+      "source_file": "pg_replay_probe.py"
+    }
+  },
+  "schema": "historical-checkpoint-effect-records-v1",
+  "source": "After_the_Clawback_R35_SECTION6A_FULL_SQL_REAUDIT_HANDOFF_2026-11-20.zip"
+}
