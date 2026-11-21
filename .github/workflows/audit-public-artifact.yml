@@ -1,0 +1,50 @@
+name: Public artifact integrity and core reproduction
+
+on:
+  push:
+    paths:
+      - .github/workflows/audit-public-artifact.yml
+      - tests/audit_public_artifact.py
+      - README.md
+      - REPRODUCING.md
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit-and-reproduce:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Static security, source and document-link audit
+        shell: bash
+        run: |
+          set -euo pipefail
+          python tests/audit_public_artifact.py --output "$RUNNER_TEMP/public-artifact-audit.json"
+      - name: Independently verify saved results and court-order coding
+        shell: bash
+        run: |
+          set -euo pipefail
+          python tests/verify_recorded_results.py
+          python tests/verify_public_summaries.py
+          python experiments/court_coding/verify_public_coding.py
+          python experiments/court_coding/verify_conditional_coding.py
+      - name: Reconstruct independent court-order transfer and effect fixtures
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd experiments/court_order_transfer
+          python tests/check_public_reproduction.py
+      - name: Retain the public-only audit summary
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: public-artifact-static-audit
+          retention-days: 30
+          path: ${{ runner.temp }}/public-artifact-audit.json
+          if-no-files-found: ignore
