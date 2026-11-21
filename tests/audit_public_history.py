@@ -51,7 +51,18 @@ def main():
                     "path": path, "blob_sha": sha
                 })
         for rule, pattern in SIGNALS.items():
-            if pattern.search(content):
+            matches = list(pattern.finditer(content))
+            if rule == "local-personal-path":
+                def is_regex_definition(match):
+                    start = content.rfind(b"\n", 0, match.start()) + 1
+                    end = content.find(b"\n", match.end())
+                    line = content[start:end if end >= 0 else len(content)]
+                    return b"re.compile(" in line and (
+                        b'"personal-path"' in line or
+                        b'"local-personal-path"' in line
+                    )
+                matches = [m for m in matches if not is_regex_definition(m)]
+            if matches:
                 issues.append({
                     "rule": rule, "paths": sorted(paths), "blob_sha": sha
                 })
