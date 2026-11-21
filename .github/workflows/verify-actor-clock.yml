@@ -1,0 +1,48 @@
+name: Actor and clock recipient evidence
+
+on:
+  push:
+    paths:
+      - .github/workflows/verify-actor-clock.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  reproduce-actor-clock:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare pinned source and unprivileged-accessible Python environment
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd experiments/actor_clock
+          sha256sum -c SHA256SUMS.txt
+          python3 -m venv /tmp/r40-clock-venv
+          /tmp/r40-clock-venv/bin/pip install --disable-pip-version-check 'cryptography==46.0.4'
+          sudo cp -a . /tmp/r40-clock-src
+          sudo chown -R 0:0 /tmp/r40-clock-src
+          sudo find /tmp/r40-clock-src -type d -exec chmod 755 {} +
+          sudo find /tmp/r40-clock-src -type f -exec chmod 644 {} +
+          sudo chmod -R a+rX /tmp/r40-clock-venv
+      - name: Verify legal deadline calculations and execute real UID-separated recipient tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd /tmp/r40-clock-src
+          sudo env PYTHONPATH=/tmp/r40-clock-src /tmp/r40-clock-venv/bin/python -m unittest discover -s tests -p 'test_*.py' -v
+          sudo env PYTHONPATH=/tmp/r40-clock-src /tmp/r40-clock-venv/bin/python -m stage_r.run_study --out /tmp/r40-clock-src/fresh_reproduction
+          sudo env PYTHONPATH=/tmp/r40-clock-src /tmp/r40-clock-venv/bin/python tests/independent_audit.py /tmp/r40-clock-src/fresh_reproduction
+          sudo env PYTHONPATH=/tmp/r40-clock-src /tmp/r40-clock-venv/bin/python tests/check_public_reproduction.py /tmp/r40-clock-src/fresh_reproduction
+          cd fresh_reproduction
+          sha256sum *.sqlite *.json *.csv > SHA256SUMS_REPRODUCED.txt
+          sudo chown -R "$(id -u):$(id -g)" /tmp/r40-clock-src/fresh_reproduction
+      - name: Save synthetic effect databases and independent clock/effect audits
+        uses: actions/upload-artifact@v4
+        with:
+          name: actor-clock-full-evidence
+          retention-days: 30
+          path: /tmp/r40-clock-src/fresh_reproduction/
