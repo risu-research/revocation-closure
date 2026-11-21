@@ -175,6 +175,10 @@ python verify_conditional_coding.py
 
 The second check reconstructs 118 additions, two removals, and the conditional code frequencies. Five identified source checks remain open in the published ledger.
 
+## Cross-experiment evidence map
+
+The [historical replay and recipient-effect evidence map](results/SECTION_VI_CROSS_EXPERIMENT_EVIDENCE_MAP.md) distinguishes the eight experimental modules, their separate denominators, recorded SQL outcomes, and the strength of each original archive. The later source-to-effect and policy-integrity modules are paired tests of the same fixed scenario definitions.
+
 ## Inputs and evidence
 
 Every experiment uses synthetic source records and researcher-specified legal-policy fixtures. The original result JSON, source revisions, independent audit procedures and GitHub Actions records are linked from the [results directory](results/). Repeated seeds vary synthetic identifiers within fixed scenario families.
