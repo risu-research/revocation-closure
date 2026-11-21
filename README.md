@@ -4,7 +4,7 @@ Reproducible research artifacts for *After the Clawback: Revocation Closure in A
 
 Legal clawback obligations can change after an agent has saved a checkpoint, read source material or received permission to create an effect. These experiments connect a selected legal-policy record, the sources and programs contributing to an output, the receiving service's current authorization, and the record of a committed write.
 
-**[Reproduce the experiments](REPRODUCING.md)** · **[Cross-experiment evidence and denominators](results/SECTION_VI_CROSS_EXPERIMENT_EVIDENCE_MAP.md)** · **[Run the full GitHub Actions evaluation](.github/workflows/reproduce-full-artifact.yml)**
+**[Reproduce the experiments](REPRODUCING.md)** · **[Full artifact and privacy audit](results/PUBLIC_ARTIFACT_REPRODUCTION_AUDIT.md)** · **[Cross-experiment evidence](results/SECTION_VI_CROSS_EXPERIMENT_EVIDENCE_MAP.md)** · **[Run the full Actions evaluation](.github/workflows/reproduce-full-artifact.yml)**
 
 ## Research components
 
