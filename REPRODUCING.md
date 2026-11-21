@@ -146,7 +146,7 @@ PYTHONPATH=. python tests/independent_stage_q_audit.py . fresh_ablation
 python tests/check_expected_metrics.py
 ```
 
-The two runs compare program approvals and verify the physical SQL effects. See the [experiment README](experiments/program_binding/README.md).
+The two runs compare program approvals and verify the physical SQL effects. See the [experiment README](experiments/program_binding/README.md) and the [fresh signed-record and SQL audit](results/PROGRAM_BINDING_CI_AUDIT.md).
 
 
 ## Court-order conditional coding
