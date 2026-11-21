@@ -151,6 +151,10 @@ python tests/check_expected_metrics.py
 The two runs compare program approvals and verify the physical SQL effects. See the [experiment README](experiments/program_binding/README.md) and the [fresh signed-record and SQL audit](results/PROGRAM_BINDING_CI_AUDIT.md).
 
 
+## Actor, deadline, and exception checks at the recipient
+
+The [actor-clock module](experiments/actor_clock/README.md) runs eight source-linked court duty fixtures through six independently controlled Linux-UID recipient instances. Its [public Actions workflow](.github/workflows/verify-actor-clock.yml) executes twelve date checks, the signed-event study, the read-only SQL observer, and archive-hash verification. The [original-clause and stored SQL audit](results/ACTOR_CLOCK_SQL_AND_SOURCE_AUDIT.md) links all three entered orders and the new complete synthetic evidence artifact.
+
 ## Court-order conditional coding
 
 The [court-order coding module](experiments/court_coding/CONDITIONAL_CODING.md) now includes the 120-cell adjudication ledger and the complete conditional 520-cell matrix. Run:
