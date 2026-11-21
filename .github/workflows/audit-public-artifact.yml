@@ -6,6 +6,7 @@ on:
     paths:
       - .github/workflows/audit-public-artifact.yml
       - tests/audit_public_artifact.py
+      - tests/audit_public_history.py
       - README.md
       - REPRODUCING.md
   workflow_dispatch:
@@ -19,6 +20,8 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -27,6 +30,11 @@ jobs:
         run: |
           set -euo pipefail
           python tests/audit_public_artifact.py --output "$RUNNER_TEMP/public-artifact-audit.json"
+      - name: Audit every reachable public Git blob revision
+        shell: bash
+        run: |
+          set -euo pipefail
+          python tests/audit_public_history.py --output "$RUNNER_TEMP/public-history-audit.json"
       - name: Independently verify saved results and court-order coding
         shell: bash
         run: |
@@ -47,5 +55,7 @@ jobs:
         with:
           name: public-artifact-static-audit
           retention-days: 30
-          path: ${{ runner.temp }}/public-artifact-audit.json
+          path: |
+            ${{ runner.temp }}/public-artifact-audit.json
+            ${{ runner.temp }}/public-history-audit.json
           if-no-files-found: ignore
