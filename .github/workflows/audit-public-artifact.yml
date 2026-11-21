@@ -1,6 +1,7 @@
 name: Public artifact integrity and core reproduction
 
 on:
+  workflow_call:
   push:
     paths:
       - .github/workflows/audit-public-artifact.yml
