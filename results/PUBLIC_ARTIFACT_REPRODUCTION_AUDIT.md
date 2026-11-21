@@ -1,5 +1,7 @@
 # Public Artifact Reproduction and Integrity Audit
 
+The [complete paper-to-artifact evidence index](PAPER_TO_ARTIFACT_COVERAGE.md) maps every manuscript section and all nine tables to its fixed data and executable verifier.
+
 This repository publishes the code, manually reviewed policy fixtures, synthetic evaluation data and independent checks supporting *After the Clawback: Revocation Closure in Agentic Legal Workflows*. The experiments follow distinct test matrices. Each result is tied to a source revision and independently checked receiving-service evidence.
 
 ## Versioned source archive

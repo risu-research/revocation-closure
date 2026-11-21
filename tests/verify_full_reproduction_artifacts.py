@@ -244,6 +244,28 @@ def collect(root):
         actual = json.loads((root / group / "result.json").read_text())
         assert actual == original_replay[key]["result"], key
         assert actual["case_count"] == 7 and actual["all_assertions_passed"]
+        audit = json.loads((root / group / "retained-sql-audit.json").read_text())
+        assert audit["schema"] == "preserved-original-checkpoint-sql-v1"
+        assert audit["status"] == "PASS"
+        assert len(audit["cases"]) == 7
+        for case in actual["cases"]:
+            db = root / group / "sql-effects" / (case["name"] + ".sqlite")
+            assert db.exists() and db.is_file(), db
+            sql = sqlite3.connect(f"file:{db.resolve()}?mode=ro", uri=True)
+            try:
+                assert sql.execute("PRAGMA integrity_check").fetchone()[0] == "ok", db
+                rows = sql.execute(
+                    "SELECT seq,payload,policy_version FROM effects ORDER BY seq"
+                ).fetchall()
+            finally:
+                sql.close()
+            assert [list(row) for row in rows] == case["rows"], case["name"]
+        case_hashes = {x["case"]: x["sha256"] for x in audit["cases"]}
+        assert set(case_hashes) == {x["name"] for x in actual["cases"]}
+        for name, digest in case_hashes.items():
+            db = root / group / "sql-effects" / (name + ".sqlite")
+            assert hashlib.sha256(db.read_bytes()).hexdigest() == digest
+
     results.update({
         "component_original_runs_repeated": 5,
         "checkpoint_original_saver_scenarios_repeated": 14,

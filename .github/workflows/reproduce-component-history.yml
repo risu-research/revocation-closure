@@ -112,8 +112,9 @@ jobs:
           python -m pip install --disable-pip-version-check 'langgraph==1.2.12'
           mkdir -p "$RUNNER_TEMP/replay-inmemory"
           cd "$RUNNER_TEMP/replay-inmemory"
-          python "$GITHUB_WORKSPACE/experiments/component_history/source/replay_inmemory.py" | tee run.log
-          sha256sum result.json run.log > SHA256SUMS.txt
+          python "$GITHUB_WORKSPACE/experiments/component_history/retain_execution_sql.py" \
+            --source "$GITHUB_WORKSPACE/experiments/component_history/source/replay_inmemory.py" | tee run.log
+          sha256sum result.json run.log retained-sql-audit.json sql-effects/*.sqlite > SHA256SUMS.txt
       - name: Preserve individual SQL rows and decisions
         if: always()
         uses: actions/upload-artifact@v4
@@ -158,8 +159,9 @@ jobs:
         run: |
           set -euo pipefail
           cd "$RUNNER_TEMP/replay-postgres"
-          python "$GITHUB_WORKSPACE/experiments/component_history/source/replay_postgres.py" | tee run.log
-          sha256sum result.json run.log history.log > SHA256SUMS.txt
+          python "$GITHUB_WORKSPACE/experiments/component_history/retain_execution_sql.py" \
+            --source "$GITHUB_WORKSPACE/experiments/component_history/source/replay_postgres.py" | tee run.log
+          sha256sum result.json run.log history.log retained-sql-audit.json sql-effects/*.sqlite > SHA256SUMS.txt
       - name: Preserve physical effect rows and executed history checks
         if: always()
         uses: actions/upload-artifact@v4

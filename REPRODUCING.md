@@ -90,7 +90,7 @@ The [component-history archive](experiments/component_history/README.md) preserv
 python experiments/component_history/verify_historical.py
 ```
 
-Run the [component history workflow](.github/workflows/reproduce-component-history.yml) to install the studied frameworks and execute the original scripts again against isolated Chroma, Qdrant and PostgreSQL services. The full public reproduction workflow now calls this component workflow and compares its newly produced results with the historical records. The original SQLite databases from the first checkpoint runs were ephemeral; the archived case-level SQL rows remain intact.
+Run the [component history workflow](.github/workflows/reproduce-component-history.yml) to install the studied frameworks and execute the original scripts again against isolated Chroma, Qdrant and PostgreSQL services. The full public reproduction workflow now calls this component workflow and compares its newly produced results with the historical records. The original SQLite databases from the first checkpoint runs were ephemeral. The archived case-level SQL rows remain intact. The fresh workflow now preserves the actual seven SQLite databases for each saver backend and verifies every effect row against the original result JSON.
 
 ## Retrospective evidence recovery
 
