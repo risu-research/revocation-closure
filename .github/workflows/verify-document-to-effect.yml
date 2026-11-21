@@ -31,7 +31,7 @@ jobs:
           set -euo pipefail
           cd experiments/document_to_effect
           for n in 1 2; do
-            out="$RUNNER_TEMP/document-to-effect-trial-${n}"
+            out="results/ci_trial_${n}"
             python code/run.py --out "$out"
             python code/independent_audit.py "$out" | tee "$out/independent_audit.json"
             python - "$out" <<'PY'
@@ -54,5 +54,5 @@ jobs:
           name: document-to-effect-two-full-runs
           retention-days: 30
           path: |
-            ${{ runner.temp }}/document-to-effect-trial-1/
-            ${{ runner.temp }}/document-to-effect-trial-2/
+            experiments/document_to_effect/results/ci_trial_1/
+            experiments/document_to_effect/results/ci_trial_2/
