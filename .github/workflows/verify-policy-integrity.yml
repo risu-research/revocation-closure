@@ -67,7 +67,7 @@ jobs:
             assert total==expected,(name,total)
           print('PASS: 5 changed cases, 13 mutations, 12 HTTP pairs, all SQL writes')
           PY
-            (cd results; find . -type f ! -name '*-wal' ! -name '*-shm' -print0 | sort -z | xargs -0 sha256sum > archive_sha256.txt)
+            (cd results; find . -type f ! -name '*-wal' ! -name '*-shm' ! -name 'archive_sha256.txt' -print0 | sort -z | xargs -0 sha256sum > archive_sha256.txt)
           done
       - name: Retain two complete audited experiment archives
         uses: actions/upload-artifact@v4
