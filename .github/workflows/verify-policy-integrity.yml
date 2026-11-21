@@ -1,0 +1,65 @@
+name: Policy integrity and recipient current permission
+
+on:
+  push:
+    paths:
+      - .github/workflows/verify-policy-integrity.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  reproduce-policy-integrity:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install pinned cryptography dependency
+        run: python -m pip install --disable-pip-version-check -r experiments/policy_integrity/requirements.txt
+      - name: Reproduce and audit both recipient versions twice
+        shell: bash
+        run: |
+          set -euo pipefail
+          for n in 1 2; do
+            cp -a experiments/policy_integrity "$RUNNER_TEMP/policy-integrity-${n}"
+            cd "$RUNNER_TEMP/policy-integrity-${n}"
+            python reproduce.py
+            python - <<'PY'
+          import json, sqlite3
+          from pathlib import Path
+          root=Path('results')
+          compare=json.loads((root/'baseline_to_stage_t_comparison.json').read_text())
+          mutations=json.loads((root/'a0_mutation_results.json').read_text())
+          assert compare['changed_count']==5
+          assert all(x['from']=='ALLOW' and x['to']=='BLOCK_A0_REVOKED' for x in compare['changed_decisions'])
+          assert compare['legitimate_persisted_original']==compare['legitimate_persisted_stage_t']==8
+          assert len(mutations['mutations'])==13
+          assert sum(x['physical_replay'] is not None for x in mutations['mutations'])==12
+          assert mutations['totals']['mutated_protected_source_writes_persisted']==0
+          assert mutations['totals']['mutated_clean_source_writes_preserved']==12
+          for name,expected in [('stage_s_baseline_rerun',17),('a0_enforced_primary',12)]:
+            dbs=sorted((root/name).glob('*recipient.sqlite'))+sorted((root/name).glob('*missed_notice.sqlite'))+sorted((root/name).glob('*self_discovery.sqlite'))
+            assert len(dbs)==5,(name,dbs)
+            total=0
+            for db in dbs:
+              conn=sqlite3.connect(f'file:{db.resolve()}?mode=ro',uri=True)
+              assert conn.execute('PRAGMA integrity_check').fetchone()[0]=='ok'
+              total+=conn.execute('SELECT COUNT(*) FROM effects').fetchone()[0]
+              conn.close()
+            assert total==expected,(name,total)
+          print('PASS: 5 changed cases, 13 mutations, 12 HTTP pairs, all SQL writes')
+          PY
+            (cd results; find . -type f ! -name '*-wal' ! -name '*-shm' -print0 | sort -z | xargs -0 sha256sum > archive_sha256.txt)
+          done
+      - name: Retain two complete audited experiment archives
+        uses: actions/upload-artifact@v4
+        with:
+          name: policy-integrity-two-runs
+          retention-days: 30
+          path: |
+            ${{ runner.temp }}/policy-integrity-1/results/
+            ${{ runner.temp }}/policy-integrity-2/results/
