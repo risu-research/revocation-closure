@@ -17,6 +17,7 @@ GROUPS = {
     "full-checkpoint-provenance",
     "full-external-effects",
     "full-observed-tool-reads",
+    "full-retrospective-evidence-recovery",
     "full-trusted-source-custody",
     "full-independent-recipient",
 }
@@ -34,6 +35,7 @@ HASH_LISTS = (
     "program-binding-reproduction/reproduce-sha256.txt",
     "full-external-effects/SHA256SUMS.txt",
     "full-observed-tool-reads/SHA256SUMS.txt",
+    "full-retrospective-evidence-recovery/SHA256SUMS.txt",
     "document-to-effect-two-full-runs/ci_trial_1/archive_sha256.txt",
     "document-to-effect-two-full-runs/ci_trial_2/archive_sha256.txt",
     "policy-integrity-two-runs/policy-integrity-1/results/archive_sha256.txt",
@@ -164,6 +166,40 @@ def collect(root):
             m["mutated_protected_source_writes_persisted"],
             m["mutated_clean_source_writes_preserved"]
         ) == (13, 13, 12, 0, 12)
+
+    recovery = json.loads(
+        (root / "full-retrospective-evidence-recovery" / "recovery-result.json").read_text()
+    )
+    assert recovery["schema"] == "retrospective-recovery-fresh-v1"
+    development = recovery["results"]["development"]
+    holdout = recovery["results"]["heldout"]
+    for rec, cases, keep, missing, writes, tampered in (
+        (development, 180, 84, 96, 120, 8),
+        (holdout, 540, 252, 288, 360, 24),
+    ):
+        t = rec["totals"]
+        assert rec["passed"]
+        assert (t["cases"], t["full_unique"], t["without_r_unique"],
+                t["without_r_unresolved"], t["actual_sql_writes"],
+                t["physically_tampered_writes"]) == (
+                    cases, cases, keep, missing, writes, tampered
+                )
+        assert len(rec["rows"]) == cases
+    observed_dir = root / "full-observed-tool-reads"
+    for name in ("evidence.sqlite", "tool_read_holdout_audit.json",
+                 "tool_read_holdout_oracle.json", "tool_read_holdout_acks.json"):
+        actual = hashlib.sha256((observed_dir / name).read_bytes()).hexdigest()
+        assert holdout["original_sha256"][name] == actual, name
+    recovery_dir = root / "full-retrospective-evidence-recovery"
+    assert sql_count(recovery_dir / "dev" / "evidence.sqlite", "effects") == 120
+    results.update({
+        "retrospective_dev_cases": 180,
+        "retrospective_heldout_cases": 540,
+        "retrospective_heldout_unique_recovered": 540,
+        "retrospective_heldout_missing_R_unresolved": 288,
+        "retrospective_dev_sql_effects": 120,
+        "retrospective_heldout_sql_effects": 360,
+    })
     expected = {
         "external_sql_writes": 720,
         "observed_read_sql_effects": 360,

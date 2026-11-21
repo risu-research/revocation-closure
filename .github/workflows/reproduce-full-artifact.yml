@@ -99,7 +99,51 @@ jobs:
           path: |
             experiments/observed_tool_reads/_runs/holdout/evidence.sqlite
             experiments/observed_tool_reads/_runs/holdout/tool_read_holdout_audit.json
+            experiments/observed_tool_reads/_runs/holdout/tool_read_holdout_oracle.json
+            experiments/observed_tool_reads/_runs/holdout/tool_read_holdout_acks.json
             experiments/observed_tool_reads/_runs/holdout/SHA256SUMS.txt
+
+  retrospective-recovery:
+    needs: actual-observed-tool-reads
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: full-observed-tool-reads
+          path: ${{ runner.temp }}/observed-heldout
+      - name: Reproduce archived recovery and corruption controls
+        shell: bash
+        run: bash experiments/retrospective_recovery/reproduce_archived.sh
+      - name: Independently reanalyze fresh tool-read evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check 'langgraph==1.2.12'
+          bash experiments/observed_tool_reads/run.sh dev
+          OUT=experiments/retrospective_recovery/_runs
+          mkdir -p "$OUT/dev"
+          for file in evidence.sqlite tool_read_dev_audit.json tool_read_dev_oracle.json tool_read_dev_acks.json; do
+            cp "experiments/observed_tool_reads/_runs/dev/$file" "$OUT/dev/$file"
+          done
+          python experiments/retrospective_recovery/reproduce_fresh.py \
+            --dev "$OUT/dev" \
+            --holdout "$RUNNER_TEMP/observed-heldout" \
+            --out "$OUT/recovery-result.json"
+          (cd "$OUT" && sha256sum recovery-result.json \
+            dev/evidence.sqlite dev/tool_read_dev_audit.json \
+            dev/tool_read_dev_oracle.json dev/tool_read_dev_acks.json \
+            > SHA256SUMS.txt)
+      - name: Archive recovery audit and development evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: full-retrospective-evidence-recovery
+          retention-days: 30
+          path: experiments/retrospective_recovery/_runs/
 
   trusted-source-custody:
     runs-on: ubuntu-24.04
@@ -145,6 +189,7 @@ jobs:
       - checkpoint-and-provenance
       - physical-external-effects
       - actual-observed-tool-reads
+      - retrospective-recovery
       - trusted-source-custody
       - independent-recipient
     runs-on: ubuntu-24.04

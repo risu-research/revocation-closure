@@ -1,6 +1,6 @@
 # Reproducing the public experiments
 
-The [v1.0.0 research archive](https://doi.org/10.5281/zenodo.24410799) preserves the fixed inputs, executable evaluation code, expected outcomes and independent audit programs at commit `c1f15fb1146a10cb3690e755bf8aa7deaa23c3a5`. Reproduce the paper's recorded results from this [release tag](https://github.com/risu-research/revocation-closure/releases/tag/v1.0.0). The tests use synthetic material and selected manually reviewed clauses from public court orders.
+The [v1.0.0 research archive](https://doi.org/10.5281/zenodo.24410799) preserves the originally released fixed inputs, executable evaluation code, expected outcomes and independent audit programs at commit `c1f15fb1146a10cb3690e755bf8aa7deaa23c3a5`. Reproduce the paper's recorded results from this [release tag](https://github.com/risu-research/revocation-closure/releases/tag/v1.0.0). The tests use synthetic material and selected manually reviewed clauses from public court orders.
 
 ## One-click full reproduction
 
@@ -14,9 +14,9 @@ The component workflows remain independently runnable:
 - [Instrumented document reads and SQL effects](.github/workflows/verify-document-to-effect.yml)
 - [Current permission and typed-policy integrity](.github/workflows/verify-policy-integrity.yml)
 
-The final `verify-complete-artifact` job downloads the ten experimental evidence groups from that run. It checks their stored SQL effects and policy-mutation records, scans the evidence for sensitive content, and publishes a `full-reproduction-verification` artifact listing SHA-256 digests for every file. The [public audit description](results/PUBLIC_ARTIFACT_REPRODUCTION_AUDIT.md) maps each group to the corresponding experiment.
+The final `verify-complete-artifact` job downloads the eleven evidence groups from that run. It checks their stored SQL effects and policy-mutation records, scans the evidence for sensitive content, and publishes a `full-reproduction-verification` artifact listing SHA-256 digests for every file. The [public audit description](results/PUBLIC_ARTIFACT_REPRODUCTION_AUDIT.md) maps each group to the corresponding experiment.
 
-To repeat the final verification offline, download all ten evidence groups from **one** full Actions run, preserving each artifact's top-level folder name, then use:
+To repeat the final verification offline, download all eleven evidence groups from **one** full Actions run, preserving each artifact's top-level folder name, then use:
 
 ```bash
 python tests/verify_full_reproduction_artifacts.py PATH_TO_DOWNLOADED_GROUPS --out verified-manifest.json
@@ -81,6 +81,16 @@ bash experiments/observed_tool_reads/run.sh holdout
 [Protocol](experiments/observed_tool_reads/PROTOCOL.md) · [Recorded evidence](results/OBSERVED_TOOL_READ_EVIDENCE.md)
 
 Both shell helpers require Linux or macOS, Bash, local loopback ports, and SQLite. The produced synthetic outputs stay in their ignored `_runs/holdout/` directories.
+
+## Retrospective evidence recovery
+
+The [recovery module](experiments/retrospective_recovery/README.md) preserves the original synthetic development and held-out tool-read archives. Reproduce the 180 and 540 original recorded cases, SQL checks and corruption controls using the Python standard library:
+
+```bash
+bash experiments/retrospective_recovery/reproduce_archived.sh
+```
+
+The full Actions workflow also regenerates development tool reads and reuses the held-out database from its observed-read job. It recomputes the 720 cases with fresh nonces, verifies all stored SQL effects and archives a full per-record reconstruction.
 
 ## Isolated trusted broker and downstream recipient
 

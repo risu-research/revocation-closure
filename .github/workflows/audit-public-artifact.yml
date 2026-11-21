@@ -9,6 +9,7 @@ on:
       - tests/audit_public_history.py
       - tests/verify_full_reproduction_artifacts.py
       - tests/test_full_reproduction_integrity.py
+      - experiments/retrospective_recovery/**
       - CITATION.cff
       - README.md
       - REPRODUCING.md
@@ -51,6 +52,11 @@ jobs:
           python tests/verify_public_summaries.py
           python experiments/court_coding/verify_public_coding.py
           python experiments/court_coding/verify_conditional_coding.py
+      - name: Reproduce historical source recovery and corruption controls
+        shell: bash
+        run: |
+          set -euo pipefail
+          bash experiments/retrospective_recovery/reproduce_archived.sh
       - name: Reconstruct independent court-order transfer and effect fixtures
         shell: bash
         run: |
