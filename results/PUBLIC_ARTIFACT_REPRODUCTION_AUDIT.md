@@ -11,7 +11,7 @@ This repository publishes the code, manually reviewed policy fixtures, synthetic
 - [Independent completed-artifact verifier](../tests/verify_full_reproduction_artifacts.py)
 - [Cross-experiment evidence map](SECTION_VI_CROSS_EXPERIMENT_EVIDENCE_MAP.md)
 
-The full workflow runs ten source/data and executable study jobs. A final job downloads every resulting artifact, checks physical SQLite effects, validates required mutation controls, screens archived files for credentials and personal paths, and records each file's SHA-256 in a commit-bound manifest. A failed prerequisite or inconsistent archived effect prevents that final verification from succeeding.
+The full workflow runs ten source/data and executable study jobs. A final job downloads every resulting artifact, validates the experiment-produced SHA-256 inventories, checks physical SQLite effects, validates required mutation controls, screens archived files for credentials and personal paths, and records each file's SHA-256 in a commit-bound manifest. Negative-control tests confirm that altered, missing, malformed and out-of-archive hash entries are rejected. A failed prerequisite or inconsistent archived effect prevents that final verification from succeeding.
 
 ## Independent test evidence
 
