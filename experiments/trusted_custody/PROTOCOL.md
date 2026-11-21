@@ -96,4 +96,3 @@ This test uses a broker and worker with different real Linux identities, and a d
 
 The 168 held-out executions reuse 14 designed fault types and six seeds. They do not represent independent deployed agents or legal matters, and they do not measure naturally occurring failure rates. The results isolate a feasible security improvement and a remaining evidence boundary. Wider deployment would require network egress restrictions, protected secrets outside the agent's process, policy-administration controls, and integration with the real external effect service.
 
-The accepted manuscript remains unchanged. No GitHub release, Zenodo deposition or DOI has been created. Archival publication requires the author's explicit approval.
