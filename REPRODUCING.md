@@ -14,6 +14,14 @@ The component workflows remain independently runnable:
 - [Instrumented document reads and SQL effects](.github/workflows/verify-document-to-effect.yml)
 - [Current permission and typed-policy integrity](.github/workflows/verify-policy-integrity.yml)
 
+The final `verify-complete-artifact` job downloads the ten experimental evidence groups from that run. It checks their stored SQL effects and policy-mutation records, scans the evidence for sensitive content, and publishes a `full-reproduction-verification` artifact listing SHA-256 digests for every file. The [public audit description](results/PUBLIC_ARTIFACT_REPRODUCTION_AUDIT.md) maps each group to the corresponding experiment.
+
+To repeat the final verification offline, download all ten evidence groups from **one** full Actions run, preserving each artifact's top-level folder name, then use:
+
+```bash
+python tests/verify_full_reproduction_artifacts.py PATH_TO_DOWNLOADED_GROUPS --out verified-manifest.json
+```
+
 An Actions run verifies behavior **at its own commit SHA**. Generated signing keys, nonces and temporary service ports differ between runs. The fixed scenario decisions, SQL effects and independent checks are the reproducibility targets.
 
 ## Local checks before running experiments
@@ -22,13 +30,14 @@ Python 3.12 or newer is sufficient for the standard-library verifiers. Run from 
 
 ```bash
 python tests/audit_public_artifact.py
+python tests/audit_public_history.py
 python tests/verify_recorded_results.py
 python tests/verify_public_summaries.py
 python experiments/court_coding/verify_public_coding.py
 python experiments/court_coding/verify_conditional_coding.py
 ```
 
-The static auditor checks tracked text files for secrets and personal paths, Python syntax, internal Markdown links and the 40-order coding reconciliation. The court-data tests independently verify the original 520 decisions and the 120 recorded changes. The [source-page follow-up](experiments/court_coding/SOURCE_REVIEW_REPORT_2026-11-20.md) explains the five historical source-check flags, including the four verified page locations and the scoped Voltstar review.
+The static auditor checks tracked text files for credentials and personal paths, Python syntax, internal Markdown links and the 40-order coding reconciliation. The history auditor requires a complete Git checkout and checks older reachable file revisions as well. The court-data tests independently verify the original 520 decisions and the 120 recorded changes. The [source-page follow-up](experiments/court_coding/SOURCE_REVIEW_REPORT_2026-11-20.md) explains the five historical source-check flags, including the four verified page locations and the scoped Voltstar review.
 
 ## LangGraph checkpoint and provenance modules
 
