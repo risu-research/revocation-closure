@@ -2,6 +2,10 @@
 
 This repository publishes the code, manually reviewed policy fixtures, synthetic evaluation data and independent checks supporting *After the Clawback: Revocation Closure in Agentic Legal Workflows*. The experiments follow distinct test matrices. Each result is tied to a source revision and independently checked receiving-service evidence.
 
+## Versioned source archive
+
+The [Zenodo v1.0.0 record](https://doi.org/10.5281/zenodo.24410799) preserves the public source snapshot corresponding to [GitHub release v1.0.0](https://github.com/risu-research/revocation-closure/releases/tag/v1.0.0) and commit `c1f15fb1146a10cb3690e755bf8aa7deaa23c3a5`. The published Zenodo ZIP is 446,530 bytes (MD5 `fc5ad1efce5670b0b4ab1c77488400e7`). Source files and fixed evaluation inputs are preserved there; GitHub Actions regenerates run-specific SQLite evidence and independent verification manifests.
+
 ## Reproduction entry points
 
 - [One-click full public reproduction](../.github/workflows/reproduce-full-artifact.yml)
