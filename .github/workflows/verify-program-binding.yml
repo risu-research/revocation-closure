@@ -53,3 +53,7 @@ jobs:
             /tmp/stageq-ci-src/fresh_ablation/stage_q_result.json
             /tmp/stageq-ci-src/fresh_ablation/independent_audit.json
             /tmp/stageq-ci-src/fresh_ablation/recipient_snapshot.sqlite
+            /tmp/stageq-ci-src/fresh_baseline/public_trust.json
+            /tmp/stageq-ci-src/fresh_baseline/*_evidence.json
+            /tmp/stageq-ci-src/fresh_ablation/public_trust.json
+            /tmp/stageq-ci-src/fresh_ablation/*_evidence.json
