@@ -1,141 +1,52 @@
 # Revocation Closure
 
-Research artifacts for *After the Clawback: Revocation Closure in Agentic Legal Workflows*, accepted at the Tenth Annual Workshop on Applications of Artificial Intelligence in the Legal Industry, co-located with IEEE BigData 2026.
+Reproducible research artifacts for *After the Clawback: Revocation Closure in Agentic Legal Workflows*, accepted for the AI in the Legal Industry workshop at IEEE BigData 2026.
 
-[Reproduction commands and result checks](REPRODUCING.md)
+Legal clawback obligations can change after an agent has saved a checkpoint, read source material or received permission to create an effect. These experiments connect a selected legal-policy record, the sources and programs contributing to an output, the receiving service's current authorization, and the record of a committed write.
 
-This repository gathers reproducible tests for post-use legal revocation in agent workflows. The first verified module converts cited provisions from four entered federal protective orders into **manually specified policy fixtures** and runs synthetic effect-replay tests using LangGraph 1.2.12.
+**[Reproduce the experiments](REPRODUCING.md)** · **[Cross-experiment evidence and denominators](results/SECTION_VI_CROSS_EXPERIMENT_EVIDENCE_MAP.md)** · **[Run the full GitHub Actions evaluation](.github/workflows/reproduce-full-artifact.yml)**
 
-## Current independently runnable module
+## Research components
 
-- `experiments/court_policy/legal_order_probe.py` — clause-specific policy controls and replay experiments.
-- `experiments/court_policy/COURT_ORDER_MAP.md` — docket references, section references, exact scope and interpretation limits.
-- `results/court_policy_result.json` — the recorded output from a passing public GitHub Actions run.
-- `results/PROVENANCE.md` — fixed commit, runner link and evidence hashes.
+The studies have different scenario matrices. Their counts should be interpreted within each module, with the original expected results and independent auditors linked below.
 
-Run from the repository root using Python 3.12:
+| Study | Fixed evaluation and primary question | Code and source records | Audited evidence |
+| --- | --- | --- | --- |
+| Court-order coding | 40 entered orders, 13 codes, 520 decisions, and 120 recorded revisions | [Coding dataset](experiments/court_coding/README.md) | [Reconciliation methods](experiments/court_coding/CONDITIONAL_CODING.md) |
+| Clause-policy fixtures | 25 clause checks and eight checkpoint tests | [Policy probe](experiments/court_policy/legal_order_probe.py) | [Recorded evidence](results/PROVENANCE.md) |
+| Provenance faults | 2,160 held-out replays; absent or incorrect contributing-source records | [Protocol](experiments/provenance_stress/PROTOCOL.md) | [Audit](results/PROVENANCE_STRESS_EVIDENCE.md) |
+| External effect race | 1,152 held-out replays; checks before or within a downstream SQL transaction | [Protocol](experiments/external_effects/PROTOCOL.md) | [Physical SQL re-audit](results/EXTERNAL_EFFECT_SQL_REAUDIT.md) |
+| Observed tool reads | 540 held-out executions; actual source reads and transformed outputs | [Protocol](experiments/observed_tool_reads/PROTOCOL.md) | [Audit](results/OBSERVED_TOOL_READ_EVIDENCE.md) |
+| Trusted source custody | 168 held-out conditions; isolated source custody and write-time evidence | [Protocol](experiments/trusted_custody/PROTOCOL.md) | [SQL audit](results/TRUSTED_CUSTODY_EVIDENCE.md) |
+| Program binding | 17 signed program/effect attempts; authorized versus unapproved code paths | [Module](experiments/program_binding/README.md) | [Fresh-run audit](results/PROGRAM_BINDING_CI_AUDIT.md) |
+| Independent recipient | 576 checkpoint replays; owner revocation versus recipient acknowledgment | [Protocol](experiments/independent_recipient/PROTOCOL.md) | [Recipient SQL audit](results/RECIPIENT_ACK_SQL_REAUDIT.md) |
+| Actor and clock | 17 write attempts and separate legal-event/deadline tests | [Module](experiments/actor_clock/README.md) | [Source and SQL audit](results/ACTOR_CLOCK_SQL_AND_SOURCE_AUDIT.md) |
+| Document to effect | 46 requests, 18 instrumented reads and 38 issued permits | [Module](experiments/document_to_effect/README.md) | [Signed-chain audit](results/DOCUMENT_TO_EFFECT_CHAIN_AUDIT.md) |
+| Current permission and policy integrity | Paired 46-case comparison, 17 to 12 writes, 13 structural mutations | [Module](experiments/policy_integrity/README.md) | [Policy SQL audit](results/POLICY_INTEGRITY_SQL_REAUDIT.md) |
+| Court-order transfer | Fixed policy extraction and a separate recipient-effect study | [Module](experiments/court_order_transfer/README.md) | [Reproduction tests](experiments/court_order_transfer/tests/check_public_reproduction.py) |
 
-```bash
-python -m pip install 'langgraph==1.2.12'
-python experiments/court_policy/legal_order_probe.py
-```
+## Start with independently checked records
 
-The script produces `legal_order_result.json` in the current working directory. It asserts 25 fixed policy fixtures and eight historical-checkpoint replay scenarios. It uses synthetic markers and a local SQLite effects ledger. No confidential litigation content, vendor API, or legal filing is processed.
-
-## Provenance fault evaluation
-
-A second, independently reproducible module studies missing, mislabeled, stale and falsely complete source-dependency evidence.
-
-- [Protocol and limitations](experiments/provenance_stress/PROTOCOL.md)
-- [Runnable checkpoint experiment](experiments/provenance_stress/provenance_stress.py)
-- [Development and held-out evaluation summary](results/provenance_stress_summary.json)
-- [Independent output auditor](tests/verify_provenance_evaluation.py)
-
-The evaluation covers 18 fixed fault types, three current-policy guard strategies, two court-policy fixtures and disjoint development and evaluation seeds. The 2,160 held-out synthetic checkpoint replays use LangGraph and an independent SQLite write ledger. Its aggregate results describe deliberately constructed failure conditions and do not estimate their occurrence in production.
-
-Run using Python 3.12:
+From the repository root, Python 3.12 or later runs the standard-library-only integrity checks:
 
 ```bash
-python -m pip install 'langgraph==1.2.12'
-python experiments/provenance_stress/provenance_stress.py --partition holdout
-python tests/verify_provenance_evaluation.py provenance_holdout_result.json
+python tests/audit_public_artifact.py
+python tests/verify_recorded_results.py
+python tests/verify_public_summaries.py
+python experiments/court_coding/verify_public_coding.py
+python experiments/court_coding/verify_conditional_coding.py
 ```
 
-The complete per-run result is retained as an [Actions artifact](https://github.com/risu-research/formal-exec-2609/actions/runs/44455344566). The source revision and result hash are pinned in the summary.
+These checks verify public file hygiene, relative links, source syntax, selected court-data reconciliation and recorded result summaries. **Fresh executions** are separate: follow [REPRODUCING.md](REPRODUCING.md), or start the [full public reproduction workflow](.github/workflows/reproduce-full-artifact.yml) in the Actions tab. Each experiment keeps its own inputs, test cases and independent auditor. When available, its associated Actions archive contains physical SQL effects or signed evidence.
 
-## Independent external-effect verification
+## What the evidence means
 
-A third module tests whether historical checkpoint replay creates a **persisted downstream effect** after revocation and whether a separately executed, read-only observer can verify the actual resulting storage state.
+The source references are entered public court orders. The policy interpretations, simulated source records, signatures, agent actions and receiving services are reproducible research fixtures. Their fixed scenario counts measure the specified conditions and distinguish correct-source controls, missed notices, unobserved dependencies and incorrect authorization evidence.
 
-- [Method and pre-registered scenarios](experiments/external_effects/PROTOCOL.md)
-- [HTTP effect receiver](experiments/external_effects/external_effect_sink.py)
-- [Real LangGraph replay driver](experiments/external_effects/external_effect_runner.py)
-- [Independent SQL auditor](experiments/external_effects/external_effect_auditor.py)
-- [One-command development or held-out rerun](experiments/external_effects/run.sh)
-- [Verified result and source hashes](results/external_effects_summary.json)
+The original court order, the manually reviewed policy representation and the software's final decision are separate forms of evidence. A successful verifier establishes behavior under its recorded input and receiving-service assumptions. The comparison of 17 and 12 writes reuses the same 46 designed scenarios, with newly generated run-specific credentials.
 
-The held-out run covers 1,152 seeded checkpoint replays across a fixed matrix. It compares cached approval, client-side prechecks, and storage-side checks performed inside the write transaction. An independent observer reads physically persisted SQLite rows and policy event history without relying on the workflow's success messages. The matrix includes revocation between a client check and an external write.
+The machine-readable summaries, source-code checks and documented commands remain in this repository. GitHub Actions artifacts have a limited retention period and can be regenerated by running the workflows. New signatures and synthetic nonces naturally differ across executions; reproduce the expected decisions, actual SQL effects and independent checks, not byte-for-byte copies of ephemeral keys.
 
-Results describe controlled synthetic conditions, not live legal-service behavior, validated provider deletion, or real-world error frequencies. Incorrectly complete receipts remain a known failure boundary. The work is deliberately separate from the frozen submitted manuscript.
+## Use and citation
 
-## Actual tool-read provenance and nondeterministic transformations
-
-A fourth, small independent experiment uses a real LangChain `@tool` call to read synthetic source records over HTTP. The source service records read events when they occur. A LangGraph transformation uses fresh random nonce values, so repeated reads of the same content produce different outputs. A separate read-only auditor verifies the logged sources, the nonce-bound transformation, policy epochs and persisted SQL effects.
-
-- [Experiment protocol and qualified results](experiments/observed_tool_reads/PROTOCOL.md)
-- [Executable tool and checkpoint runner](experiments/observed_tool_reads/toolread_runner.py)
-- [HTTP source read recorder](experiments/observed_tool_reads/toolread_source_service.py)
-- [Independent audit code](experiments/observed_tool_reads/toolread_auditor.py)
-- [Local reproducer](experiments/observed_tool_reads/run.sh)
-- [Original held-out metrics and evidence hashes](results/tool_read_nondeterminism_summary.json)
-
-The 540-case held-out fault matrix includes deliberately untracked source reads. A valid observation trace reduces unauthorized writes when reads pass through the instrumented boundary. A deliberate bypass defeats the trace guard despite a valid-looking record, which limits any completeness claim. The underlying content and legal policy states are synthetic.
-
-## Enforced source custody and conditional retrospective recovery
-
-A fifth module combines actual operating-system process isolation with effect-time authorization. A trusted broker has access to synthetic protected source bytes, records every read it performs, and signs a binding between source dependencies and the transformed output. The untrusted LangGraph agent has a separate Linux identity and cannot directly open the source vault, signing key, admin key or protected SQLite ledger.
-
-The later effect check verifies signed and registered evidence against the current revocation state in the same SQL transaction as the write. Missing or contradictory evidence leads to an unresolved outcome. A separate bounded forensic test distinguishes unavailable historical source versions, missing nonces and ambiguous candidate matches.
-
-- [Experiment protocol, exact scope and results](experiments/trusted_custody/PROTOCOL.md)
-- [Trusted broker and guarded effect service](experiments/trusted_custody/trusted_broker.py)
-- [Untrusted LangGraph worker](experiments/trusted_custody/agent_worker.py)
-- [Independent SQL and recovery auditor](experiments/trusted_custody/independent_auditor.py)
-- [Public Linux/Docker reproducer](experiments/trusted_custody/run.sh)
-- [Recorded development and held-out outcomes](results/trusted_custody_summary.json)
-- [Independent audit, verified Actions and public rerun evidence](results/TRUSTED_CUSTODY_EVIDENCE.md)
-
-The held-out result covers 168 fixed synthetic scenarios. It demonstrates a sounder enforcement boundary within the tested interface, while leaving general-purpose cloud egress, memory side channels, external identity and real privileged legal data outside scope. The original manuscript remains unchanged.
-
-## Independent recipient authorization after revocation
-
-A sixth controlled module places the **actual effect ledger and current revocation policy inside an independent HTTP/SQLite recipient**, separate from the trusted source broker and untrusted LangGraph worker. It tests whether an old pre-notice capability can bypass the recipient after the source is revoked.
-
-- [Experiment protocol, matched controls and known failure cases](experiments/independent_recipient/PROTOCOL.md)
-- [Independent recipient service](experiments/independent_recipient/recipient_service.py)
-- [Owner-credential relay](experiments/independent_recipient/owner_relay.py)
-- [Historical LangGraph checkpoint worker](experiments/independent_recipient/agent_worker.py)
-- [Read-only physical effect auditor](experiments/independent_recipient/independent_auditor.py)
-- [Reproduce the complete experiment](experiments/independent_recipient/run.sh)
-- [Recorded evaluation summary](results/recipient_authority_summary.json)
-- [Independent audit, original SQL evidence and public reproduction](results/RECIPIENT_AUTHORITY_EVIDENCE.md)
-
-The held-out matrix includes 576 synthetic historical checkpoint replays. It distinguishes an open effect endpoint, old signed permits, recipient-side current-policy enforcement, and the addition of a separate owner credential. The recipient blocks correctly identified revoked-source writes after it acknowledges a notice, but **a missed notice or falsely clean original issuance remains unsafe**. This is an independent target-specific protection, not a claim about arbitrary internet egress or all provider systems.
-
-## Document-to-effect replay
-
-The [document-to-effect experiment](experiments/document_to_effect/README.md) connects recorded HTTP source reads, signed write permits, producer notices and physically committed recipient effects. It includes two public court-order references, synthetic source records, a deterministic document-producing agent and a separate read-only auditor.
-
-The fixed evaluation has 46 write attempts and 17 persisted writes, including nine unsafe control outcomes. [Run the evaluation locally](experiments/document_to_effect/README.md#run-the-experiment) or use the [repository reproduction guide](REPRODUCING.md#document-to-effect-replay).
-
-## Policy integrity at the recipient
-
-The [policy-integrity experiment](experiments/policy_integrity/README.md) runs a selected, manually reviewed policy through a structural validator before the HTTP/SQLite recipient commits a new document. It tests 18 rules, eight duty and deadline records, and 13 altered-policy cases. In the matched 46-attempt comparison, unsafe control writes fell from nine to four and eight clean writes were preserved.
-
-Run the [full reproduction](experiments/policy_integrity/README.md#run) to rebuild the policy and verify the SQL effects.
-
-## Actor and deadline checks at the recipient
-
-The [actor and deadline experiment](experiments/actor_clock/README.md) replays signed synthetic source evidence against a recipient that checks actor roles, dated events and eight duty templates. Six recipient instances handle 17 write attempts and persist five effects, including one missed-notice control. A separate auditor reads the resulting SQL rows.
-
-## Court-order policy transfer
-
-The [court-order transfer experiment](experiments/court_order_transfer/README.md) evaluates a fixed lexical policy extractor on selected clauses from three court-entered orders. Three of 20 coded obligations were recovered in full from the first two orders. The unchanged extractor recovered zero of eight obligations from a third order. The accompanying HTTP/SQLite study records 11 prohibited writes with cached authorization and two with current-policy checks, including missed-notice cases.
-
-## Additional evidence
-
-The [court-order coding tables](experiments/court_coding/README.md) include the original 520-cell matrix, 40 source links, 77 reviewed disagreements and 40 event-specific records. The checker reproduces the initial core frequencies and the event totals.
-
-The [program-bound execution test](experiments/program_binding/README.md) checks signed read, program and output evidence against actual recipient writes. The approval control commits a protected program literal after the program digest is admitted.
-
-## Evidence boundary
-
-The court orders are cited as public source documents. A human translated selected clauses into test fixtures. Passing tests confirm that the implemented interpreter and replay harness behave as those fixtures specify. They do not certify compliance by any real workflow, law firm, or AI provider. Missing or falsely complete dependency information remains a failure boundary.
-
-Earlier component-level tests using Chroma, Qdrant and PostgreSQL-backed LangGraph are distinct evidence and are not represented as rerun by this module. They are tracked in the research recovery materials.
-
-Public court-order links and selected passages accompany their coded inputs. Tests and source code are maintained separately from the manuscript's frozen submitted experimental results. The camera-ready artifact scope will be explicitly tagged when the final evaluation is settled.
-
-## License and citation
-
-Original test code is released under MIT in this repository. Referenced court orders and third-party software retain their own terms. A GitHub release or Zenodo DOI will be created only after the author explicitly approves a frozen version.
+Cite the paper title and the repository URL together with the commit SHA used for an evaluation. The code is licensed under [MIT](LICENSE). Public court records and referenced software retain their original rights and terms. This repository contains synthetic test data and public source citations, with no client litigation files or production credentials.
