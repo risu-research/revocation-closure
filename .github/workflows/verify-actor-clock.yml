@@ -1,6 +1,7 @@
 name: Actor and clock recipient evidence
 
 on:
+  workflow_call:
   push:
     paths:
       - .github/workflows/verify-actor-clock.yml
