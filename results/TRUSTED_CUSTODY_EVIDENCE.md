@@ -4,7 +4,7 @@ The public source for this module is in [experiments/trusted_custody](../experim
 
 ## Verified execution
 
-| Split | Completed Actions | Artifact | Synthetic replay scenarios | Physically committed effects | SQL SHA-256 |
+| Split | Completed Actions | Artifact | Test conditions | Physically committed effects | SQL SHA-256 |
 | --- | --- | --- | ---: | ---: | --- |
 | Development | [44464377771](https://github.com/risu-research/formal-exec-2609/actions/runs/44464377771) | [14501865391](https://github.com/risu-research/formal-exec-2609/actions/runs/44464377771/artifacts/14501865391) | 56 | 20 | `3a4480abb0acf45917f8a5e4d9441a3745a584993d9898d5664c2df4acb3a1be` |
 | Held-out | [44464512343](https://github.com/risu-research/formal-exec-2609/actions/runs/44464512343) | [14501497943](https://github.com/risu-research/formal-exec-2609/actions/runs/44464512343/artifacts/14501497943) | 168 | 60 | `7c27de50bd75ee392c1deba765808a6423e1d48bd3415b903a18cf0c7ccf302a` |
@@ -35,6 +35,8 @@ These source files were kept identical between the final development and held-ou
 ## Observed effect and evidence outcomes
 
 The held-out matrix contains 14 designed scenarios in two policy fixtures repeated for six previously separated seeds. Each scenario has 12 executions.
+
+Of the 168 held-out conditions, 156 resumed a historical pre-effect checkpoint. The other 12 attempted to read revoked R after notice and were blocked before a certificate or effect checkpoint was available. The 60 physically stored effects consist of 36 valid clean-source writes, 12 R-source writes before notice, and 12 writes after an explicit release. The 72 unresolved outcomes come from six evidence-fault scenarios, with 12 cases in each. The separate duplicate-control scenario contains 12 blocked second uses following the first permitted write.
 
 - A revoked or mixed-source historical checkpoint produced no protected SQL effect after revocation.
 - Source derivation from the revoked R file after the notice was denied.
