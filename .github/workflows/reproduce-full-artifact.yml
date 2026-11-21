@@ -28,6 +28,9 @@ jobs:
   current-permission-and-policy-integrity:
     uses: ./.github/workflows/verify-policy-integrity.yml
 
+  original-component-history:
+    uses: ./.github/workflows/reproduce-component-history.yml
+
   checkpoint-and-provenance:
     runs-on: ubuntu-24.04
     timeout-minutes: 40
@@ -187,6 +190,7 @@ jobs:
       - document-to-effect
       - current-permission-and-policy-integrity
       - checkpoint-and-provenance
+      - original-component-history
       - physical-external-effects
       - actual-observed-tool-reads
       - retrospective-recovery

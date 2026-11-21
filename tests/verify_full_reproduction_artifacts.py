@@ -18,6 +18,11 @@ GROUPS = {
     "full-external-effects",
     "full-observed-tool-reads",
     "full-retrospective-evidence-recovery",
+    "full-original-component-audit",
+    "fresh-chroma-qdrant-langgraph",
+    "fresh-haystack-llama-langgraph",
+    "fresh-inmemory-checkpoint-effects",
+    "fresh-postgres-checkpoint-effects",
     "full-trusted-source-custody",
     "full-independent-recipient",
 }
@@ -36,6 +41,10 @@ HASH_LISTS = (
     "full-external-effects/SHA256SUMS.txt",
     "full-observed-tool-reads/SHA256SUMS.txt",
     "full-retrospective-evidence-recovery/SHA256SUMS.txt",
+    "fresh-chroma-qdrant-langgraph/SHA256SUMS.txt",
+    "fresh-haystack-llama-langgraph/SHA256SUMS.txt",
+    "fresh-inmemory-checkpoint-effects/SHA256SUMS.txt",
+    "fresh-postgres-checkpoint-effects/SHA256SUMS.txt",
     "document-to-effect-two-full-runs/ci_trial_1/archive_sha256.txt",
     "document-to-effect-two-full-runs/ci_trial_2/archive_sha256.txt",
     "policy-integrity-two-runs/policy-integrity-1/results/archive_sha256.txt",
@@ -199,6 +208,46 @@ def collect(root):
         "retrospective_heldout_missing_R_unresolved": 288,
         "retrospective_dev_sql_effects": 120,
         "retrospective_heldout_sql_effects": 360,
+    })
+
+    component_audit = json.loads(
+        (root / "full-original-component-audit" / "original-component-audit.json").read_text()
+    )
+    assert component_audit == {
+        "historical_checkpoints_with_revoked_marker": 3,
+        "original_checkpoint_replays": 14,
+        "original_component_runs": 5,
+        "recovered_haystack_and_llamaindex": True,
+        "source_files": 7,
+        "status": "PASS"
+    }
+    component_base = Path(__file__).resolve().parents[1] / "experiments" / "component_history"
+    original_component = json.loads((component_base / "component_results.json").read_text())["cases"]
+    original_replay = json.loads((component_base / "checkpoint_results.json").read_text())["cases"]
+    def read_original_stdout(group, filename):
+        lines = (root / group / filename).read_text(encoding="utf-8").splitlines()
+        found = [json.loads(line[7:]) for line in lines if line.startswith("RESULT ")]
+        assert len(found) == 1, (group, filename, len(found))
+        return found[0]
+    for key, group, filename in (
+        ("chroma_qdrant", "fresh-chroma-qdrant-langgraph", "chroma_qdrant.log"),
+        ("composed_chroma_langgraph", "fresh-chroma-qdrant-langgraph", "composed.log"),
+        ("haystack_llama_base", "fresh-haystack-llama-langgraph", "haystack-llama-base.log"),
+        ("haystack_llama_followup", "fresh-haystack-llama-langgraph", "haystack-llama-followup.log"),
+        ("postgres_saver", "fresh-postgres-checkpoint-effects", "history.log")
+    ):
+        assert read_original_stdout(group, filename) == original_component[key]["result"], key
+    for key, group in (
+        ("inmemory", "fresh-inmemory-checkpoint-effects"),
+        ("postgres", "fresh-postgres-checkpoint-effects")
+    ):
+        actual = json.loads((root / group / "result.json").read_text())
+        assert actual == original_replay[key]["result"], key
+        assert actual["case_count"] == 7 and actual["all_assertions_passed"]
+    results.update({
+        "component_original_runs_repeated": 5,
+        "checkpoint_original_saver_scenarios_repeated": 14,
+        "component_history_retained_revoked_checkpoints": 3,
     })
     expected = {
         "external_sql_writes": 720,

@@ -14,9 +14,9 @@ The component workflows remain independently runnable:
 - [Instrumented document reads and SQL effects](.github/workflows/verify-document-to-effect.yml)
 - [Current permission and typed-policy integrity](.github/workflows/verify-policy-integrity.yml)
 
-The final `verify-complete-artifact` job downloads the eleven evidence groups from that run. It checks their stored SQL effects and policy-mutation records, scans the evidence for sensitive content, and publishes a `full-reproduction-verification` artifact listing SHA-256 digests for every file. The [public audit description](results/PUBLIC_ARTIFACT_REPRODUCTION_AUDIT.md) maps each group to the corresponding experiment.
+The final `verify-complete-artifact` job downloads the sixteen evidence groups from that run. It checks their stored SQL effects and policy-mutation records, scans the evidence for sensitive content, and publishes a `full-reproduction-verification` artifact listing SHA-256 digests for every file. The [public audit description](results/PUBLIC_ARTIFACT_REPRODUCTION_AUDIT.md) maps each group to the corresponding experiment.
 
-To repeat the final verification offline, download all eleven evidence groups from **one** full Actions run, preserving each artifact's top-level folder name, then use:
+To repeat the final verification offline, download all sixteen evidence groups from **one** full Actions run, preserving each artifact's top-level folder name, then use:
 
 ```bash
 python tests/verify_full_reproduction_artifacts.py PATH_TO_DOWNLOADED_GROUPS --out verified-manifest.json
@@ -81,6 +81,16 @@ bash experiments/observed_tool_reads/run.sh holdout
 [Protocol](experiments/observed_tool_reads/PROTOCOL.md) · [Recorded evidence](results/OBSERVED_TOOL_READ_EVIDENCE.md)
 
 Both shell helpers require Linux or macOS, Bash, local loopback ports, and SQLite. The produced synthetic outputs stay in their ignored `_runs/holdout/` directories.
+
+## Original component deletion and checkpoint-to-effect studies
+
+The [component-history archive](experiments/component_history/README.md) preserves seven exact original source files, five original Chroma/Qdrant/Haystack/LlamaIndex/LangGraph runs, and the per-case SQL decisions from seven InMemorySaver and seven PostgresSaver checkpoint replays.
+
+```bash
+python experiments/component_history/verify_historical.py
+```
+
+Run the [component history workflow](.github/workflows/reproduce-component-history.yml) to install the studied frameworks and execute the original scripts again against isolated Chroma, Qdrant and PostgreSQL services. The full public reproduction workflow now calls this component workflow and compares its newly produced results with the historical records. The original SQLite databases from the first checkpoint runs were ephemeral; the archived case-level SQL rows remain intact.
 
 ## Retrospective evidence recovery
 

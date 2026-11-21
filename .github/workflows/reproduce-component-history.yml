@@ -1,6 +1,7 @@
 name: Reproduce original component and checkpoint studies
 
 on:
+  workflow_call:
   workflow_dispatch:
   push:
     paths:
@@ -20,7 +21,16 @@ jobs:
         with:
           python-version: '3.12'
       - name: Compare original Git blobs and saved experiment outcomes
-        run: python experiments/component_history/verify_historical.py
+        shell: bash
+        run: |
+          set -euo pipefail
+          python experiments/component_history/verify_historical.py | tee "$RUNNER_TEMP/original-component-audit.json"
+      - name: Archive original-evidence audit
+        uses: actions/upload-artifact@v4
+        with:
+          name: full-original-component-audit
+          retention-days: 30
+          path: ${{ runner.temp }}/original-component-audit.json
 
   chroma-qdrant-and-composed:
     needs: verify-original-records
@@ -44,6 +54,7 @@ jobs:
           mkdir -p "$RUNNER_TEMP/stack-results"
           python experiments/component_history/source/chroma_qdrant.py | tee "$RUNNER_TEMP/stack-results/chroma_qdrant.log"
           python experiments/component_history/source/composed_chroma_langgraph.py | tee "$RUNNER_TEMP/stack-results/composed.log"
+          (cd "$RUNNER_TEMP/stack-results" && sha256sum *.log > SHA256SUMS.txt)
       - name: Preserve independently executed stack results
         if: always()
         uses: actions/upload-artifact@v4
@@ -75,6 +86,7 @@ jobs:
           mkdir -p "$RUNNER_TEMP/stack-results"
           python experiments/component_history/source/haystack_llama_base.py | tee "$RUNNER_TEMP/stack-results/haystack-llama-base.log"
           python experiments/component_history/source/haystack_llama_followup.py | tee "$RUNNER_TEMP/stack-results/haystack-llama-followup.log"
+          (cd "$RUNNER_TEMP/stack-results" && sha256sum *.log > SHA256SUMS.txt)
       - name: Preserve fresh framework output
         if: always()
         uses: actions/upload-artifact@v4
@@ -101,6 +113,7 @@ jobs:
           mkdir -p "$RUNNER_TEMP/replay-inmemory"
           cd "$RUNNER_TEMP/replay-inmemory"
           python "$GITHUB_WORKSPACE/experiments/component_history/source/replay_inmemory.py" | tee run.log
+          sha256sum result.json run.log > SHA256SUMS.txt
       - name: Preserve individual SQL rows and decisions
         if: always()
         uses: actions/upload-artifact@v4
@@ -146,6 +159,7 @@ jobs:
           set -euo pipefail
           cd "$RUNNER_TEMP/replay-postgres"
           python "$GITHUB_WORKSPACE/experiments/component_history/source/replay_postgres.py" | tee run.log
+          sha256sum result.json run.log history.log > SHA256SUMS.txt
       - name: Preserve physical effect rows and executed history checks
         if: always()
         uses: actions/upload-artifact@v4
