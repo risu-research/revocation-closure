@@ -18,7 +18,7 @@ def produce(case,run_id,source_url,choice):
   if marks:facts.append(f'{sid}: document marker {marks[0]}')
   elif txt:facts.append(f'{sid}: '+ ' '.join(txt.split())[:70])
  # The output text is grounded in the read text, with a structured decision memo format.
- action='five-business-day clawback from producer notice' if 'five business days' in law else ('seven-day return clock from producer notice' if 'seven-calendar-day' in law else 'unresolved legal clock')
+ action='five-business-day clawback from producer notice' if ('five business days' in law or 'five (5) business days' in law) else ('seven-day return clock from producer notice' if 'seven-calendar-day' in law else 'unresolved legal clock')
  content=f'Agent-prepared legal work note ({case.upper()}). Public order: {action}. '+('Evidence reviewed: '+'; '.join(facts)+'. ' if facts else '')+'Only the cited source snapshots were reviewed; this note is not legal advice.'
  events.append({'operation':'synthesize_note','legal_rule':action,'output_sha256':sha(content),'result_bytes':len(content.encode())})
  return {'case':case,'run_id':run_id,'content':content},receipts,events
