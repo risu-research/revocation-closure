@@ -35,6 +35,7 @@ python tests/verify_recorded_results.py
 python tests/verify_public_summaries.py
 python experiments/court_coding/verify_public_coding.py
 python experiments/court_coding/verify_conditional_coding.py
+python -m unittest discover -s tests -p 'test_full_reproduction_integrity.py' -v
 ```
 
 The static auditor checks tracked text files for credentials and personal paths, Python syntax, internal Markdown links and the 40-order coding reconciliation. The history auditor requires a complete Git checkout and checks older reachable file revisions as well. The court-data tests independently verify the original 520 decisions and the 120 recorded changes. The [source-page follow-up](experiments/court_coding/SOURCE_REVIEW_REPORT_2026-11-20.md) explains the five historical source-check flags, including the four verified page locations and the scoped Voltstar review.
