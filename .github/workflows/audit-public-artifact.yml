@@ -7,6 +7,9 @@ on:
       - .github/workflows/audit-public-artifact.yml
       - tests/audit_public_artifact.py
       - tests/audit_public_history.py
+      - tests/verify_full_reproduction_artifacts.py
+      - tests/test_full_reproduction_integrity.py
+      - CITATION.cff
       - README.md
       - REPRODUCING.md
   workflow_dispatch:
@@ -35,6 +38,11 @@ jobs:
         run: |
           set -euo pipefail
           python tests/audit_public_history.py --output "$RUNNER_TEMP/public-history-audit.json"
+      - name: Test evidence-hash checker against controlled corruption
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m unittest discover -s tests -p 'test_full_reproduction_integrity.py' -v
       - name: Independently verify saved results and court-order coding
         shell: bash
         run: |
