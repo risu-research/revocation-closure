@@ -155,6 +155,10 @@ The two runs compare program approvals and verify the physical SQL effects. See 
 
 The [document-to-effect module](experiments/document_to_effect/README.md) runs a deterministic document worker against two frozen court-order excerpts and synthetic discovery records. Its [public Actions workflow](.github/workflows/verify-document-to-effect.yml) verifies the source manifest, tests Camm/Napoli clock wording, and reproduces the 46-request recipient matrix twice. The [full read-to-effect audit](results/DOCUMENT_TO_EFFECT_CHAIN_AUDIT.md) links the historical and corrected outputs, the signed source and permit evidence, and the physically saved SQLite effects.
 
+## Recipient current permission and typed-policy integrity
+
+The [policy-integrity experiment](experiments/policy_integrity/README.md) compares the baseline and strengthened recipient over 46 fixed source-to-effect scenarios. Its [public Actions workflow](.github/workflows/verify-policy-integrity.yml) verifies all 29 pinned source hashes, reconstructs the typed policy, repeats both full receiving runs, and tests 13 structural mutations with 12 independent HTTP/SQLite effect controls. The [SQL re-audit](results/POLICY_INTEGRITY_SQL_REAUDIT.md) identifies the exact five changed cases and distinguishes policy-structure detection from current-permission blocking.
+
 ## Actor, deadline, and exception checks at the recipient
 
 The [actor-clock module](experiments/actor_clock/README.md) runs eight source-linked court duty fixtures through six independently controlled Linux-UID recipient instances. Its [public Actions workflow](.github/workflows/verify-actor-clock.yml) executes twelve date checks, the signed-event study, the read-only SQL observer, and archive-hash verification. The [original-clause and stored SQL audit](results/ACTOR_CLOCK_SQL_AND_SOURCE_AUDIT.md) links all three entered orders and the new complete synthetic evidence artifact.
