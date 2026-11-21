@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "Please cite this research software and identify the release or commit used."
+type: software
+title: "Revocation Closure: Reproducible Research Artifacts for Agentic Legal Workflows"
+abstract: >-
+  Executable research artifacts accompanying After the Clawback:
+  Revocation Closure in Agentic Legal Workflows. The repository includes
+  source-linked court-order coding, fixed synthetic evaluation inputs,
+  agent and recipient implementations, physical SQLite effects,
+  and independent reproduction audits.
+authors:
+  - family-names: "Lee"
+    given-names: "Moon Hwan"
+    affiliation: "RISU Institute"
+repository-code: "https://github.com/risu-research/revocation-closure"
+license: "MIT"
+keywords:
+  - "agentic workflows"
+  - "legal policy"
+  - "revocation closure"
+  - "reproducible research"
