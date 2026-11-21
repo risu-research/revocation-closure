@@ -1,142 +1,95 @@
-# Reproduce the experiments
+# Reproducing the public experiments
 
-Run the commands from the repository root. Each module contains its protocol, source code, fixed synthetic scenarios and an independent output check. The result summaries under `results/` record the original evaluations.
+The repository contains fixed research inputs, executable evaluation code, expected outcomes and independent audit programs. Work from a checkout of a **specific Git commit** so that source files and reported counts refer to the same revision. The tests use invented material and selected manually reviewed clauses from public court orders.
 
-## Recorded results
+## One-click full reproduction
 
-First check the published summaries with Python 3.11+.
+Open [Reproduce the full public research artifact](.github/workflows/reproduce-full-artifact.yml) in the GitHub Actions tab and select **Run workflow**. This calls the five specialized checks and executes the remaining checkpoint, HTTP source-read, trusted-custody and independent-recipient modules. Job results and any retained synthetic evidence appear under the new workflow run.
+
+The component workflows remain independently runnable:
+
+- [Complete tracked-file and court-data checks](.github/workflows/audit-public-artifact.yml)
+- [Actor and deadline recipient](.github/workflows/verify-actor-clock.yml)
+- [Program and signed-output binding](.github/workflows/verify-program-binding.yml)
+- [Instrumented document reads and SQL effects](.github/workflows/verify-document-to-effect.yml)
+- [Current permission and typed-policy integrity](.github/workflows/verify-policy-integrity.yml)
+
+An Actions run verifies behavior **at its own commit SHA**. Generated signing keys, nonces and temporary service ports differ between runs. The fixed scenario decisions, SQL effects and independent checks are the reproducibility targets.
+
+## Local checks before running experiments
+
+Python 3.12 or newer is sufficient for the standard-library verifiers. Run from the repository root:
 
 ```bash
+python tests/audit_public_artifact.py
 python tests/verify_recorded_results.py
 python tests/verify_public_summaries.py
+python experiments/court_coding/verify_public_coding.py
+python experiments/court_coding/verify_conditional_coding.py
 ```
 
-These checks inspect saved result files. The commands below rerun the actual experiments.
+The static auditor checks tracked text files for secrets and personal paths, Python syntax, internal Markdown links and the 40-order coding reconciliation. The court-data tests independently verify the original 520 decisions and the 120 recorded changes. The [source-page follow-up](experiments/court_coding/SOURCE_REVIEW_REPORT_2026-11-20.md) explains the five historical source-check flags, including the four verified page locations and the scoped Voltstar review.
 
-## Court-order policy fixtures
+## LangGraph checkpoint and provenance modules
 
-Requires Python 3.12 and LangGraph 1.2.12.
+Use Python 3.12 and install the selected LangGraph version:
 
 ```bash
 python -m pip install 'langgraph==1.2.12'
+```
+
+**Court clause fixtures:** run the 25 source-linked clause fixtures and eight checkpoint tests, then verify the recorded summary.
+
+```bash
 python experiments/court_policy/legal_order_probe.py
 python tests/verify_recorded_results.py
 ```
 
-Expected output is 25 fixed clause tests and eight historical-checkpoint replay tests. The court references and clause mapping are in [COURT_ORDER_MAP.md](experiments/court_policy/COURT_ORDER_MAP.md).
-
-## Provenance fault evaluation
+**Provenance fault matrix:** 18 defined fault types, two legal contexts, three guards and 20 held-out seeds create 2,160 independent *executions of fixed scenarios*.
 
 ```bash
 python experiments/provenance_stress/provenance_stress.py --partition holdout
 python tests/verify_provenance_evaluation.py provenance_holdout_result.json
 ```
 
-The evaluation has 2,160 checkpoint replays. The recorded counts for unauthorized effects are 400, 160 and 80 across cached approval, checkpoint metadata and separate source receipts.
+[Protocol](experiments/provenance_stress/PROTOCOL.md) · [Recorded evaluation](results/provenance_stress_summary.json)
 
-## External-effect receiver
-
-Requires Linux or macOS with Bash, local HTTP ports and SQLite.
+**External HTTP/SQLite effects:** the helper starts a local receiving service, replays 1,152 held-out cases and independently checks the physical SQLite database.
 
 ```bash
 bash experiments/external_effects/run.sh holdout
 ```
 
-The script launches the receiver, resumes historical checkpoints and audits its persisted SQL rows. The 1,152-case result uses 16 templates, two legal-policy fixtures, 12 held-out seeds and three guards.
+[Protocol](experiments/external_effects/PROTOCOL.md) · [Original archive SQL re-audit](results/EXTERNAL_EFFECT_SQL_REAUDIT.md) · [Read-only cross-archive verifier](tests/verify_external_effect_archives.py)
 
-The [original archive SQL re-audit](results/EXTERNAL_EFFECT_SQL_REAUDIT.md) links to both saved Actions datasets and a separate [record-level verifier](tests/verify_external_effect_archives.py).
-
-## Observed tool reads
+**Instrumented source reads:** the source service records HTTP tool reads and runs the 540-case held-out matrix through its own SQL effects ledger.
 
 ```bash
 bash experiments/observed_tool_reads/run.sh holdout
 ```
 
-The script starts the source service, records actual tool reads and checks the resulting SQL effects. The fixed held-out matrix has 540 executions.
+[Protocol](experiments/observed_tool_reads/PROTOCOL.md) · [Recorded evidence](results/OBSERVED_TOOL_READ_EVIDENCE.md)
 
-## Trusted source custody
+Both shell helpers require Linux or macOS, Bash, local loopback ports, and SQLite. The produced synthetic outputs stay in their ignored `_runs/holdout/` directories.
 
-Requires Linux with Docker. The test creates separate process identities and runs inside a disposable container.
+## Isolated trusted broker and downstream recipient
+
+Use Linux with Docker, a working network connection to retrieve the published Python image and `langgraph==1.2.12`, and permission to run containers. These two helpers create real Linux user-identity boundaries.
 
 ```bash
 bash experiments/trusted_custody/run.sh holdout
-```
-
-The auditor checks the resulting SQLite ledger against the held-out oracle. The recorded evaluation contains 168 conditions.
-
-## Independent recipient authorization
-
-Requires Linux with Docker.
-
-```bash
 bash experiments/independent_recipient/run.sh holdout
 ```
 
-The recipient keeps its own policy and SQLite effect ledger. The evaluation contains 576 historical-checkpoint replays across four recipient modes. The protocol records missed-notice and false-clean-issuance controls.
+The first performs 168 selected synthetic conditions with source custody, evidence-bound broker operations and an independent SQL audit. The second replays 576 historical checkpoint conditions across four independent-recipient modes, preserving separate owner, agent and recipient roles.
 
-The [original SQL acknowledgment re-audit](results/RECIPIENT_ACK_SQL_REAUDIT.md) separates the owner restriction from the recipient's acknowledged policy epoch and gives the saved per-case evidence and read-only verification command.
+[Trusted custody protocol](experiments/trusted_custody/PROTOCOL.md) · [Trusted custody audit](results/TRUSTED_CUSTODY_EVIDENCE.md)
 
-## Document-to-effect replay
+[Independent-recipient protocol](experiments/independent_recipient/PROTOCOL.md) · [Acknowledgment SQL re-audit](results/RECIPIENT_ACK_SQL_REAUDIT.md)
 
-Requires Python 3.13 and `cryptography==46.0.4`, with local HTTP and SQLite support.
+## Signed program binding and actor-specific clocks
 
-```bash
-python -m pip install -r experiments/document_to_effect/requirements.txt
-cd experiments/document_to_effect
-python tests/reproduce.py
-```
-
-The test replays 46 synthetic write attempts through a separate HTTP/SQLite recipient, checks 17 persisted writes and nine unsafe control outcomes, and reconstructs the decisions in a read-only SQL audit. For the saved request and database evidence, see [the module instructions](experiments/document_to_effect/README.md).
-
-## Policy integrity at the recipient
-
-Requires Python 3.11 or later with local HTTP and SQLite support.
-
-```bash
-python -m pip install -r experiments/policy_integrity/requirements.txt
-cd experiments/policy_integrity
-python reproduce.py
-```
-
-The runner compares the original and policy-checked recipients, audits their actual SQL writes, checks 13 injected policy defects and tests detection of altered stored content. The [module README](experiments/policy_integrity/README.md) gives the recorded results and source mapping.
-
-## Actor and deadline replay
-
-Requires Python 3.11+, `cryptography`, and a disposable Linux environment where a root-owned test runner can create separate unprivileged worker and recipient users.
-
-```bash
-cd experiments/actor_clock
-python -m pip install 'cryptography>=42,<48'
-python -m unittest discover -s tests -p 'test_*.py' -v
-python -m stage_r.run_study --out /tmp/actor_clock_fresh
-python tests/check_public_reproduction.py /tmp/actor_clock_fresh
-```
-
-The independent auditor checks physical effects and signed case events against recorded expectations. [Source-linked duty inputs and methods](experiments/actor_clock/README.md).
-
-## Court-order policy transfer
-
-Requires Python 3.10+ with the standard library.
-
-```bash
-cd experiments/court_order_transfer
-python tests/check_public_reproduction.py
-```
-
-The check verifies court-order inputs, source-code seals, extracted policy results, fresh HTTP/SQLite effects and an altered-row rejection test. [Inputs and method](experiments/court_order_transfer/README.md).
-
-## Court-order coding tables
-
-```bash
-cd experiments/court_coding
-python verify_public_coding.py
-```
-
-The checker reads the original 520 labels and the 40 event records, and checks the 77 reviewed core discrepancies.
-
-## Program-bound execution
-
-Use a disposable Linux container or VM with Python 3.12+, libseccomp and root access inside that environment.
+The program-binding module requires a disposable Linux VM/container with Python 3.12+, `libseccomp` and root privileges within that test environment. From the repository root:
 
 ```bash
 cd experiments/program_binding
@@ -146,41 +99,56 @@ PYTHONPATH=. python tests/independent_stage_q_audit.py . fresh_baseline
 PYTHONPATH=. python -m experiments.trusted_transform.run_stage_q --approve-literal --out fresh_ablation
 PYTHONPATH=. python tests/independent_stage_q_audit.py . fresh_ablation
 python tests/check_expected_metrics.py
+cd ../..
 ```
 
-The two runs compare program approvals and verify the physical SQL effects. See the [experiment README](experiments/program_binding/README.md) and the [fresh signed-record and SQL audit](results/PROGRAM_BINDING_CI_AUDIT.md).
+The two branches compare approved and unapproved program bytes and physically committed SQL effects. [Signed-program audit](results/PROGRAM_BINDING_CI_AUDIT.md).
 
-
-## Document reads, signed permits and SQL effects
-
-The [document-to-effect module](experiments/document_to_effect/README.md) runs a deterministic document worker against two frozen court-order excerpts and synthetic discovery records. Its [public Actions workflow](.github/workflows/verify-document-to-effect.yml) verifies the source manifest, tests Camm/Napoli clock wording, and reproduces the 46-request recipient matrix twice. The [full read-to-effect audit](results/DOCUMENT_TO_EFFECT_CHAIN_AUDIT.md) links the historical and corrected outputs, the signed source and permit evidence, and the physically saved SQLite effects.
-
-## Recipient current permission and typed-policy integrity
-
-The [policy-integrity experiment](experiments/policy_integrity/README.md) compares the baseline and strengthened recipient over 46 fixed source-to-effect scenarios. Its [public Actions workflow](.github/workflows/verify-policy-integrity.yml) verifies all 29 pinned source hashes, reconstructs the typed policy, repeats both full receiving runs, and tests 13 structural mutations with 12 independent HTTP/SQLite effect controls. The [SQL re-audit](results/POLICY_INTEGRITY_SQL_REAUDIT.md) identifies the exact five changed cases and distinguishes policy-structure detection from current-permission blocking.
-
-## Actor, deadline, and exception checks at the recipient
-
-The [actor-clock module](experiments/actor_clock/README.md) runs eight source-linked court duty fixtures through six independently controlled Linux-UID recipient instances. Its [public Actions workflow](.github/workflows/verify-actor-clock.yml) executes twelve date checks, the signed-event study, the read-only SQL observer, and archive-hash verification. The [original-clause and stored SQL audit](results/ACTOR_CLOCK_SQL_AND_SOURCE_AUDIT.md) links all three entered orders and the new complete synthetic evidence artifact.
-
-## Court-order conditional coding
-
-The [court-order coding module](experiments/court_coding/CONDITIONAL_CODING.md) now includes the 120-cell adjudication ledger and the complete conditional 520-cell matrix. Run:
+For the actor-and-clock module, use a disposable Linux environment capable of spawning separate test UIDs:
 
 ```bash
-cd experiments/court_coding
-python verify_public_coding.py
-python verify_conditional_coding.py
+cd experiments/actor_clock
+python -m pip install 'cryptography==46.0.4'
+sha256sum -c SHA256SUMS.txt
+python -m unittest discover -s tests -p 'test_*.py' -v
+python -m stage_r.run_study --out /tmp/actor_clock_fresh
+python tests/independent_audit.py /tmp/actor_clock_fresh
+python tests/check_public_reproduction.py /tmp/actor_clock_fresh
+cd ../..
 ```
 
-The second check reconstructs 118 additions, two removals, and the conditional code frequencies. The five flagged source checks remain in the historical ledger; a [subsequent source-page review](experiments/court_coding/SOURCE_REVIEW_REPORT_2026-11-20.md) confirmed four page locations and recorded a scope-specific review of the fifth. Independent recoding of all 520 labels remains a separate task.
+Run its study as root **inside the disposable environment** if the operating system needs root privileges to allocate the separate worker/recipient identities. [Eight duty inputs](experiments/actor_clock/README.md) · [SQL and original-clause audit](results/ACTOR_CLOCK_SQL_AND_SOURCE_AUDIT.md).
 
-## Cross-experiment evidence map
+## Document-to-effect writes and typed-policy checks
 
-The [historical replay and recipient-effect evidence map](results/SECTION_VI_CROSS_EXPERIMENT_EVIDENCE_MAP.md) distinguishes the eight experimental modules, their separate denominators, recorded SQL outcomes, and the strength of each original archive. The later source-to-effect and policy-integrity modules are paired tests of the same fixed scenario definitions.
+Use Python 3.13 with local HTTP and SQLite support. In the following commands, install dependencies at the repository root and then run each module in its own directory:
 
-## Inputs and evidence
+```bash
+python -m pip install -r experiments/document_to_effect/requirements.txt
+python -m pip install -r experiments/policy_integrity/requirements.txt
 
-Every experiment uses synthetic source records and researcher-specified legal-policy fixtures. The original result JSON, source revisions, independent audit procedures and GitHub Actions records are linked from the [results directory](results/). Repeated seeds vary synthetic identifiers within fixed scenario families.
+(cd experiments/document_to_effect && python tests/reproduce.py)
+(cd experiments/policy_integrity && python reproduce.py)
+```
 
-Keep source code, audit code and result files together when comparing a new run with the recorded evaluation.
+The first program checks **46 actual HTTP write attempts** from newly recorded document reads through signed permits to five recipient databases. The second uses the same 46 fixed scenario definitions to compare the original **17** and strengthened **12** committed writes; it also injects 13 typed-policy mutations, testing 12 through actual HTTP/SQLite receiving services.
+
+[Signed document-to-effect evidence](results/DOCUMENT_TO_EFFECT_CHAIN_AUDIT.md) · [Policy integrity and 13 mutations](results/POLICY_INTEGRITY_SQL_REAUDIT.md).
+
+Both modules use fixed synthetic legal-source summaries and generate fresh run-specific signing keys.
+
+## Court-order policy extraction and coding
+
+The lexical transfer experiment uses the standard library to assess held-out legal-policy extraction and exercise its independent HTTP/SQLite effect tester:
+
+```bash
+(cd experiments/court_order_transfer && python tests/check_public_reproduction.py)
+```
+
+[Source inputs and fixed gold records](experiments/court_order_transfer/README.md) · [Court-order coding dataset and codebook](experiments/court_coding/README.md) · [Source review](experiments/court_coding/SOURCE_REVIEW_REPORT_2026-11-20.md).
+
+## Evidence interpretation and retention
+
+The [cross-experiment evidence map](results/SECTION_VI_CROSS_EXPERIMENT_EVIDENCE_MAP.md) records denominators, original Actions runs and retained physical databases for the eight recipient-related studies. Selected source hashes and verified saved summaries reside in `results/`, and each module's independent auditor reads the stored effects or signed records without relying on an agent's success response.
+
+GitHub retains Actions-generated ZIP archives for a limited period; the links in the evidence reports may eventually expire. Use the current source code and relevant workflow to regenerate fresh synthetic evidence. Keep the run commit SHA, independent audit output, recipient SQL records and fixed input/source manifest together when citing a result. Different runs generate different keys and hashes for random test data, so compare the specified decisions and counts rather than the temporary byte strings.
