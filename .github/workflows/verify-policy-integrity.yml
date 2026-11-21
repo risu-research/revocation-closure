@@ -1,6 +1,7 @@
 name: Policy integrity and recipient current permission
 
 on:
+  workflow_call:
   push:
     paths:
       - .github/workflows/verify-policy-integrity.yml
