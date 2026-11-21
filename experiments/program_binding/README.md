@@ -24,7 +24,7 @@ python tests/check_expected_metrics.py
 
 The second run adds the digest of `programs/literal_launder.py` to the recipient's trusted program list. The program reads only `iottie_CLEAN` from the broker, but its code contains bytes identical to the revoked synthetic source. Once admitted, the recipient commits that output. The independent audit verifies the literal's bytes, its clean read record, the approval list and the stored SQL effect.
 
-The runner measures delivered program bytes and recorded output. The registered approval is a separate trust decision. Source-origin review must include program literals and other inputs already present before the broker's reads.
+The runner measures delivered program bytes and recorded output. The approved-program registry controls which signed outputs the recipient will store. It does not prevent an unapproved script from executing in the test runner. Source-origin review must include program literals and other inputs already present before the broker's reads. The [fresh Actions reproduction and SQL audit](../../results/PROGRAM_BINDING_CI_AUDIT.md) records both approval conditions and retains the signed evidence.
 
 The [test matrix](STAGE_Q_TEST_MATRIX.csv) lists the original cases. The [expected counts](recorded_outcomes.json) separate the original run from the admission ablation. The auditor checks source pins, signatures, code/launcher digests, recorded notice epochs, output hashes, and physical SQLite effects. Its four proof-mutation controls must all fail verification.
 
