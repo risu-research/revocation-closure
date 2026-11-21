@@ -131,3 +131,35 @@ jobs:
           path: |
             _recipient_runs/holdout/audit.json
             _recipient_runs/holdout/recipient.sqlite
+
+  verify-complete-artifact:
+    needs:
+      - tracked-files-and-court-data
+      - program-binding
+      - actor-clock
+      - document-to-effect
+      - current-permission-and-policy-integrity
+      - checkpoint-and-provenance
+      - physical-external-effects
+      - actual-observed-tool-reads
+      - trusted-source-custody
+      - independent-recipient
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Retrieve every completed reproducibility artifact
+        uses: actions/download-artifact@v4
+        with:
+          path: ${{ runner.temp }}/full-public-artifacts
+      - name: Independently verify hashes, saved SQL effects and artifact privacy
+        shell: bash
+        run: |
+          set -euo pipefail
+          python tests/verify_full_reproduction_artifacts.py "$RUNNER_TEMP/full-public-artifacts" --out "$RUNNER_TEMP/full-reproduction-manifest.json"
+      - name: Preserve commit-bound evidence manifest
+        uses: actions/upload-artifact@v4
+        with:
+          name: full-reproduction-verification
+          retention-days: 30
+          path: ${{ runner.temp }}/full-reproduction-manifest.json
