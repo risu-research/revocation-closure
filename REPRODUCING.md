@@ -173,7 +173,7 @@ python verify_public_coding.py
 python verify_conditional_coding.py
 ```
 
-The second check reconstructs 118 additions, two removals, and the conditional code frequencies. Five identified source checks remain open in the published ledger.
+The second check reconstructs 118 additions, two removals, and the conditional code frequencies. The five flagged source checks remain in the historical ledger; a [subsequent source-page review](experiments/court_coding/SOURCE_REVIEW_REPORT_2026-11-20.md) confirmed four page locations and recorded a scope-specific review of the fifth. Independent recoding of all 520 labels remains a separate task.
 
 ## Cross-experiment evidence map
 
