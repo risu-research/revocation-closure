@@ -44,6 +44,8 @@ bash experiments/external_effects/run.sh holdout
 
 The script launches the receiver, resumes historical checkpoints and audits its persisted SQL rows. The 1,152-case result uses 16 templates, two legal-policy fixtures, 12 held-out seeds and three guards.
 
+The [original archive SQL re-audit](results/EXTERNAL_EFFECT_SQL_REAUDIT.md) links to both saved Actions datasets and a separate [record-level verifier](tests/verify_external_effect_archives.py).
+
 ## Observed tool reads
 
 ```bash
