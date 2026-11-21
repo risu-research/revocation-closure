@@ -6,7 +6,7 @@ This repository publishes the code, manually reviewed policy fixtures, synthetic
 
 ## Versioned source archive
 
-The [Zenodo v1.0.0 record](https://doi.org/10.5281/zenodo.24410799) preserves the public source snapshot corresponding to [GitHub release v1.0.0](https://github.com/risu-research/revocation-closure/releases/tag/v1.0.0) and commit `c1f15fb1146a10cb3690e755bf8aa7deaa23c3a5`. The published Zenodo ZIP is 446,530 bytes (MD5 `fc5ad1efce5670b0b4ab1c77488400e7`). Source files and fixed evaluation inputs are preserved there; GitHub Actions regenerates run-specific SQLite evidence and independent verification manifests.
+The first [Zenodo v1.0.0 record](https://doi.org/10.5281/zenodo.24410799) preserves the original published source snapshot at `c1f15fb1146a10cb3690e755bf8aa7deaa23c3a5`. The expanded [v1.1.0 GitHub release](https://github.com/risu-research/revocation-closure/releases/tag/v1.1.0) incorporates the original recovered components, complete retrospective inputs, independent outcome auditors, and new source-to-physical-SQL capture. Zenodo allocates a version-specific DOI when that release is archived under [concept DOI 10.5281/zenodo.24410798](https://doi.org/10.5281/zenodo.24410798). GitHub Actions regenerates fresh SQLite evidence and validates its rows and hashes.
 
 ## Reproduction entry points
 
@@ -17,7 +17,7 @@ The [Zenodo v1.0.0 record](https://doi.org/10.5281/zenodo.24410799) preserves th
 - [Independent completed-artifact verifier](../tests/verify_full_reproduction_artifacts.py)
 - [Cross-experiment evidence map](SECTION_VI_CROSS_EXPERIMENT_EVIDENCE_MAP.md)
 
-The full workflow runs ten source/data and executable study jobs. A final job downloads every resulting artifact, validates the experiment-produced SHA-256 inventories, checks physical SQLite effects, validates required mutation controls, screens archived files for credentials and personal paths, and records each file's SHA-256 in a commit-bound manifest. Negative-control tests confirm that altered, missing, malformed and out-of-archive hash entries are rejected. A failed prerequisite or inconsistent archived effect prevents that final verification from succeeding.
+The full workflow calls the separate source/data, historical-component and executable study jobs. A final job downloads every resulting artifact, validates the experiment-produced SHA-256 inventories, checks physical SQLite effects, validates required mutation controls, screens archived files for credentials and personal paths, and records each file's SHA-256 in a commit-bound manifest. Negative-control tests confirm that altered, missing, malformed and out-of-archive hash entries are rejected. A failed prerequisite or inconsistent archived effect prevents that final verification from succeeding.
 
 ## Independent test evidence
 

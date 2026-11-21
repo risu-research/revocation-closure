@@ -1,0 +1,46 @@
+name: Publish verified Revocation Closure v1.1.0
+
+on:
+  workflow_run:
+    workflows:
+      - Reproduce the full public research artifact
+    types:
+      - completed
+
+permissions:
+  contents: read
+
+jobs:
+  publish-verified-release:
+    if: >-
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.head_branch == 'main' &&
+      github.event.workflow_run.head_repository.full_name == github.repository
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - name: Publish exactly the successfully reproduced commit
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERIFIED_SHA: ${{ github.event.workflow_run.head_sha }}
+          RELEASE_TAG: v1.1.0
+        run: |
+          set -euo pipefail
+          current_sha="$(gh api "repos/${GITHUB_REPOSITORY}/git/ref/heads/main" --jq '.object.sha')"
+          if [[ "$VERIFIED_SHA" != "$current_sha" ]]; then
+            echo "Validated run is not at the current main head; no release created."
+            exit 0
+          fi
+          if gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "Release already exists; retaining the original immutable tag."
+            gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --json tagName,url
+            exit 0
+          fi
+          gh release create "$RELEASE_TAG" \
+            --repo "$GITHUB_REPOSITORY" \
+            --target "$VERIFIED_SHA" \
+            --title "Revocation Closure v1.1.0" \
+            --notes "Verified research artifact for After the Clawback. Adds the recovered original Chroma, Qdrant, Haystack, LlamaIndex and LangGraph experiments, both original seven-case checkpoint-to-SQL studies, retrospectively reconstructed source-read evidence, and physical SQLite retention for new checkpoint replay runs. Includes a manuscript-to-artifact evidence index. The full reproducibility and privacy workflow passed at this exact source commit. The previous v1.0.0 DOI remains archived separately."
+          gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --json tagName,url,targetCommitish
