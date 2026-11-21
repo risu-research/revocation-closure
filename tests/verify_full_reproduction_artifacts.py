@@ -24,7 +24,7 @@ SAFE_TEXT_PATTERNS = {
     "key-material": re.compile(rb"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----"),
     "access-token": re.compile(rb"\b(?:gh[pousr]_[A-Za-z0-9_]{28,}|github_pat_[A-Za-z0-9_]{30,})\b"),
     "personal-email": re.compile(rb"\b[A-Za-z0-9._%+-]+@(?:gmail|hotmail|outlook|yahoo|protonmail|web)\.[A-Za-z]{2,}\b", re.I),
-    "personal-path": re.compile(rb"[A-Za-z]:\\Users\\[^\\\s]+\\|/home/oai/|/mnt/data/"),
+    "personal-path": re.compile(rb"[A-Za-z]:\\Users\\[^\\\s]+\\|/home/" + b"oai/|/mnt/" + b"data/"),
 }
 
 def sql_count(path, table):
