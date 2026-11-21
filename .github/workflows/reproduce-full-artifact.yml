@@ -1,0 +1,133 @@
+name: Reproduce the full public research artifact
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/reproduce-full-artifact.yml
+
+permissions:
+  contents: read
+
+jobs:
+  tracked-files-and-court-data:
+    uses: ./.github/workflows/audit-public-artifact.yml
+
+  program-binding:
+    uses: ./.github/workflows/verify-program-binding.yml
+
+  actor-clock:
+    uses: ./.github/workflows/verify-actor-clock.yml
+
+  document-to-effect:
+    uses: ./.github/workflows/verify-document-to-effect.yml
+
+  current-permission-and-policy-integrity:
+    uses: ./.github/workflows/verify-policy-integrity.yml
+
+  checkpoint-and-provenance:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install fixed agent-checkpoint dependency
+        run: python -m pip install --disable-pip-version-check 'langgraph==1.2.12'
+      - name: Regenerate clause fixtures and 2160 held-out provenance trials
+        shell: bash
+        run: |
+          set -euo pipefail
+          python experiments/court_policy/legal_order_probe.py
+          python tests/verify_recorded_results.py
+          python experiments/provenance_stress/provenance_stress.py --partition holdout
+          python tests/verify_provenance_evaluation.py provenance_holdout_result.json
+      - name: Retain synthetic source-policy and provenance results
+        uses: actions/upload-artifact@v4
+        with:
+          name: full-checkpoint-provenance
+          retention-days: 30
+          path: |
+            legal_order_result.json
+            provenance_holdout_result.json
+
+  physical-external-effects:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install fixed agent-checkpoint dependency
+        run: python -m pip install --disable-pip-version-check 'langgraph==1.2.12'
+      - name: Run independent HTTP and SQLite sink, 1152 held-out cases
+        shell: bash
+        run: bash experiments/external_effects/run.sh holdout
+      - name: Archive audited synthetic physical write effects
+        uses: actions/upload-artifact@v4
+        with:
+          name: full-external-effects
+          retention-days: 30
+          path: |
+            experiments/external_effects/_runs/holdout/effects.sqlite
+            experiments/external_effects/_runs/holdout/external_effect_holdout_audit.json
+            experiments/external_effects/_runs/holdout/SHA256SUMS.txt
+
+  actual-observed-tool-reads:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install fixed agent-checkpoint dependency
+        run: python -m pip install --disable-pip-version-check 'langgraph==1.2.12'
+      - name: Run HTTP read recorder and 540 held-out test executions
+        shell: bash
+        run: bash experiments/observed_tool_reads/run.sh holdout
+      - name: Archive audited synthetic tool-read effects
+        uses: actions/upload-artifact@v4
+        with:
+          name: full-observed-tool-reads
+          retention-days: 30
+          path: |
+            experiments/observed_tool_reads/_runs/holdout/evidence.sqlite
+            experiments/observed_tool_reads/_runs/holdout/tool_read_holdout_audit.json
+            experiments/observed_tool_reads/_runs/holdout/SHA256SUMS.txt
+
+  trusted-source-custody:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run real Linux-UID source custody and independent SQL audit
+        shell: bash
+        run: bash experiments/trusted_custody/run.sh holdout
+      - name: Archive synthetic recipient proof and effect ledger
+        uses: actions/upload-artifact@v4
+        with:
+          name: full-trusted-source-custody
+          retention-days: 30
+          path: |
+            _custody_runs/holdout/audit.json
+            _custody_runs/holdout/ledger.sqlite
+
+  independent-recipient:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run independent owner, worker and recipient identities
+        shell: bash
+        run: bash experiments/independent_recipient/run.sh holdout
+      - name: Archive synthetic independent-recipient effects
+        uses: actions/upload-artifact@v4
+        with:
+          name: full-independent-recipient
+          retention-days: 30
+          path: |
+            _recipient_runs/holdout/audit.json
+            _recipient_runs/holdout/recipient.sqlite
