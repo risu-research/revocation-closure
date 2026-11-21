@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - .github/workflows/reproduce-full-artifact.yml
+      - tests/verify_full_reproduction_artifacts.py
 
 permissions:
   contents: read
