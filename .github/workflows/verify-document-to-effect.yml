@@ -1,0 +1,58 @@
+name: Document to effect source, permit and SQL audit
+
+on:
+  push:
+    paths:
+      - .github/workflows/verify-document-to-effect.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  reproduce-document-to-effect:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Verify public program, inputs and audit code
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd experiments/document_to_effect
+          sha256sum -c MANIFEST_SHA256.txt
+          python -m pip install --disable-pip-version-check -r requirements.txt
+      - name: Run two fresh document-to-effect evaluations and independent audits
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd experiments/document_to_effect
+          for n in 1 2; do
+            out="$RUNNER_TEMP/document-to-effect-trial-${n}"
+            python code/run.py --out "$out"
+            python code/independent_audit.py "$out" | tee "$out/independent_audit.json"
+            python - "$out" <<'PY'
+          import json,sys
+          from pathlib import Path
+          out=Path(sys.argv[1])
+          actual=json.loads((out/'summary.json').read_text())
+          expected=json.loads(Path('recorded/expected.json').read_text())
+          assert actual == expected,(actual,expected)
+          audit=json.loads((out/'independent_audit.json').read_text())
+          assert audit['status']=='PASS'
+          assert (audit['attempts'],audit['actual_source_reads'],audit['signed_permits'],audit['signed_actor_events'],audit['writes_physically_persisted'],audit['oracle_unsafe_writes'])==(46,18,38,7,17,9)
+          print('PASS',out)
+          PY
+            (cd "$out"; sha256sum *.json *.sqlite *.txt > archive_sha256.txt)
+          done
+      - name: Retain the complete synthetic source, signed permit and SQLite records
+        uses: actions/upload-artifact@v4
+        with:
+          name: document-to-effect-two-full-runs
+          retention-days: 30
+          path: |
+            ${{ runner.temp }}/document-to-effect-trial-1/
+            ${{ runner.temp }}/document-to-effect-trial-2/
