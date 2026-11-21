@@ -50,6 +50,6 @@ The machine-readable summaries, source-code checks and documented commands remai
 
 ## Citation and reuse
 
-The [citation file](CITATION.cff) identifies the research software and its author. For a reproduced result, cite the archived release DOI when available and record the release tag or Git commit SHA. Cite *After the Clawback: Revocation Closure in Agentic Legal Workflows* separately when its publication details are available.
+The verified research software is archived as [Zenodo v1.0.0](https://doi.org/10.5281/zenodo.24410799), corresponding to [GitHub release v1.0.0](https://github.com/risu-research/revocation-closure/releases/tag/v1.0.0) at commit `c1f15fb1146a10cb3690e755bf8aa7deaa23c3a5`. The [citation file](CITATION.cff) gives the versioned software citation. Cite *After the Clawback: Revocation Closure in Agentic Legal Workflows* separately when its publication details are available.
 
 The code is licensed under [MIT](LICENSE). The linked public court records and referenced software retain their respective terms. The repository includes fixed synthetic evaluation data and source-linked legal-policy coding.
