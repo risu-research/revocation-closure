@@ -19,25 +19,25 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          python3 -m venv "$RUNNER_TEMP/stageq-venv"
-          "$RUNNER_TEMP/stageq-venv/bin/pip" install --disable-pip-version-check 'cryptography==46.0.4'
+          python3 -m venv "/tmp/stageq-ci-venv"
+          "/tmp/stageq-ci-venv/bin/pip" install --disable-pip-version-check 'cryptography==46.0.4'
           sudo apt-get update -qq
           sudo apt-get install -y -qq libseccomp2
-          sudo mkdir -p "$RUNNER_TEMP/stageq-src"
-          sudo cp -a experiments/program_binding/. "$RUNNER_TEMP/stageq-src/"
-          sudo chown -R 0:0 "$RUNNER_TEMP/stageq-src"
-          sudo find "$RUNNER_TEMP/stageq-src" -type d -exec chmod 755 {} +
-          sudo find "$RUNNER_TEMP/stageq-src" -type f -exec chmod 644 {} +
+          sudo mkdir -p "/tmp/stageq-ci-src"
+          sudo cp -a experiments/program_binding/. "/tmp/stageq-ci-src/"
+          sudo chown -R 0:0 "/tmp/stageq-ci-src"
+          sudo find "/tmp/stageq-ci-src" -type d -exec chmod 755 {} +
+          sudo find "/tmp/stageq-ci-src" -type f -exec chmod 644 {} +
       - name: Reproduce baseline and program-literal approval control
         shell: bash
         run: |
           set -euo pipefail
-          cd "$RUNNER_TEMP/stageq-src"
-          sudo env PYTHONPATH="$RUNNER_TEMP/stageq-src" "$RUNNER_TEMP/stageq-venv/bin/python" -m experiments.trusted_transform.run_stage_q --out fresh_baseline
-          sudo env PYTHONPATH="$RUNNER_TEMP/stageq-src" "$RUNNER_TEMP/stageq-venv/bin/python" tests/independent_stage_q_audit.py . fresh_baseline
-          sudo env PYTHONPATH="$RUNNER_TEMP/stageq-src" "$RUNNER_TEMP/stageq-venv/bin/python" -m experiments.trusted_transform.run_stage_q --approve-literal --out fresh_ablation
-          sudo env PYTHONPATH="$RUNNER_TEMP/stageq-src" "$RUNNER_TEMP/stageq-venv/bin/python" tests/independent_stage_q_audit.py . fresh_ablation
-          sudo env PYTHONPATH="$RUNNER_TEMP/stageq-src" "$RUNNER_TEMP/stageq-venv/bin/python" tests/check_expected_metrics.py
+          cd "/tmp/stageq-ci-src"
+          sudo env PYTHONPATH="/tmp/stageq-ci-src" "/tmp/stageq-ci-venv/bin/python" -m experiments.trusted_transform.run_stage_q --out fresh_baseline
+          sudo env PYTHONPATH="/tmp/stageq-ci-src" "/tmp/stageq-ci-venv/bin/python" tests/independent_stage_q_audit.py . fresh_baseline
+          sudo env PYTHONPATH="/tmp/stageq-ci-src" "/tmp/stageq-ci-venv/bin/python" -m experiments.trusted_transform.run_stage_q --approve-literal --out fresh_ablation
+          sudo env PYTHONPATH="/tmp/stageq-ci-src" "/tmp/stageq-ci-venv/bin/python" tests/independent_stage_q_audit.py . fresh_ablation
+          sudo env PYTHONPATH="/tmp/stageq-ci-src" "/tmp/stageq-ci-venv/bin/python" tests/check_expected_metrics.py
           sudo sha256sum fresh_baseline/stage_q_result.json fresh_baseline/independent_audit.json fresh_baseline/recipient_snapshot.sqlite fresh_ablation/stage_q_result.json fresh_ablation/independent_audit.json fresh_ablation/recipient_snapshot.sqlite | sudo tee reproduce-sha256.txt
           sudo chown -R "$(id -u):$(id -g)" fresh_baseline fresh_ablation reproduce-sha256.txt
       - name: Save the synthetic SQL and independent audit evidence
@@ -46,10 +46,10 @@ jobs:
           name: program-binding-reproduction
           retention-days: 30
           path: |
-            ${{ runner.temp }}/stageq-src/reproduce-sha256.txt
-            ${{ runner.temp }}/stageq-src/fresh_baseline/stage_q_result.json
-            ${{ runner.temp }}/stageq-src/fresh_baseline/independent_audit.json
-            ${{ runner.temp }}/stageq-src/fresh_baseline/recipient_snapshot.sqlite
-            ${{ runner.temp }}/stageq-src/fresh_ablation/stage_q_result.json
-            ${{ runner.temp }}/stageq-src/fresh_ablation/independent_audit.json
-            ${{ runner.temp }}/stageq-src/fresh_ablation/recipient_snapshot.sqlite
+            /tmp/stageq-ci-src/reproduce-sha256.txt
+            /tmp/stageq-ci-src/fresh_baseline/stage_q_result.json
+            /tmp/stageq-ci-src/fresh_baseline/independent_audit.json
+            /tmp/stageq-ci-src/fresh_baseline/recipient_snapshot.sqlite
+            /tmp/stageq-ci-src/fresh_ablation/stage_q_result.json
+            /tmp/stageq-ci-src/fresh_ablation/independent_audit.json
+            /tmp/stageq-ci-src/fresh_ablation/recipient_snapshot.sqlite
