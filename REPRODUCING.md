@@ -1,6 +1,6 @@
 # Reproducing the public experiments
 
-The repository contains fixed research inputs, executable evaluation code, expected outcomes and independent audit programs. Work from a checkout of a **specific Git commit** so that source files and reported counts refer to the same revision. The tests use invented material and selected manually reviewed clauses from public court orders.
+The [v1.0.0 research archive](https://doi.org/10.5281/zenodo.24410799) preserves the fixed inputs, executable evaluation code, expected outcomes and independent audit programs at commit `c1f15fb1146a10cb3690e755bf8aa7deaa23c3a5`. Reproduce the paper's recorded results from this [release tag](https://github.com/risu-research/revocation-closure/releases/tag/v1.0.0). The tests use synthetic material and selected manually reviewed clauses from public court orders.
 
 ## One-click full reproduction
 
