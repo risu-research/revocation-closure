@@ -1,6 +1,7 @@
 name: Document to effect source, permit and SQL audit
 
 on:
+  workflow_call:
   push:
     paths:
       - .github/workflows/verify-document-to-effect.yml
