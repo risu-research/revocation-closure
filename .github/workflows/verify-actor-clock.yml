@@ -37,9 +37,9 @@ jobs:
           sudo env PYTHONPATH=/tmp/r40-clock-src /tmp/r40-clock-venv/bin/python -m stage_r.run_study --out /tmp/r40-clock-src/fresh_reproduction
           sudo env PYTHONPATH=/tmp/r40-clock-src /tmp/r40-clock-venv/bin/python tests/independent_audit.py /tmp/r40-clock-src/fresh_reproduction
           sudo env PYTHONPATH=/tmp/r40-clock-src /tmp/r40-clock-venv/bin/python tests/check_public_reproduction.py /tmp/r40-clock-src/fresh_reproduction
+          sudo chown -R "$(id -u):$(id -g)" /tmp/r40-clock-src/fresh_reproduction
           cd fresh_reproduction
           sha256sum *.sqlite *.json *.csv > SHA256SUMS_REPRODUCED.txt
-          sudo chown -R "$(id -u):$(id -g)" /tmp/r40-clock-src/fresh_reproduction
       - name: Save synthetic effect databases and independent clock/effect audits
         uses: actions/upload-artifact@v4
         with:
