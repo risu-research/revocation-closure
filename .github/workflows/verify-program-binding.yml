@@ -1,6 +1,7 @@
 name: Program-binding reproduction
 
 on:
+  workflow_call:
   push:
     paths:
       - .github/workflows/verify-program-binding.yml
