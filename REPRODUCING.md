@@ -74,6 +74,8 @@ bash experiments/independent_recipient/run.sh holdout
 
 The recipient keeps its own policy and SQLite effect ledger. The evaluation contains 576 historical-checkpoint replays across four recipient modes. The protocol records missed-notice and false-clean-issuance controls.
 
+The [original SQL acknowledgment re-audit](results/RECIPIENT_ACK_SQL_REAUDIT.md) separates the owner restriction from the recipient's acknowledged policy epoch and gives the saved per-case evidence and read-only verification command.
+
 ## Document-to-effect replay
 
 Requires Python 3.13 and `cryptography==46.0.4`, with local HTTP and SQLite support.
