@@ -6,6 +6,12 @@ Legal clawback obligations can change after an agent has saved a checkpoint, rea
 
 **[Reproduce the experiments](REPRODUCING.md)** · **[Paper-to-artifact evidence index](results/PAPER_TO_ARTIFACT_COVERAGE.md)** · **[Full artifact and privacy audit](results/PUBLIC_ARTIFACT_REPRODUCTION_AUDIT.md)** · **[Cross-experiment evidence](results/SECTION_VI_CROSS_EXPERIMENT_EVIDENCE_MAP.md)** · **[Run the full Actions evaluation](.github/workflows/reproduce-full-artifact.yml)**
 
+## Extended release v1.2.0
+
+The [supplementary reproduction collection](supplement/README.md) adds twelve fixed experiment modules for clause-grounded policy assessment, signed authority history, transaction order, process termination, restriction recovery, and external delivery. The collection preserves the original SQL and HTTP records, independent auditors, and a manuscript-to-evidence guide. It distinguishes external body receipt from processing commitment and tests the recovery of current permission after a restriction. Its ZIP is tracked in the repository so the source archive retains the complete collection.
+
+The original studies below remain available at the fixed [v1.1.0 release](https://github.com/risu-research/revocation-closure/releases/tag/v1.1.0) and its [version DOI](https://doi.org/10.5281/zenodo.24412056). Follow the supplement's separate reproduction commands; overlapping fixtures are kept as separate comparisons.
+
 ## Research components
 
 The studies have different scenario matrices. Their counts should be interpreted within each module, with the original expected results and independent auditors linked below.
@@ -55,6 +61,6 @@ The machine-readable summaries, source-code checks and documented commands remai
 
 ## Citation and reuse
 
-The expanded [GitHub release v1.1.0](https://github.com/risu-research/revocation-closure/releases/tag/v1.1.0) includes the original component and checkpoint tests, retrospective recovery, fresh physical SQLite evidence capture, and the [paper-to-artifact map](results/PAPER_TO_ARTIFACT_COVERAGE.md). The expanded release is permanently archived as [Zenodo v1.1.0 (DOI: 10.5281/zenodo.24412056)](https://doi.org/10.5281/zenodo.24412056); the stable [Zenodo concept DOI](https://doi.org/10.5281/zenodo.24410798) links the software's version series. The initial [v1.0.0 archived release](https://doi.org/10.5281/zenodo.24410799) remains fixed at commit `c1f15fb1146a10cb3690e755bf8aa7deaa23c3a5`. The [citation file](CITATION.cff) identifies software version 1.1.0. Cite *After the Clawback: Revocation Closure in Agentic Legal Workflows* separately when its publication details are available.
+The expanded [GitHub release v1.1.0](https://github.com/risu-research/revocation-closure/releases/tag/v1.1.0) includes the original component and checkpoint tests, retrospective recovery, fresh physical SQLite evidence capture, and the [paper-to-artifact map](results/PAPER_TO_ARTIFACT_COVERAGE.md). The expanded release is permanently archived as [Zenodo v1.1.0 (DOI: 10.5281/zenodo.24412056)](https://doi.org/10.5281/zenodo.24412056); the stable [Zenodo concept DOI](https://doi.org/10.5281/zenodo.24410798) links the software's version series. The initial [v1.0.0 archived release](https://doi.org/10.5281/zenodo.24410799) remains fixed at commit `c1f15fb1146a10cb3690e755bf8aa7deaa23c3a5`. The [citation file](CITATION.cff) identifies repository version 1.2.0. Cite the version-specific DOI assigned to the extended release by Zenodo; the earlier DOI identifies v1.1.0 only. Cite *After the Clawback: Revocation Closure in Agentic Legal Workflows* separately when its publication details are available.
 
 The code is licensed under [MIT](LICENSE). The linked public court records and referenced software retain their respective terms. The repository includes fixed synthetic evaluation data and source-linked legal-policy coding.

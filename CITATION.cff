@@ -7,14 +7,14 @@ abstract: >-
   Revocation Closure in Agentic Legal Workflows. The repository includes
   source-linked court-order coding, fixed synthetic evaluation inputs,
   agent and recipient implementations, physical SQLite effects,
-  and independent reproduction audits.
+  and independent reproduction audits. The extended release includes twelve
+  supplementary modules for policy scope, authority recovery, and external
+  delivery, with a direct manuscript-result recount.
 authors:
   - family-names: "Lee"
     given-names: "Moon Hwan"
     affiliation: "RISU Institute"
-version: "1.1.0"
-date-released: 2026-11-21
-doi: "10.5281/zenodo.24412056"
+version: "1.2.0"
 repository-code: "https://github.com/risu-research/revocation-closure"
 license: "MIT"
 keywords:
@@ -22,3 +22,13 @@ keywords:
   - "legal policy"
   - "revocation closure"
   - "reproducible research"
+
+references:
+  - type: software
+    title: "Revocation Closure: Reproducible Research Artifacts for Agentic Legal Workflows"
+    authors:
+      - family-names: "Lee"
+        given-names: "Moon Hwan"
+    version: "1.1.0"
+    doi: "10.5281/zenodo.24412056"
+    repository-code: "https://github.com/risu-research/revocation-closure"

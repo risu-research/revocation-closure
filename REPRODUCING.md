@@ -1,5 +1,9 @@
 # Reproducing the public experiments
 
+## Supplementary studies in v1.2.0
+
+The [supplementary collection](supplement/README.md) includes its own fixed evidence, dependency pin, and runner for twelve modules. The commands below concern the earlier studies. Use the original v1.1.0 checkout for their tracked-file, history, and framework workflows.
+
 Use the [v1.1.0 release tag](https://github.com/risu-research/revocation-closure/releases/tag/v1.1.0) for complete replication of the paper's recorded experiments, including original-component and retrospective source recovery. The fixed release has a [version-specific Zenodo DOI, 10.5281/zenodo.24412056](https://doi.org/10.5281/zenodo.24412056), within the [same concept DOI series](https://doi.org/10.5281/zenodo.24410798). The initial [v1.0.0 archive](https://doi.org/10.5281/zenodo.24410799) remains fixed at `c1f15fb1146a10cb3690e755bf8aa7deaa23c3a5` and does not include the later recovered modules. All executable materials are synthetic or based on selected manually reviewed clauses from public court orders.
 
 ## One-click full reproduction

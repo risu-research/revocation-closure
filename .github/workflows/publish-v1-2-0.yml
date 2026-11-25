@@ -1,0 +1,102 @@
+name: Verify and publish Revocation Closure v1.2.0
+on:
+  push:
+    branches: [release-v1.2.0]
+    paths:
+      - 'supplement/revocation_closure_supplement_v1.0.0.zip'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: revocation-closure-v1-2-0
+  cancel-in-progress: false
+jobs:
+  verify:
+    if: github.ref == 'refs/heads/release-v1.2.0'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.5'
+      - name: Check exact payload and preserve earlier source
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+          git merge-base --is-ancestor 0b7ff461f1d6f6658d3d80717dbd34952dde15e2 HEAD
+          test "$(git rev-parse v1.1.0^{commit})" = "43991454d3345a85f36464c6a6011e0b519a723d"
+          git diff --name-only 0b7ff461f1d6f6658d3d80717dbd34952dde15e2 HEAD | LC_ALL=C sort > "$RUNNER_TEMP/actual"
+          printf '%s\n' '.github/workflows/publish-v1-2-0.yml' CITATION.cff README.md REPRODUCING.md supplement/README.md supplement/SHA256SUMS supplement/revocation_closure_supplement_v1.0.0.zip | LC_ALL=C sort > "$RUNNER_TEMP/expected"
+          diff -u "$RUNNER_TEMP/expected" "$RUNNER_TEMP/actual"
+          test "$(stat -c %s supplement/revocation_closure_supplement_v1.0.0.zip)" = 12536687
+          printf '%s  %s\n' 'adab20a6d78aba99a7a729a8dd7ebffb4983a2fc1055b690edb98ac8d3402967' 'supplement/revocation_closure_supplement_v1.0.0.zip' | sha256sum -c -
+          (cd supplement && sha256sum -c SHA256SUMS)
+          mkdir "$RUNNER_TEMP/supplement" "$RUNNER_TEMP/legacy"
+          unzip -q supplement/revocation_closure_supplement_v1.0.0.zip -d "$RUNNER_TEMP/supplement"
+          git archive 43991454d3345a85f36464c6a6011e0b519a723d | tar -xf - -C "$RUNNER_TEMP/legacy"
+          cd "$RUNNER_TEMP/supplement/revocation_closure_reproduction"
+          python -B legacy.py snapshot "$RUNNER_TEMP/legacy"
+          python -m pip install -r requirements.txt
+      - name: Reproduce all supplementary modules and compare manuscript results
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "$RUNNER_TEMP/supplement/revocation_closure_reproduction"
+          python -B verify_release.py
+          python -B test_integration.py
+          python -B verify_paper_results.py
+          python -B reproduce_all.py all --out "$RUNNER_TEMP/reproduction" --workers 2
+          python -B verify_paper_results.py --fresh-results "$RUNNER_TEMP/reproduction/results" --out "$RUNNER_TEMP/paper-recount.json"
+          python -B verify_release.py
+      - name: Preserve verification reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: revocation-closure-v1-2-0-verification
+          path: |
+            ${{ runner.temp }}/reproduction/report.json
+            ${{ runner.temp }}/reproduction/logs/
+            ${{ runner.temp }}/paper-recount.json
+          if-no-files-found: warn
+  publish:
+    needs: verify
+    if: github.ref == 'refs/heads/release-v1.2.0'
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - name: Publish only the verified commit
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          repo="$GITHUB_REPOSITORY"
+          branch_sha="$(gh api "repos/$repo/git/ref/heads/release-v1.2.0" --jq '.object.sha')"
+          test "$branch_sha" = "$GITHUB_SHA"
+          main_sha="$(gh api "repos/$repo/git/ref/heads/main" --jq '.object.sha')"
+          if [[ "$main_sha" != '0b7ff461f1d6f6658d3d80717dbd34952dde15e2' && "$main_sha" != "$GITHUB_SHA" ]]; then
+            echo "Main has changed. Stop for review; no release created." >&2
+            exit 1
+          fi
+          if gh release view v1.2.0 --repo "$repo" >/dev/null 2>&1; then
+            tag_sha="$(gh api "repos/$repo/git/ref/tags/v1.2.0" --jq '.object.sha')"
+            test "$tag_sha" = "$GITHUB_SHA"
+            echo "Existing release matches verified commit."
+          else
+            if gh api "repos/$repo/git/ref/tags/v1.2.0" >/dev/null 2>&1; then
+              echo "Unreleased tag already exists; stop for review." >&2
+              exit 1
+            fi
+            gh release create v1.2.0 --repo "$repo" --target "$GITHUB_SHA" --title "Revocation Closure v1.2.0" --notes "Preserves all v1.1.0 experiments and adds twelve self-contained supplementary research modules. The tracked ZIP retains the fixed evidence, independent auditors, reproduction runner and manuscript-result recount. The supplementary reproduction and pinned original source verification passed at the released commit. The original DOI 10.5281/zenodo.24412056 remains unchanged."
+            test "$(gh api "repos/$repo/git/ref/tags/v1.2.0" --jq '.object.sha')" = "$GITHUB_SHA"
+          fi
+          if [[ "$main_sha" != "$GITHUB_SHA" ]]; then
+            gh api --method PATCH "repos/$repo/git/refs/heads/main" -f sha="$GITHUB_SHA" -F force=false --jq '.object.sha'
+          fi
+          gh release view v1.2.0 --repo "$repo" --json tagName,url,targetCommitish
